@@ -10,15 +10,15 @@ namespace WaypointSpase
         
         private static void OnDrawGizmo(Waypoint waypoint, GizmoType gizmoType)
         {
-            float waypointRadius = 0.15f;
+            float waypointRadius = 0.5f;
 
             if (gizmoType == GizmoType.Selected)
             {
-                Gizmos.color = Color.blue;
+                Gizmos.color = Color.magenta;
             }
             else
             {
-                Gizmos.color = Color.blue * 0.5f;
+                Gizmos.color = Color.grey;
             }
             
             Gizmos.DrawSphere(waypoint.transform.position, waypointRadius);
@@ -28,7 +28,7 @@ namespace WaypointSpase
 
             if (waypoint.nextWaypoint != null)
             {
-                Gizmos.color = Color.cyan;
+                Gizmos.color = Color.cyan * 0.5f;
                 Vector3 leftBorder = waypoint.transform.position + waypoint.transform.right * waypoint.weight / 2;
                 Vector3 rightBorder = waypoint.transform.position - waypoint.transform.right * waypoint.weight / 2;
                 Vector3 leftNextBorder = waypoint.nextWaypoint.transform.position + 
