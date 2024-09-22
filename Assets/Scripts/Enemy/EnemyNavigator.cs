@@ -1,4 +1,5 @@
 using UnityEngine;
+using WaypointSpase;
 
 namespace EnemySpace
 {
@@ -35,9 +36,9 @@ namespace EnemySpace
             }
         }
 
-        internal void SetDestination(Vector3 pointPosition)
+        internal void SetDestination(Waypoint waypoint)
         {
-            _destination = pointPosition;
+            _destination = Vector3.Lerp(waypoint.minBounds, waypoint.maxBounds, Random.Range(0f, 1f));
             _isReachedDestination = false;
         }
     }

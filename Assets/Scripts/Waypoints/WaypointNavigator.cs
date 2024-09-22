@@ -13,19 +13,13 @@ namespace WaypointSpase
             _enemyNavigator = GetComponent<EnemyNavigator>();
         }
 
-        private void Start()
-        {
-            _enemyNavigator.SetDestination(_currentWaypoint.GetPosition());
-        }
-
         private void Update()
         {
             if (!_enemyNavigator._isReachedDestination)
             {
                 _currentWaypoint = _currentWaypoint.nextWaypoint;
+                _enemyNavigator.SetDestination(_currentWaypoint);
             }
-            
-            _enemyNavigator.SetDestination(_currentWaypoint.GetPosition());
         }
     }
 }
