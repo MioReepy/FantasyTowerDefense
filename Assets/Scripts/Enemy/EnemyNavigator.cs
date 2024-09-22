@@ -7,9 +7,9 @@ namespace EnemySpace
         [SerializeField] private float _movementSpeed = 10f;
         [SerializeField] private float _rotationSpeed = 100f;
         [SerializeField] private float _stopDistance = 10f;
-        
+
+        internal bool _isReachedDestination;
         private Vector3 _destination;
-        private bool _isReachedDestination;
 
         private void Update()
         {
