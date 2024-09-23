@@ -6,11 +6,16 @@ namespace WaypointSpase
     public class WaypointNavigator : MonoBehaviour
     {
         [SerializeField] private EnemyNavigator _enemyNavigator;
-        [SerializeField] private Waypoint _currentWaypoint;
+        internal Waypoint _currentWaypoint;
 
         private void Awake()
         {
             _enemyNavigator = GetComponent<EnemyNavigator>();
+        }
+
+        private void Start()
+        {
+            _enemyNavigator.SetDestination(_currentWaypoint);
         }
 
         private void Update()
