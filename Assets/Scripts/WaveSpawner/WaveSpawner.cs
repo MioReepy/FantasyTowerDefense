@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using WaypointSpase;
+using Random = UnityEngine.Random;
 
-namespace EnemySpace
+namespace WaveSpawnerSpace
 {
     public class WaveSpawner : MonoBehaviour
     {
@@ -12,6 +14,17 @@ namespace EnemySpace
         [SerializeField] private float _timeBetweenWaves = 5f;
         [SerializeField] private float _coolDownWaves = 5f;
         [SerializeField] private float _timeBetweenEnemySpawns = 0.5f;
+
+        [SerializeField] internal float _waveSpawnerWeight = 5f;
+        internal Vector3 minBounds;
+        internal Vector3 maxBounds;
+
+        private void Start()
+        {
+            _enemyPrefab.GetComponent<WaypointNavigator>()._currentWaypoint = _waypoint;
+            minBounds = transform.position + transform.right * _waveSpawnerWeight / 2;
+            maxBounds = transform.position - transform.right * _waveSpawnerWeight / 2;
+        }
 
         private void Update()
         {
@@ -36,7 +49,8 @@ namespace EnemySpace
 
         private void SpawnEnemy()
         {
-            var enemy = Instantiate(_enemyPrefab, transform.position, transform.rotation);
+            Vector3 spawnPosition = Vector3.Lerp(minBounds, maxBounds, Random.Range(0f, 1f));
+            var enemy = Instantiate(_enemyPrefab, spawnPosition, transform.rotation);
             enemy.GetComponent<WaypointNavigator>()._currentWaypoint = _waypoint;
         }
     }

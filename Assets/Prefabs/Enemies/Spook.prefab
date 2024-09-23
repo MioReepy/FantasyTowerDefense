@@ -186,8 +186,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2143963233178082984}
   - {fileID: 2143963233178082988}
@@ -242,7 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2366352a892e7294a8860ad28a07ef01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementSpeed: 5
+  _movementSpeed: 2
   _rotationSpeed: 500
   _stopDistance: 2
 --- !u!114 &-7661121717015544917
@@ -258,7 +258,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyNavigator: {fileID: 4247667591605308345, guid: add7e67fb68b0d54a9d9893bd0356223, type: 3}
-  _currentWaypoint: {fileID: 0}
 --- !u!1 &2143963233178108556
 GameObject:
   m_ObjectHideFlags: 0

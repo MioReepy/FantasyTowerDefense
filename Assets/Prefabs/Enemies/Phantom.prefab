@@ -201,7 +201,6 @@ GameObject:
   - component: {fileID: 4247667591605308345}
   - component: {fileID: 8380339916176997767}
   - component: {fileID: 3175076356985968367}
-  - component: {fileID: 1252948861332778382}
   m_Layer: 0
   m_Name: Phantom
   m_TagString: Untagged
@@ -219,8 +218,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2611149553095877765}
   - {fileID: 2611149553095877763}
@@ -260,7 +259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2366352a892e7294a8860ad28a07ef01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementSpeed: 5
+  _movementSpeed: 2
   _rotationSpeed: 500
   _stopDistance: 2
 --- !u!114 &8380339916176997767
@@ -292,20 +291,6 @@ MonoBehaviour:
   _movementSpeed: 10
   _rotationSpeed: 100
   _stopDistance: 10
---- !u!114 &1252948861332778382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2611149553095981223}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: deac5bc351e2f434cb8255875736b925, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemyNavigator: {fileID: 0}
-  _currentWaypoint: {fileID: 0}
 --- !u!1 &2611149553095981225
 GameObject:
   m_ObjectHideFlags: 0
