@@ -1,6 +1,6 @@
 namespace EnemySpace
 {
-    internal enum EnemyType
+    public enum EnemyType
     {
         Ghost = 0,
         Phantom = 1,

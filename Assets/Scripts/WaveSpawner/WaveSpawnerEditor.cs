@@ -7,7 +7,7 @@ namespace WaveSpawnerSpace
     public class WaveSpawnerEditor
     {
         [DrawGizmo(GizmoType.Selected | GizmoType.NonSelected)]
-        public static void OnDrawGizmos(WaveSpawner waveSpawner, GizmoType gizmoType)
+        public static void OnDrawGizmos(WaveSpawnerOld waveSpawner, GizmoType gizmoType)
         {
             float WaveSpawnerRadius = 1f;
 

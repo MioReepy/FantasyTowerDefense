@@ -152,12 +152,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyPrefab: {fileID: 2611149553095981223, guid: add7e67fb68b0d54a9d9893bd0356223, type: 3}
-  _waypoint: {fileID: 1551467194}
+  _waypoint: {fileID: 416517370}
   _waveNumber: 1
-  _timeBetweenWaves: 5
-  _coolDownWaves: 5
+  _timeBetweenWaves: 2
+  _coolDownWaves: 2
   _timeBetweenEnemySpawns: 0.5
-  _waveSpawnerWeight: 7
+  _waveSpawnerWeight: 10
 --- !u!4 &118899824
 Transform:
   m_ObjectHideFlags: 0
@@ -1479,7 +1479,7 @@ MonoBehaviour:
     xMax: 96
     zMin: 2
     zMax: 66
-  _speed: 40
+  _cameraSpeed: 0
 --- !u!114 &1651336414
 MonoBehaviour:
   m_ObjectHideFlags: 0

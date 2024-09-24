@@ -1,57 +1,35 @@
 using System;
-using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using WaypointSpase;
-using Random = UnityEngine.Random;
 
 namespace WaveSpawnerSpace
 {
-    public class WaveSpawner : MonoBehaviour
+    [CreateAssetMenu(fileName = "Wave Spawner", menuName = "Enemy/Wave Spawner")]
+    [Serializable]
+    public class WaveSpawner : ScriptableObject, ISerializationCallbackReceiver
     {
-        [SerializeField] private GameObject _enemyPrefab;
-        [SerializeField] private Waypoint _waypoint;
-        [SerializeField] private float _waveNumber = 1f;
-        [SerializeField] private float _timeBetweenWaves = 5f;
-        [SerializeField] private float _coolDownWaves = 5f;
-        [SerializeField] private float _timeBetweenEnemySpawns = 0.5f;
-
-        [SerializeField] internal float _waveSpawnerWeight = 5f;
-        internal Vector3 minBounds;
-        internal Vector3 maxBounds;
-
-        private void Start()
+        public List<WaveDataBase> WavesCount;
+        // public  Dictionary<EnemyType, int> Enemies;
+        
+        public void OnBeforeSerialize()
         {
-            _enemyPrefab.GetComponent<WaypointNavigator>()._currentWaypoint = _waypoint;
-            minBounds = transform.position + transform.right * _waveSpawnerWeight / 2;
-            maxBounds = transform.position - transform.right * _waveSpawnerWeight / 2;
-        }
-
-        private void Update()
-        {
-            if (_coolDownWaves <= 0f)
+            if (WavesCount != null)
             {
-                StartCoroutine(SpawnWave());
-                _coolDownWaves = _timeBetweenWaves;
+                for (int i = 0; i < WavesCount.Count; i++)
+                {
+                    WavesCount[i] = CreateInstance<WaveDataBase>();
+                }
             }
-            _coolDownWaves -= Time.deltaTime;
+            // if (Waves == null)
+            // {
+            //     EnemiesDatabase = new EnemyDatabase[Waves.Length];
+            // }
+            // Enemies = new Dictionary<EnemyType, int>();
         }
 
-        private IEnumerator SpawnWave()
+        public void OnAfterDeserialize()
         {
-            for (int i = 0; i < _waveNumber; i++)
-            {
-                SpawnEnemy();
-                yield return new WaitForSeconds(_timeBetweenEnemySpawns);
-            }
 
-            _waveNumber++;  
-        }
-
-        private void SpawnEnemy()
-        {
-            Vector3 spawnPosition = Vector3.Lerp(minBounds, maxBounds, Random.Range(0f, 1f));
-            var enemy = Instantiate(_enemyPrefab, spawnPosition, transform.rotation);
-            enemy.GetComponent<WaypointNavigator>()._currentWaypoint = _waypoint;
         }
     }
 }
