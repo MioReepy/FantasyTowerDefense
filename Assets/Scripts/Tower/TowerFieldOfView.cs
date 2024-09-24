@@ -7,12 +7,13 @@ namespace TowerSpace
     public class TowerFieldOfView :MonoBehaviour
     {
         [SerializeField] private LayerMask _targetMask;
-        [Range(0, 50)] [SerializeField] internal float viewRadius = 10f;
-        [SerializeField] private float _delayTime = 0.2f;
-        private List<Transform> _visibleTarget;
+        [Range(0, 50)] [SerializeField] internal float viewRadius = 30f;
+        [SerializeField] private float _delayTime = 0.5f;
+        internal List<Transform> visibleTarget;
 
         private void Start()
         {
+            visibleTarget = new List<Transform>();
             StartCoroutine("FindTarget", _delayTime);        
         }
 
@@ -37,20 +38,29 @@ namespace TowerSpace
 
                 if (Physics.Raycast(transform.position, directionToTarget, _targetMask))
                 {
-                    _visibleTarget.Add(target);
+                    visibleTarget.Add(target);
+
+                    for (int j = 0; j < visibleTarget.Count; j++)
+                    {
+                        Debug.Log(visibleTarget[j].name);
+                    }
+                    Debug.Log(visibleTarget[i].name);
                 }
             }
         }
 
         private void DeleteInVisibleTarger()
         {
-            for (int i = 0; i < _visibleTarget.Count; i++)
+            if (visibleTarget != null)
             {
-                Vector3 directionToTarget = (_visibleTarget[i].position - transform.position).normalized;
-
-                if (viewRadius >= directionToTarget.magnitude)
+                for (int i = 0; i < visibleTarget.Count; i++)
                 {
-                    _visibleTarget.Remove(_visibleTarget[i]);
+                    Vector3 directionToTarget = (visibleTarget[i].position - transform.position).normalized;
+
+                    if (viewRadius > directionToTarget.magnitude)
+                    {
+                        visibleTarget.Remove(visibleTarget[i]);
+                    }
                 }
             }
         }

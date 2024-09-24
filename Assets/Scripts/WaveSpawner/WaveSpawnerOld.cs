@@ -9,7 +9,8 @@ namespace WaveSpawnerSpace
     {
         [SerializeField] private GameObject _enemyPrefab;
         [SerializeField] private Waypoint _waypoint;
-        [SerializeField] private float _waveNumber = 3f;
+        [SerializeField] private int _waveNumber = 3;
+        [SerializeField] private int _startEnemiesCount = 3;
         [SerializeField] private float _timeBetweenWaves = 5f;
         [SerializeField] private float _coolDownWaves = 5f;
         [SerializeField] private float _timeBetweenEnemySpawns = 0.5f;
@@ -27,23 +28,28 @@ namespace WaveSpawnerSpace
 
         private void Update()
         {
-            if (_coolDownWaves <= 0f)
+            if (_waveNumber > 0)
             {
-                StartCoroutine(SpawnWave());
-                _coolDownWaves = _timeBetweenWaves;
+                if (_coolDownWaves <= 0f)
+                {
+                    StartCoroutine(SpawnWave());
+                    _coolDownWaves = _timeBetweenWaves;
+                }
+
+                _coolDownWaves -= Time.deltaTime;
             }
-            _coolDownWaves -= Time.deltaTime;
         }
 
         private IEnumerator SpawnWave()
         {
-            for (int i = 0; i < _waveNumber; i++)
+            for (int i = 0; i < _startEnemiesCount; i++)
             {
                 SpawnEnemy();
                 yield return new WaitForSeconds(_timeBetweenEnemySpawns);
             }
 
-            _waveNumber--;  
+            _waveNumber--;
+            _startEnemiesCount++;
         }
 
         private void SpawnEnemy()
