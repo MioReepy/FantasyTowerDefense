@@ -10,6 +10,7 @@ namespace TowerSpace
         [Range(0, 50)] [SerializeField] internal float viewRadius = 30f;
         [SerializeField] private float _delayTime = 0.5f;
         internal List<Transform> visibleTarget;
+        internal Transform target;
 
         private void Start()
         {
@@ -23,6 +24,10 @@ namespace TowerSpace
             {
                 yield return new WaitForSeconds(delay);
                 FindVisibleTarget();
+                if (visibleTarget.Count > 0)
+                {
+                    target = visibleTarget[0];   
+                }
                 DeleteInVisibleTarger();
             }
         }

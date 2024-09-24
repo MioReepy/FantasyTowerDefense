@@ -20,13 +20,13 @@ namespace TowerSpace
             {
                 foreach (var visibleTarget in towerFieldOfView.visibleTarget)
                 {
-                    if (visibleTarget == towerFieldOfView.visibleTarget[0])
+                    if (visibleTarget == towerFieldOfView.target)
                     {
                         Handles.color = Color.red;
                     }
                     else
                     {
-                        Handles.color = Color.grey;
+                        Handles.color = Color.magenta;
                     }
                     Handles.DrawLine(towerFieldOfView.transform.position, visibleTarget.position, 1.5f);
                 }   
