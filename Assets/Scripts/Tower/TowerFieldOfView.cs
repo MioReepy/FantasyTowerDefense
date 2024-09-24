@@ -44,12 +44,6 @@ namespace TowerSpace
                 if (Physics.Raycast(transform.position, directionToTarget, _targetMask))
                 {
                     visibleTarget.Add(target);
-
-                    for (int j = 0; j < visibleTarget.Count; j++)
-                    {
-                        Debug.Log(visibleTarget[j].name);
-                    }
-                    Debug.Log(visibleTarget[i].name);
                 }
             }
         }
