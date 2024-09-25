@@ -1,4 +1,3 @@
-using EnemySpace;
 using UnityEngine;
 
 namespace WaveSpawnerSpace

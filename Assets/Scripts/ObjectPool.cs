@@ -13,11 +13,9 @@ public class ObjectPool : MonoBehaviour
     {
         _poolObjects = new List<GameObject>();
 
-        GameObject poolTemp;
-
         for (int i = 0; i < _poolSize; i++)
         {
-            poolTemp = Instantiate(objectToPool, spawnObject.transform);
+            GameObject poolTemp = Instantiate(objectToPool, spawnObject.transform);
             poolTemp.SetActive(false);
             _poolObjects.Add(poolTemp);
         }
@@ -32,7 +30,10 @@ public class ObjectPool : MonoBehaviour
                 return _poolObjects[i];
             }
         }
-
-        return null;
+        
+        GameObject poolTemp = Instantiate(objectToPool, spawnObject.transform);
+        poolTemp.SetActive(false);
+        _poolObjects.Add(poolTemp);
+        return poolTemp;
     }
 }
