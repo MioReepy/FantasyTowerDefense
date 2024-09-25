@@ -15,8 +15,8 @@ namespace WaveSpawnerSpace
             Gizmos.DrawSphere(waveSpawner.transform.position, WaveSpawnerRadius);
 
             Gizmos.color = Color.white;
-            Gizmos.DrawLine(waveSpawner.transform.position + Vector3.right * waveSpawner._waveSpawnerWeight / 2,
-                waveSpawner.transform.position - Vector3.right * waveSpawner._waveSpawnerWeight / 2);
+            Gizmos.DrawLine(waveSpawner.transform.position + Vector3.right * waveSpawner._waveSpawnerWidth / 2,
+                waveSpawner.transform.position - Vector3.right * waveSpawner._waveSpawnerWidth / 2);
         }
     }
 }

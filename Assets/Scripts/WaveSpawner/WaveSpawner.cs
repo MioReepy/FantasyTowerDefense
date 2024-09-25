@@ -10,7 +10,7 @@ namespace WaveSpawnerSpace
         [SerializeField] private float _timeBetweenWaves = 5f;
         private float _coolDownWaves = 5f;
         [SerializeField] private Transform _spawnPoint;
-        [SerializeField] internal float _waveSpawnerWeight = 5f;
+        [SerializeField] internal float _waveSpawnerWidth = 5f;
         internal Vector3 minBounds;
         internal Vector3 maxBounds;
 
@@ -22,8 +22,8 @@ namespace WaveSpawnerSpace
         private void Start()
         {
             _enemyPool = GetComponent<ObjectPool>();
-            minBounds = transform.position + transform.right * _waveSpawnerWeight / 2;
-            maxBounds = transform.position - transform.right * _waveSpawnerWeight / 2;
+            minBounds = transform.position + transform.right * _waveSpawnerWidth / 2;
+            maxBounds = transform.position - transform.right * _waveSpawnerWidth / 2;
         }
 
         private void Update()
