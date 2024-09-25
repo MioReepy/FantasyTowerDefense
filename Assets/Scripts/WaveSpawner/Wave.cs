@@ -6,6 +6,5 @@ namespace WaveSpawnerSpace
     public class Wave : ScriptableObject
     {
         public EnemiesForWave[] enemy;
-        public float timeBetweenEnemies = 0.5f;
     }
 }

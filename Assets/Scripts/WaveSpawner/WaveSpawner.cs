@@ -8,6 +8,7 @@ namespace WaveSpawnerSpace
     {
         [SerializeField] private Wave[] waves;
         [SerializeField] private float _timeBetweenWaves = 5f;
+        [SerializeField] private float _timeBetweenEnemies = 0.5f;
         private float _coolDownWaves = 5f;
         [SerializeField] private Transform _spawnPoint;
         [SerializeField] internal float _waveSpawnerWidth = 5f;
@@ -24,31 +25,29 @@ namespace WaveSpawnerSpace
             _enemyPool = GetComponent<ObjectPool>();
             minBounds = transform.position + transform.right * _waveSpawnerWidth / 2;
             maxBounds = transform.position - transform.right * _waveSpawnerWidth / 2;
-        }
-
-        private void Update()
-        {
-            if (_currentWave < waves.Length)
-            {
-                if (_coolDownWaves <= 0f)
-                {
-                    StartCoroutine(SpawnWave());
-                    _coolDownWaves = _timeBetweenWaves;
-                }
-
-                _coolDownWaves -= Time.deltaTime;
-            }
+            StartCoroutine(SpawnWave());
         }
 
         private IEnumerator SpawnWave()
         {
-            for (int i = 0; i < waves[_currentWave].enemy.Length; i++)
+            while (_currentWave < waves.Length)
             {
-                SpawnEnemy();
-                yield return new WaitForSeconds(waves[_currentWave].timeBetweenEnemies);
-            }
+                for (int z = _currentWave; z < waves.Length; z++)
+                {
+                    for (int i = 0; i < waves[z].enemy.Length; i++)
+                    {
+                        for (int j = 0; j < waves[z].enemy[i].count; j++)
+                        {
+                            SpawnEnemy();
+                            yield return new WaitForSeconds(_timeBetweenEnemies);
+                        }
 
-            _currentWave++;
+                        yield return new WaitForSeconds(_timeBetweenEnemies);
+                        _currentWave++;
+                    }
+                    yield return new WaitForSeconds(_timeBetweenWaves);
+                }
+            }
         }
 
         private void SpawnEnemy()

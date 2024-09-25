@@ -131,7 +131,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 118899824}
-  - component: {fileID: 118899823}
   - component: {fileID: 118899825}
   - component: {fileID: 118899826}
   m_Layer: 0
@@ -141,26 +140,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &118899823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 118899822}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f0ddf97f95e0464d9b12d5f5cf58b87, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _waypoint: {fileID: 1551467194}
-  _waveNumber: 10
-  _startEnemiesCount: 3
-  _timeBetweenWaves: 7
-  _timeBetweenEnemySpawns: 0.5
-  _waveSpawnerWeight: 10
-  _enemyPool: {fileID: 118899825}
-  _spawnPoint: {fileID: 118899824}
 --- !u!4 &118899824
 Transform:
   m_ObjectHideFlags: 0
@@ -188,7 +167,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 237c626abac9d4d458c258b6f3ee4dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToPool: {fileID: 2611149553095981223, guid: add7e67fb68b0d54a9d9893bd0356223, type: 3}
+  objectToPool:
+  - {fileID: 4524045572467879168, guid: 14f1f307a97058a49b01c5ef42cbbfcd, type: 3}
+  - {fileID: 2611149553095981223, guid: add7e67fb68b0d54a9d9893bd0356223, type: 3}
+  - {fileID: 2143963233178108554, guid: 64926770d352a2d4a904e19f65d72d80, type: 3}
   spawnObject: {fileID: 1913327452}
   _poolSize: 20
 --- !u!114 &118899826
@@ -208,8 +190,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9b03736507c2e794caafdfb9eda542b7, type: 2}
   - {fileID: 11400000, guid: a753f3db4758f8e44a41dacc33469e27, type: 2}
   _timeBetweenWaves: 5
+  _timeBetweenEnemies: 0.5
   _spawnPoint: {fileID: 118899824}
-  _waveSpawnerWeight: 5
+  _waveSpawnerWidth: 5
   _waypoint: {fileID: 1551467194}
   _enemyPool: {fileID: 118899825}
 --- !u!1 &123902744
@@ -1966,7 +1949,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2132e29add9b55408128a2dd97558b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotationSpeed: 100
+  _rotationSpeed: 5
   _fireSpeed: 2
   _spawnPool: {fileID: 648943712}
   fireOffset: 4
@@ -1982,7 +1965,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 237c626abac9d4d458c258b6f3ee4dd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToPool: {fileID: 3076262866650904099, guid: bc813c22dad9d3b47804f6c8bdd88f46, type: 3}
+  objectToPool:
+  - {fileID: 3076262866650904099, guid: bc813c22dad9d3b47804f6c8bdd88f46, type: 3}
   spawnObject: {fileID: 178483362}
   _poolSize: 10
 --- !u!1 &1985515771
