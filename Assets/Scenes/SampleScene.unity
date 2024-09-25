@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 118899824}
   - component: {fileID: 118899823}
   - component: {fileID: 118899825}
+  - component: {fileID: 118899826}
   m_Layer: 0
   m_Name: WaveSpawner
   m_TagString: Untagged
@@ -147,7 +148,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 118899822}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0f0ddf97f95e0464d9b12d5f5cf58b87, type: 3}
   m_Name: 
@@ -189,7 +190,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToPool: {fileID: 2611149553095981223, guid: add7e67fb68b0d54a9d9893bd0356223, type: 3}
   spawnObject: {fileID: 1913327452}
-  _poolSize: 15
+  _poolSize: 20
+--- !u!114 &118899826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118899822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65463058dc9a7894e956cdf3be10db11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves:
+  - {fileID: 11400000, guid: c65d3f604043dd64e91c929eb1dbde3e, type: 2}
+  - {fileID: 11400000, guid: 9b03736507c2e794caafdfb9eda542b7, type: 2}
+  - {fileID: 11400000, guid: a753f3db4758f8e44a41dacc33469e27, type: 2}
+  _timeBetweenWaves: 5
+  _spawnPoint: {fileID: 118899824}
+  _waveSpawnerWeight: 5
+  _waypoint: {fileID: 1551467194}
+  _enemyPool: {fileID: 118899825}
 --- !u!1 &123902744
 GameObject:
   m_ObjectHideFlags: 0
@@ -981,7 +1003,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!156049354 &849501070
 Grid:
   m_ObjectHideFlags: 0
@@ -1813,6 +1835,37 @@ MonoBehaviour:
   m_DefaultActionMap: KeyBoard
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 963194227}
+--- !u!1 &1696297232
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1696297233}
+  m_Layer: 0
+  m_Name: TestWave
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1696297233
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696297232}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 90.88345, y: 8.668823, z: 61.70078}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1784078305
 GameObject:
   m_ObjectHideFlags: 0
@@ -2040,3 +2093,4 @@ SceneRoots:
   - {fileID: 167002442}
   - {fileID: 167973835}
   - {fileID: 123902746}
+  - {fileID: 1696297233}
