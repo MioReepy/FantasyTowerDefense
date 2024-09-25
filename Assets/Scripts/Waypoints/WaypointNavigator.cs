@@ -6,7 +6,7 @@ namespace WaypointSpase
     public class WaypointNavigator : MonoBehaviour
     {
         [SerializeField] private EnemyNavigator _enemyNavigator;
-        internal Waypoint _currentWaypoint;
+        [SerializeField] internal Waypoint _currentWaypoint;
 
         private void Awake()
         {
@@ -20,11 +20,23 @@ namespace WaypointSpase
 
         private void Update()
         {
+            SetCurrentWaypoint();
+        }
+
+        private void SetCurrentWaypoint()
+        {
             if (!_enemyNavigator._isReachedDestination)
             {
                 _currentWaypoint = _currentWaypoint.nextWaypoint;
                 _enemyNavigator.SetDestination(_currentWaypoint);
             }
+        }
+
+        internal void UpdateWaypoint(Waypoint waypoint)
+        {
+            _currentWaypoint = waypoint;
+            _enemyNavigator.SetDestination(_currentWaypoint);
+
         }
     }
 }

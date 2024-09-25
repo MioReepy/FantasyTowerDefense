@@ -24,10 +24,16 @@ namespace TowerSpace
             {
                 yield return new WaitForSeconds(delay);
                 FindVisibleTarget();
+                
                 if (visibleTarget.Count > 0)
-                {
-                    target = visibleTarget[0];   
+                { 
+                    target = visibleTarget[0];
                 }
+                else
+                {
+                    target = null;    
+                }
+                
                 DeleteInVisibleTarger();
             }
         }

@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59c7cf6a067e6d24a823ea7d41c63aab, type: 3}
   m_Name: WaveEnemy
   m_EditorClassIdentifier: 
-  _waves: []
+  _waves:
+  - {fileID: 11400000, guid: d244078a24f6dcc4594b731a20059deb, type: 2}
+  - {fileID: 11400000, guid: 6d11f3f1fc8944743b391777e5c96f64, type: 2}

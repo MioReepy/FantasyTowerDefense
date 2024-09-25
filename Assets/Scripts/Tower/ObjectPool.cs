@@ -4,7 +4,7 @@ using UnityEngine;
 public class ObjectPool : MonoBehaviour
 {
     [SerializeField] private GameObject objectToPool;
-    [SerializeField] private GameObject _spawnObject;
+    [SerializeField] internal GameObject spawnObject;
     [SerializeField] private int _poolSize = 10;
 
     private List<GameObject> _poolObjects;
@@ -17,7 +17,7 @@ public class ObjectPool : MonoBehaviour
 
         for (int i = 0; i < _poolSize; i++)
         {
-            poolTemp = Instantiate(objectToPool, _spawnObject.transform);
+            poolTemp = Instantiate(objectToPool, spawnObject.transform);
             poolTemp.SetActive(false);
             _poolObjects.Add(poolTemp);
         }
