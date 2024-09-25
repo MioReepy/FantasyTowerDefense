@@ -219,7 +219,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2143963233178108554}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 9000000, guid: eecb4f4e0bf0aee45a92a52e9dec8aeb, type: 3}
   m_Controller: {fileID: 9100000, guid: 242edde3011c7a346bc9651788b72c62, type: 2}
   m_CullingMode: 1
@@ -260,6 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyNavigator: {fileID: 4247667591605308345, guid: add7e67fb68b0d54a9d9893bd0356223, type: 3}
+  _currentWaypoint: {fileID: 0}
 --- !u!136 &422742858840033980
 CapsuleCollider:
   m_ObjectHideFlags: 0

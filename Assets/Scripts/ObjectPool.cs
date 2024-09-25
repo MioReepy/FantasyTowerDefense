@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ObjectPool : MonoBehaviour
 {
-    [SerializeField] private GameObject objectToPool;
+    [SerializeField] internal GameObject[] objectToPool;
     [SerializeField] internal GameObject spawnObject;
     [SerializeField] private int _poolSize = 10;
 
@@ -12,28 +12,36 @@ public class ObjectPool : MonoBehaviour
     private void Start()
     {
         _poolObjects = new List<GameObject>();
-
-        for (int i = 0; i < _poolSize; i++)
+        
+        for (int i = 0; i < objectToPool.Length; i++)
         {
-            GameObject poolTemp = Instantiate(objectToPool, spawnObject.transform);
-            poolTemp.SetActive(false);
-            _poolObjects.Add(poolTemp);
+            for (int j = 0; j < _poolSize; j++)
+            {
+                GameObject poolTemp = Instantiate(objectToPool[i], spawnObject.transform);
+                poolTemp.SetActive(false);
+                _poolObjects.Add(poolTemp);
+            }
         }
     }
 
     internal GameObject GetPoolObject()
     {
-        for (int i = 0; i < _poolSize; i++)
+        for (int i = 0; i < objectToPool.Length; i++)
         {
-            if (!_poolObjects[i].activeInHierarchy)
+            for (int j = 0; j < _poolObjects.Count; j++)
             {
-                return _poolObjects[i];
+                if (!_poolObjects[j].activeInHierarchy)
+                {
+                    return _poolObjects[j];
+                }
             }
+
+            GameObject poolTemp = Instantiate(objectToPool[i], spawnObject.transform);
+            poolTemp.SetActive(false);
+            _poolObjects.Add(poolTemp);
+            return poolTemp;
         }
-        
-        GameObject poolTemp = Instantiate(objectToPool, spawnObject.transform);
-        poolTemp.SetActive(false);
-        _poolObjects.Add(poolTemp);
-        return poolTemp;
+
+        return null;
     }
 }

@@ -42,7 +42,7 @@ namespace WaveSpawnerSpace
 
         private IEnumerator SpawnWave()
         {
-            for (int i = 0; i < waves.Length; i++)
+            for (int i = 0; i < waves[_currentWave].enemy.Length; i++)
             {
                 SpawnEnemy();
                 yield return new WaitForSeconds(waves[_currentWave].timeBetweenEnemies);
@@ -53,20 +53,17 @@ namespace WaveSpawnerSpace
 
         private void SpawnEnemy()
         {
-            for (int i = 0; i < waves[_currentWave].enemy.Length; i++)
+            GameObject enemyObject = _enemyPool.GetPoolObject();
+
+            if (enemyObject != null)
             {
-                GameObject enemyObject = _enemyPool.GetPoolObject();
+                enemyObject.GetComponent<WaypointNavigator>().UpdateWaypoint(_waypoint);
+                Vector3 spawnPosition = Vector3.Lerp(minBounds, maxBounds, Random.Range(0f, 1f));
+                enemyObject.transform.parent = _enemyPool.spawnObject.transform;
+                enemyObject.transform.position = spawnPosition;
+                enemyObject.transform.rotation = transform.rotation;
 
-                if (enemyObject != null)
-                {
-                    enemyObject.GetComponent<WaypointNavigator>().UpdateWaypoint(_waypoint);
-                    Vector3 spawnPosition = Vector3.Lerp(minBounds, maxBounds, Random.Range(0f, 1f));
-                    enemyObject.transform.parent = _enemyPool.spawnObject.transform;
-                    enemyObject.transform.position = spawnPosition;
-                    enemyObject.transform.rotation = transform.rotation;
-
-                    enemyObject.SetActive(true);
-                }
+                enemyObject.SetActive(true);
             }
         }
     }
