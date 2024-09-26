@@ -9,13 +9,13 @@ namespace TowerSpace
         private float _fireCoolDown = 0f;
         
         private TowerFieldOfView _towerFieldOfView;
-        private ObjectPool bulletPool;
+        private BulletObjectPool _bulletPool;
         [SerializeField] private Transform _spawnPool;
         [SerializeField] private float fireOffset = 3f;
         private void Start()
         {
             _towerFieldOfView = GetComponent<TowerFieldOfView>();
-            bulletPool = GetComponent<ObjectPool>();
+            _bulletPool = GetComponent<BulletObjectPool>();
         }
 
         private void Update()
@@ -44,13 +44,13 @@ namespace TowerSpace
 
         private void Shoot()
         {
-            GameObject bulletObject = bulletPool.GetPoolObject();
+            GameObject bulletObject = _bulletPool.GetPoolObject();
 
             if (bulletObject != null)
             {
-                bulletObject.transform.parent = _spawnPool;
-                bulletObject.transform.position = bulletPool.spawnObject.transform.position;
-                bulletObject.transform.rotation = bulletPool.spawnObject.transform.rotation;
+                bulletObject.transform.parent = _bulletPool.spawnObject.transform;
+                bulletObject.transform.position = _bulletPool.spawnObject.transform.position;
+                bulletObject.transform.rotation = _bulletPool.spawnObject.transform.rotation;
                 
                 bulletObject.SetActive(true);
                 

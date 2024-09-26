@@ -16,13 +16,13 @@ namespace WaveSpawnerSpace
         internal Vector3 maxBounds;
 
         [SerializeField] private Waypoint _waypoint;
-        [SerializeField] private ObjectPool _enemyPool;
+        [SerializeField] private EnemyObjectPool _enemyPool;
 
         private int _currentWave = 0;
 
         private void Start()
         {
-            _enemyPool = GetComponent<ObjectPool>();
+            _enemyPool = GetComponent<EnemyObjectPool>();
             minBounds = transform.position + transform.right * _waveSpawnerWidth / 2;
             maxBounds = transform.position - transform.right * _waveSpawnerWidth / 2;
             StartCoroutine(Spawn());

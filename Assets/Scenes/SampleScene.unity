@@ -186,21 +186,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - enemy:
+  - enemies:
     - EnemyObject: {fileID: 11400000, guid: d244078a24f6dcc4594b731a20059deb, type: 2}
-      count: 4
-  - enemy:
+      count: 3
+  - enemies:
     - EnemyObject: {fileID: 11400000, guid: d244078a24f6dcc4594b731a20059deb, type: 2}
       count: 3
     - EnemyObject: {fileID: 11400000, guid: 7bfb7c56d75fc314abca5b713e3990ae, type: 2}
-      count: 7
-  - enemy:
+      count: 1
+  - enemies:
     - EnemyObject: {fileID: 11400000, guid: d244078a24f6dcc4594b731a20059deb, type: 2}
       count: 3
     - EnemyObject: {fileID: 11400000, guid: 7bfb7c56d75fc314abca5b713e3990ae, type: 2}
       count: 7
     - EnemyObject: {fileID: 11400000, guid: 6d11f3f1fc8944743b391777e5c96f64, type: 2}
-      count: 7
+      count: 9
   _timeBetweenWaves: 5
   _timeBetweenEnemies: 0.5
   _spawnPoint: {fileID: 118899824}
@@ -362,7 +362,7 @@ PrefabInstance:
       addedObject: {fileID: 1921168397}
     - targetCorrespondingSourceObject: {fileID: 100006, guid: d7049ca128a08fd40af5a67a66445c93, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1921168398}
+      addedObject: {fileID: 1921168402}
   m_SourcePrefab: {fileID: 100100000, guid: d7049ca128a08fd40af5a67a66445c93, type: 3}
 --- !u!1 &167973834
 GameObject:
@@ -788,7 +788,7 @@ Transform:
   m_GameObject: {fileID: 648943711}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -70.35052, y: 1.8744049, z: -45.82717}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1933,7 +1933,7 @@ Transform:
   m_GameObject: {fileID: 1913327452}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -70.35052, y: 1.8744049, z: -45.82717}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1965,7 +1965,7 @@ MonoBehaviour:
   _fireSpeed: 2
   _spawnPool: {fileID: 648943712}
   fireOffset: 4
---- !u!114 &1921168398
+--- !u!114 &1921168402
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1974,11 +1974,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1921168393}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 237c626abac9d4d458c258b6f3ee4dd4, type: 3}
+  m_Script: {fileID: 11500000, guid: f585a7aafd2c4054fb33c2c10b3b1f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToPool:
-  - {fileID: 3076262866650904099, guid: bc813c22dad9d3b47804f6c8bdd88f46, type: 3}
+  objectToPool: {fileID: 3076262866650904099, guid: bc813c22dad9d3b47804f6c8bdd88f46, type: 3}
   spawnObject: {fileID: 178483362}
   _poolSize: 10
 --- !u!1 &1985515771
@@ -2083,9 +2082,9 @@ SceneRoots:
   - {fileID: 561654382}
   - {fileID: 1651336412}
   - {fileID: 849501071}
-  - {fileID: 118899824}
   - {fileID: 422604156}
   - {fileID: 512869629}
+  - {fileID: 118899824}
   - {fileID: 167002442}
   - {fileID: 167973835}
   - {fileID: 123902746}

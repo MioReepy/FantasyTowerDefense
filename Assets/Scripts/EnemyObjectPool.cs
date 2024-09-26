@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectPool : MonoBehaviour
+public class EnemyObjectPool : MonoBehaviour
 {
     [SerializeField] internal GameObject[] objectToPool;
     [SerializeField] internal GameObject spawnObject;
