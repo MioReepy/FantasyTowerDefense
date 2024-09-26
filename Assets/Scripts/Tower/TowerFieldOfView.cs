@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using WaypointSpase;
 
 namespace TowerSpace
 {
@@ -15,26 +16,22 @@ namespace TowerSpace
         private void Start()
         {
             visibleTarget = new List<Transform>();
-            StartCoroutine("FindTarget", _delayTime);        
+            StartCoroutine(FindTarget());        
         }
 
-        IEnumerator FindTarget(float delay)
+        IEnumerator FindTarget()
         {
             while (true)
             {
-                yield return new WaitForSeconds(delay);
+                yield return new WaitForSeconds(_delayTime);
+                
                 FindVisibleTarget();
-                
+
                 if (visibleTarget.Count > 0)
-                { 
-                    target = visibleTarget[0];
-                }
-                else
                 {
-                    target = null;    
+                    target = visibleTarget[0];
+                    DeleteInVisibleTarger();
                 }
-                
-                DeleteInVisibleTarger();
             }
         }
 
@@ -44,28 +41,23 @@ namespace TowerSpace
 
             for (int i = 0; i < targetsInViewRadius.Length; i++)
             {
-                Transform target = targetsInViewRadius[i].transform;
-                Vector3 directionToTarget = (target.position - transform.position).normalized;
 
-                if (Physics.Raycast(transform.position, directionToTarget, _targetMask))
+                if (!visibleTarget.Contains(targetsInViewRadius[i].transform))
                 {
-                    visibleTarget.Add(target);
+                    visibleTarget.Add(targetsInViewRadius[i].transform);
                 }
             }
         }
 
         private void DeleteInVisibleTarger()
         {
-            if (visibleTarget != null)
+            for (int i = 0; i < visibleTarget.Count; i++)
             {
-                for (int i = 0; i < visibleTarget.Count; i++)
-                {
-                    Vector3 directionToTarget = (visibleTarget[i].position - transform.position).normalized;
+                Vector3 directionToTarget = visibleTarget[i].position - transform.position;
 
-                    if (viewRadius > directionToTarget.magnitude)
-                    {
-                        visibleTarget.Remove(visibleTarget[i]);
-                    }
+                if (viewRadius * viewRadius < directionToTarget.sqrMagnitude)
+                {
+                    visibleTarget.Remove(visibleTarget[i]);
                 }
             }
         }
