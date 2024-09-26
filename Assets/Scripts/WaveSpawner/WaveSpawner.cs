@@ -25,28 +25,36 @@ namespace WaveSpawnerSpace
             _enemyPool = GetComponent<ObjectPool>();
             minBounds = transform.position + transform.right * _waveSpawnerWidth / 2;
             maxBounds = transform.position - transform.right * _waveSpawnerWidth / 2;
-            StartCoroutine(SpawnWave());
+            StartCoroutine(Spawn());
         }
 
-        private IEnumerator SpawnWave()
+        private IEnumerator Spawn()
         {
             while (_currentWave < waves.Length)
             {
-                for (int z = _currentWave; z < waves.Length; z++)
+                for (int i = _currentWave; i < waves.Length; i++)
                 {
-                    for (int i = 0; i < waves[z].enemies.Length; i++)
-                    {
-                        for (int j = 0; j < waves[z].enemies[i].count; j++)
-                        {
-                            SpawnEnemy();
-                            yield return new WaitForSeconds(_timeBetweenEnemies);
-                        }
-
-                        yield return new WaitForSeconds(_timeBetweenEnemies);
-                        _currentWave++;
-                    }
+                    StartCoroutine(SpawnWaves(_currentWave));
+                    
                     yield return new WaitForSeconds(_timeBetweenWaves);
                 }
+            }
+        }
+
+        private IEnumerator SpawnWaves(int waveNumber)
+        {
+            while (_currentWave == waveNumber)
+            {
+                for (int i = 0; i < waves[waveNumber].enemies.Length; i++)
+                {
+                    for (int j = 0; j < waves[waveNumber].enemies[i].count; j++)
+                    {
+                        SpawnEnemy();
+                        yield return new WaitForSeconds(_timeBetweenEnemies);
+                    }
+                }
+                
+                _currentWave++;
             }
         }
 
