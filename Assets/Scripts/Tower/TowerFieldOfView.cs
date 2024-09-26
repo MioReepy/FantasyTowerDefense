@@ -29,7 +29,19 @@ namespace TowerSpace
 
                 if (visibleTarget.Count > 0)
                 {
-                    target = visibleTarget[0];
+                    int index = 1;
+                    
+                    for (int i = 0; i < visibleTarget.Count; i++)
+                    {
+                        if (visibleTarget[i].GetComponent<WaypointNavigator>()._currentWaypoint.transform
+                                .GetSiblingIndex() > index)
+                        {
+                            target = visibleTarget[i].transform;
+                            index = visibleTarget[i].GetComponent<WaypointNavigator>()._currentWaypoint.transform
+                                .GetSiblingIndex();
+                        }
+                    }
+                    
                     DeleteInVisibleTarger();
                 }
             }
@@ -41,7 +53,6 @@ namespace TowerSpace
 
             for (int i = 0; i < targetsInViewRadius.Length; i++)
             {
-
                 if (!visibleTarget.Contains(targetsInViewRadius[i].transform))
                 {
                     visibleTarget.Add(targetsInViewRadius[i].transform);

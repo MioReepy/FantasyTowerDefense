@@ -12,7 +12,7 @@ namespace WaypointSpase
         }
         
         public Transform waypointRoot;
-        private float _waypointDistance = 10f;
+        private float _waypointDistance = 5f;
 
         private void OnGUI()
         {
