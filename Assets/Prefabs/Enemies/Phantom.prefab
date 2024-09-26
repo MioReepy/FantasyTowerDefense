@@ -202,6 +202,7 @@ GameObject:
   - component: {fileID: 8380339916176997767}
   - component: {fileID: 404522220961919863}
   - component: {fileID: -1827693633351716636}
+  - component: {fileID: -1106765236697834484}
   m_Layer: 7
   m_Name: Phantom
   m_TagString: Enemy
@@ -276,6 +277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyNavigator: {fileID: 4247667591605308345}
+  _currentWaypoint: {fileID: 0}
 --- !u!136 &404522220961919863
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -326,6 +328,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-1106765236697834484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2611149553095981223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b1d5c6e9dcf94d4fbe99d0822e61a47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 11400000, guid: 7bfb7c56d75fc314abca5b713e3990ae, type: 2}
 --- !u!1 &2611149553095981225
 GameObject:
   m_ObjectHideFlags: 0

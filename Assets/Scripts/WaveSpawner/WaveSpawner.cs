@@ -1,4 +1,5 @@
 using System.Collections;
+using EnemySpace;
 using UnityEngine;
 using WaypointSpase;
 
@@ -49,7 +50,7 @@ namespace WaveSpawnerSpace
                 {
                     for (int j = 0; j < waves[waveNumber].enemies[i].count; j++)
                     {
-                        SpawnEnemy();
+                        SpawnEnemy(waves[waveNumber].enemies[i].EnemyObject);
                         yield return new WaitForSeconds(_timeBetweenEnemies);
                     }
                 }
@@ -58,9 +59,9 @@ namespace WaveSpawnerSpace
             }
         }
 
-        private void SpawnEnemy()
+        private void SpawnEnemy(EnemyObject enemy)
         {
-            GameObject enemyObject = _enemyPool.GetPoolObject();
+            GameObject enemyObject = _enemyPool.GetPoolObject(enemy);
 
             if (enemyObject != null)
             {

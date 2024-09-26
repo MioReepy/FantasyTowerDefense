@@ -17,7 +17,5 @@ namespace TowerSpace
                 gameObject.SetActive(false);
             }
         }
-
-
     }
 }

@@ -11,4 +11,3 @@ namespace EnemySpace
         [Range(0.5f, 10f)] public float enemySpeed;
     }
 }
-
