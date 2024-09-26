@@ -186,9 +186,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - {fileID: 11400000, guid: c65d3f604043dd64e91c929eb1dbde3e, type: 2}
-  - {fileID: 11400000, guid: 9b03736507c2e794caafdfb9eda542b7, type: 2}
-  - {fileID: 11400000, guid: a753f3db4758f8e44a41dacc33469e27, type: 2}
+  - enemy:
+    - EnemyObject: {fileID: 11400000, guid: d244078a24f6dcc4594b731a20059deb, type: 2}
+      count: 4
+  - enemy:
+    - EnemyObject: {fileID: 11400000, guid: d244078a24f6dcc4594b731a20059deb, type: 2}
+      count: 3
+    - EnemyObject: {fileID: 11400000, guid: 7bfb7c56d75fc314abca5b713e3990ae, type: 2}
+      count: 7
+  - enemy:
+    - EnemyObject: {fileID: 11400000, guid: d244078a24f6dcc4594b731a20059deb, type: 2}
+      count: 3
+    - EnemyObject: {fileID: 11400000, guid: 7bfb7c56d75fc314abca5b713e3990ae, type: 2}
+      count: 7
+    - EnemyObject: {fileID: 11400000, guid: 6d11f3f1fc8944743b391777e5c96f64, type: 2}
+      count: 7
   _timeBetweenWaves: 5
   _timeBetweenEnemies: 0.5
   _spawnPoint: {fileID: 118899824}

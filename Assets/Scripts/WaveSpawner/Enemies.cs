@@ -4,7 +4,7 @@ using EnemySpace;
 namespace WaveSpawnerSpace
 {
     [Serializable]
-    public class EnemiesForWave
+    public struct Enemies
     {
         public EnemyObject EnemyObject;
         public int count;

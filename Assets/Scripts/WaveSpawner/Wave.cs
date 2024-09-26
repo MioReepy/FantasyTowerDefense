@@ -1,10 +1,10 @@
-using UnityEngine;
+using System;
 
 namespace WaveSpawnerSpace
 {
-    [CreateAssetMenu(fileName = "Wave", menuName = "Wave/New Wave")]
-    public class Wave : ScriptableObject
+    [Serializable]
+    public struct Wave
     {
-        public EnemiesForWave[] enemy;
+        public Enemies[] enemies;
     }
 }

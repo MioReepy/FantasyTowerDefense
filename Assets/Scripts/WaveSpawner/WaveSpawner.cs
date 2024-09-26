@@ -34,9 +34,9 @@ namespace WaveSpawnerSpace
             {
                 for (int z = _currentWave; z < waves.Length; z++)
                 {
-                    for (int i = 0; i < waves[z].enemy.Length; i++)
+                    for (int i = 0; i < waves[z].enemies.Length; i++)
                     {
-                        for (int j = 0; j < waves[z].enemy[i].count; j++)
+                        for (int j = 0; j < waves[z].enemies[i].count; j++)
                         {
                             SpawnEnemy();
                             yield return new WaitForSeconds(_timeBetweenEnemies);
