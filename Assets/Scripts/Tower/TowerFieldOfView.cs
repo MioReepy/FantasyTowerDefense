@@ -24,7 +24,6 @@ namespace TowerSpace
             while (true)
             {
                 yield return new WaitForSeconds(_delayTime);
-                
                 FindVisibleTarget();
 
                 if (visibleTarget.Count > 0)
@@ -36,6 +35,11 @@ namespace TowerSpace
                         if (visibleTarget[i].GetComponent<WaypointNavigator>()._currentWaypoint.transform
                                 .GetSiblingIndex() > index)
                         {
+                            if (target == null && visibleTarget[i] == null)
+                            {
+                                break;
+                            }
+                            
                             target = visibleTarget[i].transform;
                             index = visibleTarget[i].GetComponent<WaypointNavigator>()._currentWaypoint.transform
                                 .GetSiblingIndex();

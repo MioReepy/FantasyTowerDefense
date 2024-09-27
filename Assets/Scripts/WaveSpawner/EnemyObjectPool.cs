@@ -11,6 +11,9 @@ namespace WaveSpawnerSpace
         [SerializeField] private int _poolSize = 10;
 
         private List<GameObject> _poolObjects;
+        
+        static public EnemyObjectPool Singleton;
+        private void Awake() => Singleton = this;
 
         private void Start()
         {
@@ -46,6 +49,12 @@ namespace WaveSpawnerSpace
             poolTemp.SetActive(false);
             _poolObjects.Add(poolTemp);
             return poolTemp;
+        }
+        
+        internal void ReturnToPool(GameObject poolObject)
+        {
+            poolObject.SetActive(false);
+            poolObject.transform.position = spawnObject.transform.position;
         }
     }
 }

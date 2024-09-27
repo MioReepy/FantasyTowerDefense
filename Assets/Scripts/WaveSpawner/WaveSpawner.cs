@@ -17,13 +17,11 @@ namespace WaveSpawnerSpace
         internal Vector3 maxBounds;
 
         [SerializeField] private Waypoint _waypoint;
-        [SerializeField] private EnemyObjectPool _enemyPool;
 
         private int _currentWave = 0;
 
         private void Start()
         {
-            _enemyPool = GetComponent<EnemyObjectPool>();
             minBounds = transform.position + transform.right * _waveSpawnerWidth / 2;
             maxBounds = transform.position - transform.right * _waveSpawnerWidth / 2;
             StartCoroutine(Spawn());
@@ -60,13 +58,14 @@ namespace WaveSpawnerSpace
 
         private void SpawnEnemy(EnemyObject enemy)
         {
-            GameObject enemyObject = _enemyPool.GetPoolObject(enemy);
+            GameObject enemyObject = EnemyObjectPool.Singleton.GetPoolObject(enemy);
 
             if (enemyObject != null)
             {
                 enemyObject.GetComponent<WaypointNavigator>().UpdateWaypoint(_waypoint);
                 Vector3 spawnPosition = Vector3.Lerp(minBounds, maxBounds, Random.Range(0f, 1f));
-                enemyObject.transform.parent = _enemyPool.spawnObject.transform;
+                
+                enemyObject.transform.parent = EnemyObjectPool.Singleton.spawnObject.transform;
                 enemyObject.transform.position = spawnPosition;
                 enemyObject.transform.rotation = transform.rotation;
 

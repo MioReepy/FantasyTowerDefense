@@ -2,7 +2,6 @@ using UnityEngine;
 
 namespace EnemySpace
 {
-    
     public class EnemyObject : ScriptableObject
     {
         [SerializeField] internal int ID;

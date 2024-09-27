@@ -11,6 +11,9 @@ namespace TowerSpace
 
         private List<GameObject> _poolObjects;
 
+        static public BulletObjectPool Singleton;
+        private void Awake() => Singleton = this;
+        
         private void Start()
         {
             _poolObjects = new List<GameObject>();
