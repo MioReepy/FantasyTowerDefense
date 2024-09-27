@@ -36,7 +36,6 @@ namespace WaveSpawnerSpace
                 for (int i = _currentWave; i < waves.Length; i++)
                 {
                     StartCoroutine(SpawnWaves(_currentWave));
-                    
                     yield return new WaitForSeconds(_timeBetweenWaves);
                 }
             }

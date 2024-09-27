@@ -6,7 +6,6 @@ namespace EnemySpace
 {
     public class EnemyNavigator : MonoBehaviour
     {
-        [SerializeField] private float _movementSpeed = 10f;
         [SerializeField] private float _rotationSpeed = 100f;
         [SerializeField] private float _stopDistance = 10f;
 
@@ -28,7 +27,7 @@ namespace EnemySpace
                     Quaternion targetRotation = Quaternion.LookRotation(destinationDirection);
                     transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation,
                         _rotationSpeed * Time.deltaTime);
-                    transform.Translate(Vector3.forward * _movementSpeed * Time.deltaTime);
+                    transform.Translate(Vector3.forward * (gameObject.GetComponent<EnemyIdentificator>().enemy.enemySpeed * Time.deltaTime));
                 }
                 else
                 {

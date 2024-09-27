@@ -40,14 +40,12 @@ namespace WaveSpawnerSpace
                         return _poolObjects[j];
                     }
                 }
-
-                GameObject poolTemp = Instantiate(enemy.prefabEnemy, spawnObject.transform);
-                poolTemp.SetActive(false);
-                _poolObjects.Add(poolTemp);
-                return poolTemp;
             }
 
-            return null;
+            GameObject poolTemp = Instantiate(enemy.prefabEnemy, spawnObject.transform);
+            poolTemp.SetActive(false);
+            _poolObjects.Add(poolTemp);
+            return poolTemp;
         }
     }
 }

@@ -6,12 +6,10 @@ namespace TowerSpace
     {
         [SerializeField] private float _rotationSpeed = 100f;
         [SerializeField] private float _fireSpeed = 1f;
+        [SerializeField] private Transform _spawnPool;
         private float _fireCoolDown = 0f;
-        
         private TowerFieldOfView _towerFieldOfView;
         private BulletObjectPool _bulletPool;
-        [SerializeField] private Transform _spawnPool;
-        [SerializeField] private float fireOffset = 3f;
         private void Start()
         {
             _towerFieldOfView = GetComponent<TowerFieldOfView>();
@@ -56,7 +54,7 @@ namespace TowerSpace
                 
                 Bullet bullet = bulletObject.GetComponent<Bullet>();
 
-                bullet.Target = _towerFieldOfView.target.position + (_towerFieldOfView.target.forward * fireOffset);
+                bullet.Target = _towerFieldOfView.target.position + _towerFieldOfView.target.forward;
                 bullet.Hit = true;
             }
         }

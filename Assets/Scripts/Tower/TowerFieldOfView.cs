@@ -51,11 +51,11 @@ namespace TowerSpace
         {
             Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, viewRadius, _targetMask);
 
-            for (int i = 0; i < targetsInViewRadius.Length; i++)
+            foreach (var target in targetsInViewRadius)
             {
-                if (!visibleTarget.Contains(targetsInViewRadius[i].transform))
+                if (!visibleTarget.Contains(target.transform))
                 {
-                    visibleTarget.Add(targetsInViewRadius[i].transform);
+                    visibleTarget.Add(target.transform);
                 }
             }
         }
