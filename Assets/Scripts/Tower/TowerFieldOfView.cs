@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using EnemySpace;
 using UnityEngine;
 using WaypointSpase;
 
@@ -10,7 +11,7 @@ namespace TowerSpace
         [SerializeField] private LayerMask _targetMask;
         [Range(0, 50)] [SerializeField] internal float viewRadius = 30f;
         [SerializeField] private float _delayTime = 0.5f;
-        internal List<Transform> visibleTarget;
+        [SerializeField] internal List<Transform> visibleTarget;
         internal Transform target;
 
         private void Start()
@@ -25,6 +26,11 @@ namespace TowerSpace
             {
                 yield return new WaitForSeconds(_delayTime);
                 FindVisibleTarget();
+
+                if (visibleTarget.Count <= 0)
+                {
+                    target = null;
+                }
 
                 if (visibleTarget.Count > 0)
                 {
@@ -70,7 +76,7 @@ namespace TowerSpace
             {
                 Vector3 directionToTarget = visibleTarget[i].position - transform.position;
 
-                if (viewRadius * viewRadius < directionToTarget.sqrMagnitude)
+                if (viewRadius * viewRadius < directionToTarget.sqrMagnitude || !visibleTarget[i].gameObject.activeInHierarchy)
                 {
                     visibleTarget.Remove(visibleTarget[i]);
                 }

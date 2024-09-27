@@ -37,8 +37,8 @@ namespace WaveSpawnerSpace
                 for (int j = 0; j < _poolObjects.Count; j++)
                 {
                     if (!_poolObjects[j].activeInHierarchy &&
-                        _poolObjects[j].GetComponent<EnemyIdentificator>().enemy ==
-                        enemy.prefabEnemy.GetComponent<EnemyIdentificator>().enemy)
+                        _poolObjects[j].GetComponent<Enemy>().enemy ==
+                        enemy.prefabEnemy.GetComponent<Enemy>().enemy)
                     {
                         return _poolObjects[j];
                     }
@@ -54,7 +54,6 @@ namespace WaveSpawnerSpace
         internal void ReturnToPool(GameObject poolObject)
         {
             poolObject.SetActive(false);
-            poolObject.transform.position = spawnObject.transform.position;
         }
     }
 }

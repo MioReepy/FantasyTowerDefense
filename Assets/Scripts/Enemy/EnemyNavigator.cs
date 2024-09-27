@@ -27,7 +27,7 @@ namespace EnemySpace
                     Quaternion targetRotation = Quaternion.LookRotation(destinationDirection);
                     transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation,
                         _rotationSpeed * Time.deltaTime);
-                    transform.Translate(Vector3.forward * (gameObject.GetComponent<EnemyIdentificator>().enemy.enemySpeed * Time.deltaTime));
+                    transform.Translate(Vector3.forward * (gameObject.GetComponent<Enemy>().enemy.enemySpeed * Time.deltaTime));
                 }
                 else
                 {

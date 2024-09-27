@@ -261,7 +261,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2366352a892e7294a8860ad28a07ef01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementSpeed: 10
   _rotationSpeed: 500
   _stopDistance: 2
 --- !u!114 &8380339916176997767
@@ -297,7 +296,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.8
   m_Height: 2.5
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
@@ -341,6 +340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 11400000, guid: 7bfb7c56d75fc314abca5b713e3990ae, type: 2}
+  _impactEffect: {fileID: 7388991303198605836, guid: ebd769dac08fc674f8a44336dfcdaf92, type: 3}
 --- !u!1 &2611149553095981225
 GameObject:
   m_ObjectHideFlags: 0
