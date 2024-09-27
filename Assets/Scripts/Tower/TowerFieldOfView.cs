@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using EnemySpace;
 using UnityEngine;
 using WaypointSpase;
 
@@ -38,14 +37,14 @@ namespace TowerSpace
                     
                     for (int i = 0; i < visibleTarget.Count; i++)
                     {
+                        if (target == null && visibleTarget[i] == null)
+                        {
+                            break;
+                        }
+                        
                         if (visibleTarget[i].GetComponent<WaypointNavigator>()._currentWaypoint.transform
                                 .GetSiblingIndex() > index)
                         {
-                            if (target == null && visibleTarget[i] == null)
-                            {
-                                break;
-                            }
-                            
                             target = visibleTarget[i].transform;
                             index = visibleTarget[i].GetComponent<WaypointNavigator>()._currentWaypoint.transform
                                 .GetSiblingIndex();

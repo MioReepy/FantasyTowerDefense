@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace TowerSpace
 {
-    public class Tower : MonoBehaviour
+    public class ShootingTower : MonoBehaviour
     {
         [SerializeField] private float _rotationSpeed = 100f;
         [SerializeField] private float _fireSpeed = 1f;

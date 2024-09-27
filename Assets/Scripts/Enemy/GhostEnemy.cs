@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace EnemySpace
 {
-    [CreateAssetMenu(fileName = "Ghost Enemy", menuName = "Enemy/Enemy Type/Ghost Enemy")]
+    [CreateAssetMenu(fileName = "Ghost Enemy", menuName = "ScriptableObject/Enemy/Ghost Enemy")]
     [Serializable]
     public class GhostEnemy : EnemyObject, ISerializationCallbackReceiver
     {
