@@ -2,6 +2,13 @@ using UnityEngine;
 
 namespace EnemySpace
 {
+    public enum EnemyType
+    {
+        Ghost = 0,
+        Phantom = 1,
+        Spook = 2
+    }
+    
     public class EnemyObject : ScriptableObject
     {
         [SerializeField] internal int ID;
@@ -9,5 +16,7 @@ namespace EnemySpace
         [SerializeField] internal EnemyType enemyType;
         [SerializeField] [Range(10, 100)] internal int enemyHP;
         [SerializeField] [Range(0.5f, 10f)] internal float enemySpeed;
+        [SerializeField] [Range(1, 50)] internal int enemyCount;
+        [SerializeField] [Range(1, 50)] internal int waveNumber;
     }
 }
