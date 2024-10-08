@@ -1,17 +1,19 @@
 using System;
 using EnemySpace;
+using UnityEngine;
 
 namespace WaveSpawnerSpace
 {
     [Serializable]
     public struct Enemies
     {
-        public EnemyObject EnemyObject;
-        public int count;
+        public EnemyObject enemyObject;
+        public int enemyCount;
+        internal int waveNumber;
     }
     
     [Serializable]
-    public struct Wave
+    public class Wave
     {
         public Enemies[] enemies;
     }

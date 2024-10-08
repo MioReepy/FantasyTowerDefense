@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using EnemySpace;
 using UnityEngine;
 using WaypointSpase;
+using Random = UnityEngine.Random;
 
 namespace WaveSpawnerSpace
 {
@@ -20,6 +23,21 @@ namespace WaveSpawnerSpace
 
         private int _currentWave = 0;
 
+        private List<Enemies> _enemyObjects;
+
+        private void Awake()
+        {
+            for (int wave = 0; wave < waves.Length; wave++)
+            {
+                for (int enemy = 0; enemy < waves[wave].enemies.Length; enemy++)
+                {
+                    var enemyObject = waves[wave].enemies[enemy];
+                    enemyObject.waveNumber = wave;
+                    _enemyObjects.Add(enemyObject);
+                }
+            }
+        }
+
         private void Start()
         {
             minBounds = transform.position + transform.right * _waveSpawnerWidth / 2;
@@ -31,28 +49,20 @@ namespace WaveSpawnerSpace
         {
             while (_currentWave < waves.Length)
             {
-                for (int i = _currentWave; i < waves.Length; i++)
+                foreach (var enemy in _enemyObjects)
                 {
-                    StartCoroutine(SpawnWaves(_currentWave));
-                    yield return new WaitForSeconds(_timeBetweenWaves);
-                }
-            }
-        }
-
-        private IEnumerator SpawnWaves(int waveNumber)
-        {
-            while (_currentWave == waveNumber)
-            {
-                for (int i = 0; i < waves[waveNumber].enemies.Length; i++)
-                {
-                    for (int j = 0; j < waves[waveNumber].enemies[i].count; j++)
+                    if (enemy.waveNumber == _currentWave)
                     {
-                        SpawnEnemy(waves[waveNumber].enemies[i].EnemyObject);
-                        yield return new WaitForSeconds(_timeBetweenEnemies);
+                        for (int i = 0; i < enemy.enemyCount; i++)
+                        {
+                            SpawnEnemy(enemy.enemyObject);
+                            yield return new WaitForSeconds(_timeBetweenEnemies);   
+                        }
                     }
                 }
-                
+
                 _currentWave++;
+                yield return new WaitForSeconds(_timeBetweenWaves);
             }
         }
 
