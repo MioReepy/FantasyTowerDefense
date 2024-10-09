@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using EnemySpace;
@@ -10,23 +9,22 @@ namespace WaveSpawnerSpace
 {
     public class WaveSpawner : MonoBehaviour
     {
+        [SerializeField] private Waypoint _waypoint;
+        [SerializeField] private Transform _spawnPoint;
         [SerializeField] private Wave[] waves;
+        [SerializeField] internal float _waveSpawnerWidth = 5f;
         [SerializeField] private float _timeBetweenWaves = 5f;
         [SerializeField] private float _timeBetweenEnemies = 0.5f;
         private float _coolDownWaves = 5f;
-        [SerializeField] private Transform _spawnPoint;
-        [SerializeField] internal float _waveSpawnerWidth = 5f;
+        private int _currentWave = 0;
+        private List<Enemies> _enemyObjects;
         internal Vector3 minBounds;
         internal Vector3 maxBounds;
-
-        [SerializeField] private Waypoint _waypoint;
-
-        private int _currentWave = 0;
-
-        private List<Enemies> _enemyObjects;
-
+        
         private void Awake()
         {
+            _enemyObjects = new List<Enemies>();
+            
             for (int wave = 0; wave < waves.Length; wave++)
             {
                 for (int enemy = 0; enemy < waves[wave].enemies.Length; enemy++)
@@ -51,13 +49,15 @@ namespace WaveSpawnerSpace
             {
                 foreach (var enemy in _enemyObjects)
                 {
-                    if (enemy.waveNumber == _currentWave)
+                    if (enemy.waveNumber != _currentWave)
                     {
-                        for (int i = 0; i < enemy.enemyCount; i++)
-                        {
-                            SpawnEnemy(enemy.enemyObject);
-                            yield return new WaitForSeconds(_timeBetweenEnemies);   
-                        }
+                        continue;
+                    }
+                    
+                    for (int i = 0; i < enemy.enemyCount; i++)
+                    {
+                        SpawnEnemy(enemy.enemyObject);
+                        yield return new WaitForSeconds(_timeBetweenEnemies);   
                     }
                 }
 
