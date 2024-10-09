@@ -14,7 +14,7 @@ namespace EnemySpace
             {
                 other.gameObject.SetActive(false);
                 Instantiate(_impactEffect, transform.position, Quaternion.identity);
-                EnemyObjectPool.Singleton.ReturnToPool(gameObject);
+                EnemyPool.ReturnToPool(gameObject);
             }
         }
     }

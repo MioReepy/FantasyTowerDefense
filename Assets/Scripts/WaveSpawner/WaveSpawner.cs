@@ -32,6 +32,7 @@ namespace WaveSpawnerSpace
                     var enemyObject = waves[wave].enemies[enemy];
                     enemyObject.waveNumber = wave;
                     _enemyObjects.Add(enemyObject);
+                    EnemyPool.CreateEnemyPool(enemyObject.enemyObject.enemyType, enemyObject.enemyCount);
                 }
             }
         }
@@ -56,7 +57,7 @@ namespace WaveSpawnerSpace
                     
                     for (int i = 0; i < enemy.enemyCount; i++)
                     {
-                        SpawnEnemy(enemy.enemyObject);
+                        SpawnEnemy(enemy.enemyObject.enemyType);
                         yield return new WaitForSeconds(_timeBetweenEnemies);   
                     }
                 }
@@ -66,16 +67,15 @@ namespace WaveSpawnerSpace
             }
         }
 
-        private void SpawnEnemy(EnemyObject enemy)
+        private void SpawnEnemy(EnemyType enemyType)
         {
-            GameObject enemyObject = EnemyObjectPool.Singleton.GetPoolObject(enemy);
+            GameObject enemyObject = EnemyPool.GetEnemy(enemyType);
 
             if (enemyObject != null)
             {
                 enemyObject.GetComponent<WaypointNavigator>().UpdateWaypoint(_waypoint);
                 Vector3 spawnPosition = Vector3.Lerp(minBounds, maxBounds, Random.Range(0f, 1f));
                 
-                enemyObject.transform.parent = EnemyObjectPool.Singleton.spawnObject.transform;
                 enemyObject.transform.position = spawnPosition;
                 enemyObject.transform.rotation = transform.rotation;
 
