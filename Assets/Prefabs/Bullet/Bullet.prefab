@@ -119,4 +119,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletSpeed: 100
+  offset: 1
   _impactEffect: {fileID: 7388991303198605836, guid: ebd769dac08fc674f8a44336dfcdaf92, type: 3}

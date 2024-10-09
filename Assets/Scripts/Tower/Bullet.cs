@@ -7,11 +7,16 @@ namespace TowerSpace
         [SerializeField] private float bulletSpeed = 100f;
         [SerializeField] private GameObject _impactEffect;
         public Transform Target { get; set; }
-        public bool Hit { get; set; }
+        // public bool Hit { get; set; }
 
         private void LateUpdate()
         {
             transform.position = Vector3.MoveTowards(transform.position, Target.position, bulletSpeed * Time.deltaTime);
+            
+            if (Vector3.Distance(transform.position, Target.position) < 0.01f)
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 }

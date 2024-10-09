@@ -42,5 +42,10 @@ namespace TowerSpace
 
             return poolTemp;
         }
+        
+        public static void ReturnToPool(GameObject poolObject)
+        {
+            poolObject.SetActive(false);
+        }
     }
 }
