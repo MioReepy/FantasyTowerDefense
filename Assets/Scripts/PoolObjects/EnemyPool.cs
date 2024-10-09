@@ -11,13 +11,13 @@ namespace WaveSpawnerSpace
             switch (enemyType)
             {
                 case EnemyType.Ghost:
-                    GhostPool.Singleton._poolSize += poolSize;
+                    GhostPool.Singleton.AddEnemyToPool(poolSize);
                     break;                
                 case EnemyType.Phantom:
-                    PhantomPool.Singleton._poolSize += poolSize;
+                    PhantomPool.Singleton.AddEnemyToPool(poolSize);
                     break;                
                 case EnemyType.Spook:
-                    SpookPool.Singleton._poolSize += poolSize;
+                    SpookPool.Singleton.AddEnemyToPool(poolSize);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(enemyType), enemyType, null);
@@ -27,8 +27,8 @@ namespace WaveSpawnerSpace
         public static GameObject GetEnemy(EnemyType enemyType) => enemyType switch
         {
             EnemyType.Ghost => GhostPool.Singleton.GetPoolObject(),
-            EnemyType.Phantom => GhostPool.Singleton.GetPoolObject(),
-            EnemyType.Spook => GhostPool.Singleton.GetPoolObject(),
+            EnemyType.Phantom => PhantomPool.Singleton.GetPoolObject(),
+            EnemyType.Spook => SpookPool.Singleton.GetPoolObject(),
             _ => throw new ArgumentOutOfRangeException(nameof(enemyType), enemyType, null)
         };
         

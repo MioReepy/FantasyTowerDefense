@@ -20,8 +20,8 @@ namespace WaveSpawnerSpace
         private List<Enemies> _enemyObjects;
         internal Vector3 minBounds;
         internal Vector3 maxBounds;
-        
-        private void Awake()
+
+        private void Start()
         {
             _enemyObjects = new List<Enemies>();
             
@@ -35,10 +35,7 @@ namespace WaveSpawnerSpace
                     EnemyPool.CreateEnemyPool(enemyObject.enemyObject.enemyType, enemyObject.enemyCount);
                 }
             }
-        }
-
-        private void Start()
-        {
+            
             minBounds = transform.position + transform.right * _waveSpawnerWidth / 2;
             maxBounds = transform.position - transform.right * _waveSpawnerWidth / 2;
             StartCoroutine(Spawn());
