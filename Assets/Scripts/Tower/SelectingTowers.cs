@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -16,6 +17,14 @@ namespace TowerSpace
             _timeLightClick = _lightClick.GetComponent<ParticleSystem>().main.duration / 2;
         }
 
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                OnEscapeDown();
+            }
+        }
+
         private void OnMouseEnter()
         {
             StartCoroutine(OnEnter());
@@ -28,16 +37,12 @@ namespace TowerSpace
         
         private void OnMouseDown()
         {
-            StartCoroutine(OnClick());
+            StartCoroutine(OnMouseClick());
         }
 
-        private IEnumerator OnClick()
+        private void OnEscapeDown()
         {
-            _lightClick.SetActive(true);
-            _lightClick.GetComponent<ParticleSystem>().Play();
-            _light.SetActive(false);
-            yield return new WaitForSeconds(_timeLight);
-            _lightClick.GetComponent<ParticleSystem>().Pause();
+            StartCoroutine(OnEscapeClick());
         }
 
         private IEnumerator OnEnter()
@@ -50,7 +55,7 @@ namespace TowerSpace
                 _light.GetComponent<ParticleSystem>().Pause();   
             }
         }
-        
+
         private IEnumerator OnExit()
         {
             if (!_light.GetComponent<ParticleSystem>().isPlaying)
@@ -61,6 +66,27 @@ namespace TowerSpace
             yield return new WaitForSeconds(_timeLight);
             _light.GetComponent<ParticleSystem>().Stop();
             _light.SetActive(false);
+        }
+
+        private IEnumerator OnMouseClick()
+        {
+            _lightClick.SetActive(true);
+            _lightClick.GetComponent<ParticleSystem>().Play();
+            _light.SetActive(false);
+            yield return new WaitForSeconds(_timeLightClick);
+            _lightClick.GetComponent<ParticleSystem>().Pause();
+        }
+
+        private IEnumerator OnEscapeClick()
+        {
+            if (!_lightClick.GetComponent<ParticleSystem>().isPlaying)
+            {
+                _lightClick.GetComponent<ParticleSystem>().Play();
+            }
+            
+            yield return new WaitForSeconds(_timeLightClick);
+            _lightClick.GetComponent<ParticleSystem>().Stop();
+            _lightClick.SetActive(false);
         }
     }
 }
