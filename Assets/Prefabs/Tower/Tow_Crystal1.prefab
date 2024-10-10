@@ -180,6 +180,7 @@ GameObject:
   - component: {fileID: -1544407003171332763}
   - component: {fileID: 2814290754411846086}
   - component: {fileID: -461131931549607190}
+  - component: {fileID: -2877993786835868587}
   m_Layer: 0
   m_Name: Tow_Crystal1
   m_TagString: Untagged
@@ -273,6 +274,20 @@ MonoBehaviour:
   objectToPool: {fileID: 3076262866650904099, guid: bc813c22dad9d3b47804f6c8bdd88f46, type: 3}
   spawnObject: {fileID: 0}
   _poolSize: 10
+--- !u!114 &-2877993786835868587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0db2c42ff4072084f929d23431062c9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _towerType: 2
+  _towerLevel: 1
 --- !u!1 &5039836736427133509
 GameObject:
   m_ObjectHideFlags: 0

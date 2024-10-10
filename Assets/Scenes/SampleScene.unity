@@ -280,7 +280,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 118899824}
-  - component: {fileID: 118899825}
   - component: {fileID: 118899826}
   - component: {fileID: 118899827}
   - component: {fileID: 118899829}
@@ -307,24 +306,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &118899825
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 118899822}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 237c626abac9d4d458c258b6f3ee4dd4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToPool:
-  - {fileID: 11400000, guid: d244078a24f6dcc4594b731a20059deb, type: 2}
-  - {fileID: 11400000, guid: 7bfb7c56d75fc314abca5b713e3990ae, type: 2}
-  - {fileID: 11400000, guid: 6d11f3f1fc8944743b391777e5c96f64, type: 2}
-  spawnObject: {fileID: 1913327452}
-  _poolSize: 10
 --- !u!114 &118899826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6008,6 +5989,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1516482766}
+  - component: {fileID: 1516482767}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -6038,6 +6020,18 @@ Transform:
   - {fileID: 927253359}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1516482767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516482765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 703d4a74797fa0d4cb320f580c73d82a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1518867049
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6790,11 +6784,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boundary:
-    xMin: 57
-    xMax: 96
-    zMin: 2
-    zMax: 66
-  _cameraSpeed: 5
+    xMin: 100
+    xMax: 110
+    zMin: 0
+    zMax: 30
+  _cameraSpeed: 20
 --- !u!114 &1651336414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8756,7 +8750,7 @@ PrefabInstance:
       objectReference: {fileID: 648943711}
     - target: {fileID: 1921342129390575396, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2689737059475160631, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: spawnObject

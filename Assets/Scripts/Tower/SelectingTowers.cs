@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
@@ -10,6 +9,7 @@ namespace TowerSpace
         [SerializeField] private GameObject _lightClick;
         private float _timeLight;
         private float _timeLightClick;
+        internal bool isTowerSelected;
 
         private void Start()
         {
@@ -38,11 +38,13 @@ namespace TowerSpace
         private void OnMouseDown()
         {
             StartCoroutine(OnMouseClick());
+            isTowerSelected = true;
         }
 
         private void OnEscapeDown()
         {
             StartCoroutine(OnEscapeClick());
+            isTowerSelected = false;
         }
 
         private IEnumerator OnEnter()

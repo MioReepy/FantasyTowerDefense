@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace TowerSpace
@@ -10,15 +11,14 @@ namespace TowerSpace
         private void Awake() => Instance = this;
 
         #endregion
-
-        [SerializeField] private GameObject[] _towerPrefabs;
-        private GameObject _towerToBuild;
-
-        private void Start()
+        
+        internal TowerType GetTowerToBuild(string key) => key switch
         {
-            _towerToBuild = _towerPrefabs[Random.Range(0, _towerPrefabs.Length)];
-        }
-
-        internal GameObject GetTowerToBuild() => _towerToBuild;
+            "1" => TowerType.Crossbow,
+            "2" => TowerType.Cannon,
+            "3" => TowerType.Crystal,
+            "4" => TowerType.Mortar,
+            _ => throw new ArgumentOutOfRangeException(nameof(Event.current.keyCode), Event.current.keyCode, null)
+        };
     }
 }
