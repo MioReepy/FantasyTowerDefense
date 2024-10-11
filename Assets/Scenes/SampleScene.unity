@@ -6786,9 +6786,13 @@ MonoBehaviour:
   _boundary:
     xMin: 100
     xMax: 110
+    yMin: 20
+    yMax: 50
     zMin: 0
     zMax: 30
-  _cameraSpeed: 20
+  _cameraSpeed: 100
+  _cameraScrollY: 0
+  _scrollSpeed: 2
 --- !u!114 &1651336414
 MonoBehaviour:
   m_ObjectHideFlags: 0
