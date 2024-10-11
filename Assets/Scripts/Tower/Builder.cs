@@ -58,8 +58,12 @@ namespace TowerSpace
             {
                 _buildingTower.transform.GetChild(_currentIndexTower).GetChild(_currentTower.GetComponent<Tower>()
                     .currentTowerLevel).gameObject.SetActive(false);
+                _baseTower.transform.GetChild(_currentTower.GetComponent<Tower>()
+                    .currentTowerLevel).gameObject.SetActive(false);
                 _currentTower.GetComponent<Tower>().currentTowerLevel++;
                 _buildingTower.transform.GetChild(_currentIndexTower).GetChild(_currentTower.GetComponent<Tower>()
+                    .currentTowerLevel).gameObject.SetActive(true);
+                _baseTower.transform.GetChild(_currentTower.GetComponent<Tower>()
                     .currentTowerLevel).gameObject.SetActive(true);
             }
         }
