@@ -15,9 +15,9 @@ namespace TowerSpace
         internal TowerType GetTowerToBuild(string key) => key switch
         {
             "1" => TowerType.Crossbow,
-            "2" => TowerType.Cannon,
-            "3" => TowerType.Crystal,
-            "4" => TowerType.Mortar,
+            "2" => TowerType.Crystal,
+            "3" => TowerType.Mortar,
+            "4" => TowerType.Tesla,
             _ => throw new ArgumentOutOfRangeException(nameof(Event.current.keyCode), Event.current.keyCode, null)
         };
     }

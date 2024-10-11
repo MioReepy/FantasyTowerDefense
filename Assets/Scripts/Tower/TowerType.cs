@@ -2,9 +2,9 @@ namespace TowerSpace
 {
     public enum TowerType
     {
-        Cannon = 0,
-        Crossbow = 1,
-        Crystal = 2,
-        Mortar = 3,
+        Crossbow = 0,
+        Crystal = 1,
+        Mortar = 2,
+        Tesla = 3,
     }
 }
