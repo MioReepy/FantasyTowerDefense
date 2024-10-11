@@ -15,11 +15,15 @@ namespace WaveSpawnerSpace
         [SerializeField] internal float _waveSpawnerWidth = 5f;
         [SerializeField] private float _timeBetweenWaves = 5f;
         [SerializeField] private float _timeBetweenEnemies = 0.5f;
+        internal float coolDownWaves = 0f;
         private float _coolDownWaves = 5f;
         private int _currentWave = 0;
         private List<Enemies> _enemyObjects;
         internal Vector3 minBounds;
         internal Vector3 maxBounds;
+
+        public static WaveSpawner Instance;
+        private void Awake() => Instance = this;
 
         private void Start()
         {
@@ -38,6 +42,7 @@ namespace WaveSpawnerSpace
             
             minBounds = transform.position + transform.right * _waveSpawnerWidth / 2;
             maxBounds = transform.position - transform.right * _waveSpawnerWidth / 2;
+            
             StartCoroutine(Spawn());
         }
 
@@ -45,6 +50,9 @@ namespace WaveSpawnerSpace
         {
             while (_currentWave < waves.Length)
             {
+                coolDownWaves = _timeBetweenWaves;
+                yield return new WaitForSeconds(_timeBetweenWaves);
+                
                 foreach (var enemy in _enemyObjects)
                 {
                     if (enemy.waveNumber != _currentWave)
@@ -60,7 +68,6 @@ namespace WaveSpawnerSpace
                 }
 
                 _currentWave++;
-                yield return new WaitForSeconds(_timeBetweenWaves);
             }
         }
 
