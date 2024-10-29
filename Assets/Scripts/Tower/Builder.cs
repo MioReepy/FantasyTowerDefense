@@ -56,16 +56,18 @@ namespace TowerSpace
             if (BuildTower.Instance.GetTowerToBuild(Input.inputString) ==
                 _currentTower.GetComponent<Tower>()._towerType && _currentTower.GetComponent<Tower>().currentTowerLevel < _currentTower.transform.childCount - 1)
             {
-                _buildingTower.transform.GetChild(_currentIndexTower).GetChild(_currentTower.GetComponent<Tower>()
-                    .currentTowerLevel).gameObject.SetActive(false);
-                _baseTower.transform.GetChild(_currentTower.GetComponent<Tower>()
-                    .currentTowerLevel).gameObject.SetActive(false);
+                ActiveNewStageTower(false);
                 _currentTower.GetComponent<Tower>().currentTowerLevel++;
-                _buildingTower.transform.GetChild(_currentIndexTower).GetChild(_currentTower.GetComponent<Tower>()
-                    .currentTowerLevel).gameObject.SetActive(true);
-                _baseTower.transform.GetChild(_currentTower.GetComponent<Tower>()
-                    .currentTowerLevel).gameObject.SetActive(true);
+                ActiveNewStageTower(true);
             }
+        }
+
+        private void ActiveNewStageTower(bool isActive)
+        {
+            _buildingTower.transform.GetChild(_currentIndexTower).GetChild(_currentTower.GetComponent<Tower>()
+                .currentTowerLevel).gameObject.SetActive(isActive);
+            _baseTower.transform.GetChild(_currentTower.GetComponent<Tower>()
+                .currentTowerLevel).gameObject.SetActive(isActive);
         }
     }
 }

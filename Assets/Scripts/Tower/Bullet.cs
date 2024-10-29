@@ -7,7 +7,6 @@ namespace TowerSpace
         [SerializeField] private float bulletSpeed = 100f;
         [SerializeField] private GameObject _impactEffect;
         public Transform Target { get; set; }
-        // public bool Hit { get; set; }
 
         private void LateUpdate()
         {

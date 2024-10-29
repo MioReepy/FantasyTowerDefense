@@ -54,7 +54,6 @@ namespace TowerSpace
                 Bullet bullet = bulletObject.GetComponent<Bullet>();
 
                 bullet.Target = _towerFieldOfView.target;
-                // bullet.Hit = true;
             }
         }
     }
