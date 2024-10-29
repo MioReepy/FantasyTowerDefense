@@ -13,6 +13,8 @@ namespace TowerSpace
         private float _timeLightClick;
 
         internal bool isTowerSelected;
+        
+        public event EventHandler OnTowerSelected;
 
         private void Start()
         {
@@ -50,8 +52,12 @@ namespace TowerSpace
         
         private void OnMouseDown()
         {
-            isTowerSelected = true;
-            StartCoroutine(OnMouseClick());
+            if (_lightClick.GetComponent<ParticleSystem>().isStopped && !isTowerSelected)
+            {
+                isTowerSelected = true;
+                StartCoroutine(OnMouseClick());
+                OnTowerSelected?.Invoke(this, EventArgs.Empty);
+            }
         }
 
         private void OnEscapeDown()
@@ -62,7 +68,7 @@ namespace TowerSpace
 
         private IEnumerator OnEnter()
         {
-            if (!_lightClick.GetComponent<ParticleSystem>().isPlaying)
+            if (_lightClick.GetComponent<ParticleSystem>().isStopped)
             {
                 _light.SetActive(true);
                 _light.GetComponent<ParticleSystem>().Play();
