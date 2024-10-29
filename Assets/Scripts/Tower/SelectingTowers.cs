@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using PlayerSpace;
 using UnityEngine;
 
 namespace TowerSpace
@@ -9,12 +11,23 @@ namespace TowerSpace
         [SerializeField] private GameObject _lightClick;
         private float _timeLight;
         private float _timeLightClick;
+
         internal bool isTowerSelected;
 
         private void Start()
         {
+            InputPlayerController.Instance.OnClick += InputPlayerController_OnClick;
+            
             _timeLight = _light.GetComponent<ParticleSystem>().main.duration / 2;
             _timeLightClick = _lightClick.GetComponent<ParticleSystem>().main.duration / 2;
+        }
+
+        private void InputPlayerController_OnClick(object sender, EventArgs e)
+        {
+            if (_lightClick.GetComponent<ParticleSystem>().isPlaying || _lightClick.GetComponent<ParticleSystem>().isPaused)
+            {
+                OnEscapeDown();
+            }
         }
 
         private void Update()
@@ -37,8 +50,8 @@ namespace TowerSpace
         
         private void OnMouseDown()
         {
-            StartCoroutine(OnMouseClick());
             isTowerSelected = true;
+            StartCoroutine(OnMouseClick());
         }
 
         private void OnEscapeDown()
@@ -49,7 +62,7 @@ namespace TowerSpace
 
         private IEnumerator OnEnter()
         {
-            if (!_lightClick.GetComponent<ParticleSystem>().isPaused)
+            if (!_lightClick.GetComponent<ParticleSystem>().isPlaying)
             {
                 _light.SetActive(true);
                 _light.GetComponent<ParticleSystem>().Play();
@@ -89,6 +102,12 @@ namespace TowerSpace
             yield return new WaitForSeconds(_timeLightClick);
             _lightClick.GetComponent<ParticleSystem>().Stop();
             _lightClick.SetActive(false);
+        }
+
+        private void OnDisable()
+        {
+            InputPlayerController.Instance.OnClick -= InputPlayerController_OnClick;
+
         }
     }
 }

@@ -2,43 +2,47 @@ using System.Collections.Generic;
 using EnemySpace;
 using UnityEngine;
 
-public class EnemyPoolObjects : MonoBehaviour
+namespace WaveSpawnerSpace
 {
-    private EnemyObject _objectToPool;
-    private GameObject _spawnObject;
-
-    private List<GameObject> _poolObjects;
-
-    protected void SetEnemyObjectAndSpawnObject(EnemyObject objectToPool, GameObject spawnObject)
+    public class EnemyPoolObjects : MonoBehaviour
     {
-        _objectToPool = objectToPool;
-        _spawnObject = spawnObject;
-        _poolObjects = new List<GameObject>();
-    }
+        private EnemyObject _objectToPool;
+        private GameObject _spawnObject;
 
-    internal void AddEnemyToPool(int poolSize)
-    {
-        for (int i = 0; i < poolSize; i++)
+        private List<GameObject> _poolObjects;
+
+        protected void SetEnemyObjectAndSpawnObject(EnemyObject objectToPool, GameObject spawnObject)
         {
-            GameObject poolTemp = Instantiate(_objectToPool.prefabEnemy, _spawnObject.transform);
-            poolTemp.SetActive(false);
-            _poolObjects.Add(poolTemp);
+            _objectToPool = objectToPool;
+            _spawnObject = spawnObject;
+            _poolObjects = new List<GameObject>();
         }
-    }
 
-    internal GameObject GetPoolObject()
-    {
-        foreach (var enemyObject in _poolObjects)
+        internal void AddEnemyToPool(int poolSize)
         {
-            if (!enemyObject.activeInHierarchy)
+            for (int i = 0; i < poolSize; i++)
             {
-                return enemyObject;
+                GameObject poolTemp = Instantiate(_objectToPool.prefabEnemy, _spawnObject.transform);
+                poolTemp.SetActive(false);
+                _poolObjects.Add(poolTemp);
             }
         }
 
-        GameObject poolTemp = Instantiate(_objectToPool.prefabEnemy, _spawnObject.transform);
-        poolTemp.SetActive(false);
-        _poolObjects.Add(poolTemp);
-        return poolTemp;
+        internal GameObject GetPoolObject()
+        {
+            foreach (var enemyObject in _poolObjects)
+            {
+                if (!enemyObject.activeInHierarchy)
+                {
+                    return enemyObject;
+                }
+            }
+
+            GameObject poolTemp = Instantiate(_objectToPool.prefabEnemy, _spawnObject.transform);
+            poolTemp.SetActive(false);
+            _poolObjects.Add(poolTemp);
+
+            return poolTemp;
+        }
     }
 }
