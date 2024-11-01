@@ -12,12 +12,14 @@ namespace PlayerSpace
         private InputAction _actionMove;
         private InputAction _scrollMove;
         private InputAction _mouseClick;
+        private InputAction _unSelect;
         
         private CameraMovement _playerController;
 
         public static InputPlayerController Instance;
         
         public event EventHandler OnClick;
+        public event EventHandler OnUnselect;
 
         private void Awake()
         {
@@ -29,6 +31,7 @@ namespace PlayerSpace
             _scrollMove = _playerInputController.actions["MouseScrollY"];
             _scrollMove = _playerInputController.actions["MouseScrollY"];
             _mouseClick = _playerInputController.actions["MouseClick"];
+            _unSelect = _playerInputController.actions["Unselect"];
             
             _playerController = GetComponent<CameraMovement>();
         }
@@ -36,6 +39,7 @@ namespace PlayerSpace
         private void OnEnable()
         {
             _mouseClick.performed += _ => MouseClick();
+            _unSelect.performed += _ => Unselect();
         }
 
         private void FixedUpdate()
@@ -48,6 +52,11 @@ namespace PlayerSpace
         private void MouseClick()
         {
             OnClick?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void Unselect()
+        {
+            OnUnselect?.Invoke(this, EventArgs.Empty);
         }
     }
 }

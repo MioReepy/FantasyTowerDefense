@@ -19,6 +19,7 @@ namespace TowerSpace
         private void Start()
         {
             InputPlayerController.Instance.OnClick += InputPlayerController_OnClick;
+            InputPlayerController.Instance.OnUnselect += InputPlayerController_OnUnselect;
             
             _timeLight = _light.GetComponent<ParticleSystem>().main.duration / 2;
             _timeLightClick = _lightClick.GetComponent<ParticleSystem>().main.duration / 2;
@@ -32,12 +33,9 @@ namespace TowerSpace
             }
         }
 
-        private void Update()
+        private void InputPlayerController_OnUnselect(object sender, EventArgs e)
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                OnEscapeDown();
-            }
+            OnEscapeDown();
         }
 
         private void OnMouseEnter()
@@ -113,7 +111,6 @@ namespace TowerSpace
         private void OnDisable()
         {
             InputPlayerController.Instance.OnClick -= InputPlayerController_OnClick;
-
         }
     }
 }
