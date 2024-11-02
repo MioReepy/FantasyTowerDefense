@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7542682789514983758}
   - component: {fileID: 8596976792158835682}
-  - component: {fileID: 8193295155746540985}
   - component: {fileID: 5945564339141868158}
+  - component: {fileID: 8193295155746540985}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -53,6 +53,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _light: {fileID: 4699573317936533070}
   _lightClick: {fileID: 4825375798661696078}
+--- !u!114 &5945564339141868158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173085577158851945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 605e2f338d1b2b441a6e3cd6c48f6309, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _emptyTower: {fileID: 1921342129390575396}
+  _baseTower: {fileID: 3213652432030763392}
+  _buildingTower: {fileID: 7063900053281042841}
 --- !u!135 &8193295155746540985
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -74,21 +89,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5945564339141868158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 173085577158851945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 605e2f338d1b2b441a6e3cd6c48f6309, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _emptyTower: {fileID: 1921342129390575396}
-  _baseTower: {fileID: 3213652432030763392}
-  _buildingTower: {fileID: 7063900053281042841}
 --- !u!1 &415983794055822966
 GameObject:
   m_ObjectHideFlags: 0
@@ -11457,15 +11457,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ae1bfaed41d170647b31864257fe8702, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ae1bfaed41d170647b31864257fe8702, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ae1bfaed41d170647b31864257fe8702, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ae1bfaed41d170647b31864257fe8702, type: 3}
       propertyPath: m_LocalPosition.x
