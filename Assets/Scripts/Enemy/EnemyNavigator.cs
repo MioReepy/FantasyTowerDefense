@@ -23,17 +23,22 @@ namespace EnemySpace
 
                 if (destinationDistance >= _stopDistance)
                 {
-                    _isReachedDestination = true;
-                    Quaternion targetRotation = Quaternion.LookRotation(destinationDirection);
-                    transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation,
-                        _rotationSpeed * Time.deltaTime);
-                    transform.Translate(Vector3.forward * (gameObject.GetComponent<Enemy>().enemy.enemySpeed * Time.deltaTime));
+                    EnemyMove(destinationDirection);
                 }
                 else
                 {
                     _isReachedDestination = false;
                 }
             }
+        }
+
+        private void EnemyMove(Vector3 destinationDirection)
+        {
+            _isReachedDestination = true;
+            Quaternion targetRotation = Quaternion.LookRotation(destinationDirection);
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation,
+                _rotationSpeed * Time.deltaTime);
+            transform.Translate(Vector3.forward * (gameObject.GetComponent<Enemy>().enemy.enemySpeed * Time.deltaTime));
         }
 
         internal void SetDestination(Waypoint waypoint)
