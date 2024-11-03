@@ -9,7 +9,6 @@ namespace TowerSpace
         Crystal = 1,
         Mortar = 2,
         Tesla = 3,
-        None = 4
     }
 
     [CreateAssetMenu(fileName = "Tower", menuName = "ScriptableObject/Tower")]

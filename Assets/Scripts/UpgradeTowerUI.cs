@@ -5,8 +5,8 @@ namespace UISpace
     public class UpgradeTowerUI : MonoBehaviour
     {
         [SerializeField] private GameObject _arrowAvailableUpgrade;
-        [SerializeField] private GameObject _availableBuild;
-        [SerializeField] private GameObject _availableUpgrade;
+        [SerializeField] internal GameObject availableBuild;
+        [SerializeField] internal GameObject availableUpgrade;
 
         internal void HideArrowUpgrade()
         {
@@ -15,12 +15,12 @@ namespace UISpace
 
         internal void HideAvailableBuild()
         {
-            _arrowAvailableUpgrade.gameObject.SetActive(false);
+            availableBuild.gameObject.SetActive(false);
         }
         
         internal void HideAvailableUpgrade()
         {
-            _arrowAvailableUpgrade.gameObject.SetActive(false);
+            availableUpgrade.gameObject.SetActive(false);
         }
 
         internal void ShowArrowUpgrade()
@@ -30,12 +30,12 @@ namespace UISpace
 
         internal void ShowAvailableBuild()
         {
-            _arrowAvailableUpgrade.gameObject.SetActive(true);
+            availableBuild.gameObject.SetActive(true);
         }
 
         internal void ShowAvailableUpgrade()
         {
-            _arrowAvailableUpgrade.gameObject.SetActive(true);
+            availableUpgrade.gameObject.SetActive(true);
         }
     }
 }

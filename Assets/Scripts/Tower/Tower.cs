@@ -11,7 +11,6 @@ namespace TowerSpace
         private void Start()
         {
             currentTowerLevel = 0;
-            _towerType = TowerType.None;
         }
     }
 }

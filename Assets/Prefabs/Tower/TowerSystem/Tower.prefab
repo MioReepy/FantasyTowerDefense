@@ -71,6 +71,7 @@ MonoBehaviour:
   _emptyTower: {fileID: 1921342129390575396}
   _baseTower: {fileID: 3213652432030763392}
   _buildingTower: {fileID: 7063900053281042841}
+  tower: {fileID: 0}
 --- !u!135 &8193295155746540985
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -105,8 +106,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _arrowAvailableUpgrade: {fileID: 3415266094520923704}
-  _availableBuild: {fileID: 313366091777293412}
-  _availableUpgrade: {fileID: 9084071323626384524}
+  availableBuild: {fileID: 313366091777293412}
+  availableUpgrade: {fileID: 9084071323626384524}
 --- !u!1 &415983794055822966
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,6 +489,7 @@ GameObject:
   - component: {fileID: 230281226005385601}
   - component: {fileID: 2993210102406812523}
   - component: {fileID: 3408139737747999609}
+  - component: {fileID: 2716802667720039479}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -580,6 +582,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &2716802667720039479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8327672967698088762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89a3787fbaa221b4fb08d251123c7b06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &15209212969635870
 PrefabInstance:
   m_ObjectHideFlags: 0
