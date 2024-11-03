@@ -2,10 +2,14 @@ using UnityEngine;
 
 public class UseGravitation : MonoBehaviour
 {
-    [SerializeField] private float gravitationForce = 100f;
+    [SerializeField] private bool _isUseGravitation = false;
+    [SerializeField] private float _gravitationForce = 100f;
+    
     private void OnCollisionStay(Collision other)
     {
-        other.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * gravitationForce);
-        Debug.Log(other.gameObject.name);
+        if (_isUseGravitation)
+        {
+            other.gameObject.GetComponent<Rigidbody>().AddForce(Vector3.up * _gravitationForce);
+        }
     }
 }
