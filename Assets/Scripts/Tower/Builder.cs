@@ -8,9 +8,9 @@ namespace TowerSpace
         [SerializeField] private GameObject _baseTower;
         [SerializeField] private GameObject _buildingTower;
         
+        private Tower _tower;
         private TowerType _towerType;
         private GameObject _currentTower;
-        private int _currentIndexTower = 0;
         private void Update()
         {
             if (gameObject.GetComponent<SelectingTowers>().isTowerSelected && (Input.GetKeyDown(KeyCode.Keypad1) || 
@@ -26,10 +26,12 @@ namespace TowerSpace
             if (_emptyTower.activeInHierarchy)
             {
                 BuildNewTower(towerType);
+                Debug.Log("New Tower");
             }
             else
             {
-                UpgradeTower(towerType);
+                UpgradeTower();
+                Debug.Log("Upgrade Tower");
             }
         }
 
@@ -40,34 +42,31 @@ namespace TowerSpace
                 
             for (int child = 0; child < _buildingTower.transform.childCount; child++)
             {
-                if (_buildingTower.transform.GetChild(child).GetComponent<Tower>()._towerType == towerType)
+                _tower = _buildingTower.transform.GetChild(child).GetComponent<Tower>();
+                if (_tower._towerType == towerType)
                 {
-                    _buildingTower.transform.GetChild(child).gameObject.SetActive(true);
-                    _currentTower = _buildingTower.transform.GetChild(child).gameObject;
-                    _currentTower.GetComponent<Tower>().currentTowerLevel = 0;
-                    _currentIndexTower = child;
+                    _tower._currentTower = _buildingTower.transform.GetChild(child).gameObject;;
+                    _tower._currentTower.SetActive(true);
+                    _tower.currentTowerLevel = 0;
                     break;
                 }
             }
         }
 
-        private void UpgradeTower(TowerType towerType)
+        private void UpgradeTower()
         {
-            if (BuildTower.Instance.GetTowerToBuild(Input.inputString) ==
-                _currentTower.GetComponent<Tower>()._towerType && _currentTower.GetComponent<Tower>().currentTowerLevel < _currentTower.transform.childCount - 1)
+            if (_tower.currentTowerLevel < _tower.transform.childCount - 1)
             {
                 ActiveNewStageTower(false);
-                _currentTower.GetComponent<Tower>().currentTowerLevel++;
+                _tower.currentTowerLevel++;
                 ActiveNewStageTower(true);
             }
         }
 
         private void ActiveNewStageTower(bool isActive)
         {
-            _buildingTower.transform.GetChild(_currentIndexTower).GetChild(_currentTower.GetComponent<Tower>()
-                .currentTowerLevel).gameObject.SetActive(isActive);
-            _baseTower.transform.GetChild(_currentTower.GetComponent<Tower>()
-                .currentTowerLevel).gameObject.SetActive(isActive);
+            _tower.transform.GetChild(_tower.currentTowerLevel).gameObject.SetActive(isActive);
+            _baseTower.transform.GetChild(_tower.currentTowerLevel).gameObject.SetActive(isActive);
         }
     }
 }
