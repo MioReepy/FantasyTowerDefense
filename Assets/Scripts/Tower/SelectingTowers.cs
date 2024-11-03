@@ -13,21 +13,26 @@ namespace TowerSpace
         private float _timeLightClick;
 
         internal bool isTowerSelected;
-        
-        public event EventHandler OnTowerSelected;
 
+        public static event EventHandler<OnSelected> OnTowerSelected;
+        public static event EventHandler<OnSelected> OnTowerUnselected;
+        public class OnSelected : EventArgs
+        {
+            public GameObject TowerSelected;
+        }
         private void Start()
         {
             InputPlayerController.Instance.OnClick += InputPlayerController_OnClick;
             InputPlayerController.Instance.OnUnselect += InputPlayerController_OnUnselect;
-            
+
             _timeLight = _light.GetComponent<ParticleSystem>().main.duration / 2;
             _timeLightClick = _lightClick.GetComponent<ParticleSystem>().main.duration / 2;
         }
 
         private void InputPlayerController_OnClick(object sender, EventArgs e)
         {
-            if (_lightClick.GetComponent<ParticleSystem>().isPlaying || _lightClick.GetComponent<ParticleSystem>().isPaused)
+            if (_lightClick.GetComponent<ParticleSystem>().isPlaying ||
+                _lightClick.GetComponent<ParticleSystem>().isPaused)
             {
                 OnEscapeDown();
             }
@@ -47,14 +52,18 @@ namespace TowerSpace
         {
             StartCoroutine(OnExit());
         }
-        
+
         private void OnMouseDown()
         {
             if (_lightClick.GetComponent<ParticleSystem>().isStopped && !isTowerSelected)
             {
                 isTowerSelected = true;
                 StartCoroutine(OnMouseClick());
-                OnTowerSelected?.Invoke(this, EventArgs.Empty);
+                
+                OnTowerSelected?.Invoke(this, new OnSelected
+                {
+                    TowerSelected = gameObject
+                });
             }
         }
 
@@ -62,6 +71,11 @@ namespace TowerSpace
         {
             StartCoroutine(OnEscapeClick());
             isTowerSelected = false;
+            
+            OnTowerUnselected?.Invoke(this, new OnSelected
+            {
+                TowerSelected = gameObject
+            });
         }
 
         private IEnumerator OnEnter()
@@ -71,7 +85,7 @@ namespace TowerSpace
                 _light.SetActive(true);
                 _light.GetComponent<ParticleSystem>().Play();
                 yield return new WaitForSeconds(_timeLight);
-                _light.GetComponent<ParticleSystem>().Pause();   
+                _light.GetComponent<ParticleSystem>().Pause();
             }
         }
 
@@ -81,7 +95,7 @@ namespace TowerSpace
             {
                 _light.GetComponent<ParticleSystem>().Play();
             }
-            
+
             yield return new WaitForSeconds(_timeLight);
             _light.GetComponent<ParticleSystem>().Stop();
             _light.SetActive(false);
@@ -102,7 +116,7 @@ namespace TowerSpace
             {
                 _lightClick.GetComponent<ParticleSystem>().Play();
             }
-            
+
             yield return new WaitForSeconds(_timeLightClick);
             _lightClick.GetComponent<ParticleSystem>().Stop();
             _lightClick.SetActive(false);

@@ -9,9 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d1f09a5fed4968449e447a0f7154d65, type: 3}
+  m_Script: {fileID: 11500000, guid: 32c364b89b0f1254bb20ec50c05cb4de, type: 3}
   m_Name: Crossbow Tower
   m_EditorClassIdentifier: 
-  ID: 0
-  towerType: 0
-  towerPrefab: []
+  TowerType: 0
+  TowerPrefabs:
+  - {fileID: 100008, guid: eacf23fba5fa0e1498775fcc81bcfa39, type: 3}
+  - {fileID: 100008, guid: bc424fb31e73d5e468ca64bb6edc6fb7, type: 3}
+  - {fileID: 100008, guid: 767f9cd5230d9334eb08119f2b0f3e7a, type: 3}
+  AvailableTowerSprite: {fileID: 21300000, guid: e30eb9c3272550d49acfb818d86bd67b, type: 3}
+  UnavailableTowerSprite: {fileID: 21300000, guid: ea97180bae5acd74eadc533c4a31ba79, type: 3}
