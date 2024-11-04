@@ -15,20 +15,15 @@ namespace TowerSpace
         {
             public GameObject SelectedTower;
         }
-        
-        private void Update()
+
+        internal void OnButtonClick(TowerType towerType)
         {
-            if (gameObject.GetComponent<SelectingTowers>().isTowerSelected && (Input.GetKeyDown(KeyCode.Keypad1) || 
-                Input.GetKeyDown(KeyCode.Keypad2) || Input.GetKeyDown(KeyCode.Keypad3) || Input.GetKeyDown(KeyCode.Keypad4)))
+            BuildSelectedTower(towerType);
+
+            OnUpgradeTower?.Invoke(this, new OnUpgrade
             {
-                TowerType _towerType = BuildTower.Instance.GetTowerToBuild(Input.inputString);
-                BuildSelectedTower(_towerType);
-                
-                OnUpgradeTower?.Invoke(this, new OnUpgrade
-                {
-                    SelectedTower = gameObject
-                });
-            }
+                SelectedTower = gameObject
+            });
         }
 
         private void BuildSelectedTower(TowerType towerType)
