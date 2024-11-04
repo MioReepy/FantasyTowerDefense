@@ -15,15 +15,6 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "MouseScrollY",
-                    "type": "PassThrough",
-                    "id": "cb9cc645-8280-4c19-880c-2efb1a177589",
-                    "expectedControlType": "Axis",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "MouseClick",
                     "type": "Button",
                     "id": "31221544-08ad-499a-9e3d-98e6364ea5dc",
@@ -36,6 +27,24 @@
                     "name": "Unselect",
                     "type": "Button",
                     "id": "1a3fb110-ed11-4e02-90d4-cb489c83fb80",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ZoomPlus",
+                    "type": "Button",
+                    "id": "0855e428-48a9-4c82-9e9d-46edc26889fa",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ZoomMinus",
+                    "type": "Button",
+                    "id": "16e2caf2-b031-4a90-b608-fbf612258027",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -100,17 +109,6 @@
                 },
                 {
                     "name": "",
-                    "id": "f9ac0966-f4cc-4ae7-b02f-7d183702cd0a",
-                    "path": "<Mouse>/scroll/y",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "MouseScrollY",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "c7589654-ac22-4e07-a7be-1e507e8c5a5f",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
@@ -128,6 +126,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Unselect",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "352e53f5-f7b3-464f-8c4a-c692e3ca1904",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ZoomPlus",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a1db3a17-abb7-4b7d-a2cc-2f96e91a9ada",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ZoomMinus",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

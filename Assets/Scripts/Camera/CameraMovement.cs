@@ -6,7 +6,6 @@ namespace CameraSpace
     {
         [SerializeField] private Boundary _boundary;
         [SerializeField] private float _cameraSpeed;
-        [SerializeField] internal float _cameraScrollY;
         [SerializeField] private float _scrollSpeed;
         private Vector3 _moveInput;
 
@@ -27,7 +26,6 @@ namespace CameraSpace
         private void MoveCamera()
         {
             Vector3 movePosition = transform.position + _moveInput;
-            movePosition.y -= _cameraScrollY * _scrollSpeed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position,
                 new Vector3(Mathf.Clamp(movePosition.x, _boundary.xMin, _boundary.xMax), 
                     Mathf.Clamp(movePosition.y, _boundary.yMin, _boundary.yMax),
