@@ -248,6 +248,7 @@ GameObject:
   - component: {fileID: 980991119397593241}
   - component: {fileID: 4237518500866400990}
   - component: {fileID: -4537285201549936650}
+  - component: {fileID: -7761673393585361887}
   m_Layer: 0
   m_Name: Tow_Crossbow1
   m_TagString: Untagged
@@ -341,6 +342,21 @@ MonoBehaviour:
   objectToPool: {fileID: 3076262866650904099, guid: bc813c22dad9d3b47804f6c8bdd88f46, type: 3}
   spawnObject: {fileID: 0}
   _poolSize: 10
+--- !u!114 &-7761673393585361887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b0bc4ca4a158b3488e6bb5746535947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rotationSpeed: 100
+  _fireSpeed: 1
+  _spawnPool: {fileID: 3168906720798492643}
 --- !u!1 &6245984575922362347
 GameObject:
   m_ObjectHideFlags: 0

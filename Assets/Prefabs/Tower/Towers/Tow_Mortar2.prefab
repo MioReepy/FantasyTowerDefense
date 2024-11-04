@@ -180,6 +180,7 @@ GameObject:
   - component: {fileID: 3540549778815433052}
   - component: {fileID: 803681747191312790}
   - component: {fileID: 2486849915722601247}
+  - component: {fileID: 5175976937530921848}
   m_Layer: 0
   m_Name: Tow_Mortar2
   m_TagString: Untagged
@@ -273,6 +274,21 @@ MonoBehaviour:
   objectToPool: {fileID: 3076262866650904099, guid: bc813c22dad9d3b47804f6c8bdd88f46, type: 3}
   spawnObject: {fileID: 0}
   _poolSize: 10
+--- !u!114 &5175976937530921848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f339f1476b11fda49ab552f9edbfdfc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rotationSpeed: 100
+  _fireSpeed: 1
+  _spawnPool: {fileID: 272094316798849235}
 --- !u!1 &2479811427824938728
 GameObject:
   m_ObjectHideFlags: 0

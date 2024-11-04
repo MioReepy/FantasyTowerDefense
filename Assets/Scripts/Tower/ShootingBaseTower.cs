@@ -2,36 +2,16 @@ using UnityEngine;
 
 namespace TowerSpace
 {
-    public class ShootingTower : MonoBehaviour
+    public class ShootingBaseTower : MonoBehaviour
     {
         [SerializeField] private float _rotationSpeed = 100f;
-        [SerializeField] private float _fireSpeed = 1f;
-        [SerializeField] private Transform _spawnPool;
-        private float _fireCoolDown = 0f;
-        private TowerFieldOfView _towerFieldOfView;
+        [SerializeField] protected float _fireSpeed = 1f;
+        [SerializeField] protected Transform _spawnPool;
 
-        private void Start()
-        {
-            _towerFieldOfView = GetComponent<TowerFieldOfView>();
-        }
+        protected float _fireCoolDown = 0f;
+        protected TowerFieldOfView _towerFieldOfView;
 
-        private void Update()
-        {
-            if (_towerFieldOfView.target != null)
-            {
-                RotateToDirection();
-
-                if (_fireCoolDown <= 0f)
-                {
-                    Shoot();
-                    _fireCoolDown = 1 / _fireSpeed;
-                }
-
-                _fireCoolDown -= Time.deltaTime;
-            }
-        }
-
-        private void RotateToDirection()
+        protected void RotateToDirection()
         {
             Vector3 lookRotation = Quaternion.LookRotation(_towerFieldOfView.target.position - transform.position)
                 .eulerAngles;
@@ -39,7 +19,7 @@ namespace TowerSpace
             transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * _rotationSpeed);
         }
 
-        private void Shoot()
+        private protected virtual void Shoot()
         {
             GameObject bulletObject = BulletObjectPool.Singleton.GetPoolObject();
 

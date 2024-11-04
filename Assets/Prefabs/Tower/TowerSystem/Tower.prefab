@@ -37,9 +37,8 @@ Transform:
   - {fileID: 6782580766715820707}
   - {fileID: 3315852762955231066}
   - {fileID: 4350046299429102269}
-  - {fileID: 5090673198314491511}
-  - {fileID: 7929353147090041980}
   - {fileID: 8796164938706572755}
+  - {fileID: 7929353147090041980}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8596976792158835682
@@ -279,6 +278,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 7726638055030903159}
   - {fileID: 6631864816870234787}
   - {fileID: 727550279628621255}
   - {fileID: 9062436380829580792}
@@ -452,6 +452,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5241134401048675561}
+  - {fileID: 5090673198314491511}
   - {fileID: 5841222148492898630}
   - {fileID: 3279872969693360828}
   m_Father: {fileID: 7542682789514983758}
@@ -1094,6 +1095,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2653796394280292332}
     m_Modifications:
+    - target: {fileID: -5913284655674273678, guid: 3297ad837a9b7a34781618380474a01f, type: 3}
+      propertyPath: _lightningBolt
+      value: 
+      objectReference: {fileID: 4163266203129238288}
+    - target: {fileID: -2806713072170244589, guid: 3297ad837a9b7a34781618380474a01f, type: 3}
+      propertyPath: _lightningBolt
+      value: 
+      objectReference: {fileID: 4163266203129238288}
     - target: {fileID: 100004, guid: 3297ad837a9b7a34781618380474a01f, type: 3}
       propertyPath: m_Name
       value: Tow_Tesla2
@@ -1293,6 +1302,10 @@ PrefabInstance:
     - target: {fileID: 6214214331715364004, guid: a45c91dc90c378f46aa5e6276d5401dd, type: 3}
       propertyPath: m_Name
       value: Circle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6214214331715364004, guid: a45c91dc90c378f46aa5e6276d5401dd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1880,6 +1893,73 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7834735537330133525, guid: 0b21a9b73331755478eb3a190207ea6c, type: 3}
   m_PrefabInstance: {fileID: 2037661079614101761}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2097963070285744197
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2653796394280292332}
+    m_Modifications:
+    - target: {fileID: 2655877766157523797, guid: 6a1cdda5477168a4386b2b377c861483, type: 3}
+      propertyPath: m_Name
+      value: SimpleLightningBolt
+      objectReference: {fileID: 0}
+    - target: {fileID: 8514052980916672818, guid: 6a1cdda5477168a4386b2b377c861483, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8514052980916672818, guid: 6a1cdda5477168a4386b2b377c861483, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8514052980916672818, guid: 6a1cdda5477168a4386b2b377c861483, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8514052980916672818, guid: 6a1cdda5477168a4386b2b377c861483, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8514052980916672818, guid: 6a1cdda5477168a4386b2b377c861483, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8514052980916672818, guid: 6a1cdda5477168a4386b2b377c861483, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8514052980916672818, guid: 6a1cdda5477168a4386b2b377c861483, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8514052980916672818, guid: 6a1cdda5477168a4386b2b377c861483, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8514052980916672818, guid: 6a1cdda5477168a4386b2b377c861483, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8514052980916672818, guid: 6a1cdda5477168a4386b2b377c861483, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6a1cdda5477168a4386b2b377c861483, type: 3}
+--- !u!1 &4163266203129238288 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2655877766157523797, guid: 6a1cdda5477168a4386b2b377c861483, type: 3}
+  m_PrefabInstance: {fileID: 2097963070285744197}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7726638055030903159 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8514052980916672818, guid: 6a1cdda5477168a4386b2b377c861483, type: 3}
+  m_PrefabInstance: {fileID: 2097963070285744197}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2167403247660389769
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2089,7 +2169,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 7542682789514983758}
+    m_TransformParent: {fileID: 8796164938706572755}
     m_Modifications:
     - target: {fileID: 524572398670386221, guid: c6eea52dff353da4b99d2a59ce4efaa3, type: 3}
       propertyPath: lengthInSec
@@ -2130,6 +2210,10 @@ PrefabInstance:
     - target: {fileID: 7986504087968017091, guid: c6eea52dff353da4b99d2a59ce4efaa3, type: 3}
       propertyPath: m_Name
       value: Tower_Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 7986504087968017091, guid: c6eea52dff353da4b99d2a59ce4efaa3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8037160467862551414, guid: c6eea52dff353da4b99d2a59ce4efaa3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2172,7 +2256,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4217862762997978641, guid: c6eea52dff353da4b99d2a59ce4efaa3, type: 3}
+    - {fileID: 3301859001294354502, guid: c6eea52dff353da4b99d2a59ce4efaa3, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6eea52dff353da4b99d2a59ce4efaa3, type: 3}
@@ -3079,6 +3165,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3620340381904750904, guid: 00a3cf9a04e762842960b8993da5a63a, type: 3}
+      propertyPath: _lightningBolt
+      value: 
+      objectReference: {fileID: 4163266203129238288}
+    - target: {fileID: 7588975511122843146, guid: 00a3cf9a04e762842960b8993da5a63a, type: 3}
+      propertyPath: _lightningBolt
+      value: 
+      objectReference: {fileID: 4163266203129238288}
     - target: {fileID: 8321003335312407757, guid: 00a3cf9a04e762842960b8993da5a63a, type: 3}
       propertyPath: viewRadius
       value: 18
@@ -3689,6 +3783,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2653796394280292332}
     m_Modifications:
+    - target: {fileID: -4730598066336819365, guid: 1d4f518a457f5b54b8010914173ec915, type: 3}
+      propertyPath: _lightningBolt
+      value: 
+      objectReference: {fileID: 4163266203129238288}
     - target: {fileID: 100006, guid: 1d4f518a457f5b54b8010914173ec915, type: 3}
       propertyPath: m_Name
       value: Tow_Tesla3
@@ -3741,6 +3839,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2366888195592381997, guid: 1d4f518a457f5b54b8010914173ec915, type: 3}
+      propertyPath: _lightningBolt
+      value: 
+      objectReference: {fileID: 4163266203129238288}
     - target: {fileID: 6092569165194821655, guid: 1d4f518a457f5b54b8010914173ec915, type: 3}
       propertyPath: viewRadius
       value: 22

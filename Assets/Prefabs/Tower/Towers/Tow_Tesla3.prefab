@@ -14470,8 +14470,9 @@ GameObject:
   - component: {fileID: 3300000}
   - component: {fileID: 2300000}
   - component: {fileID: 6092569165194821655}
-  - component: {fileID: 2366888195592381997}
   - component: {fileID: -6652119892992400730}
+  - component: {fileID: -4730598066336819365}
+  - component: {fileID: -6343362972707782369}
   m_Layer: 0
   m_Name: Tow_Tesla3
   m_TagString: Untagged
@@ -14566,21 +14567,6 @@ MonoBehaviour:
   viewRadius: 22
   _delayTime: 0.5
   visibleTarget: []
---- !u!114 &2366888195592381997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2132e29add9b55408128a2dd97558b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rotationSpeed: 100
-  _fireSpeed: 1
-  _spawnPool: {fileID: 3652546391327738430}
 --- !u!114 &-6652119892992400730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14596,6 +14582,37 @@ MonoBehaviour:
   objectToPool: {fileID: 3076262866650904099, guid: bc813c22dad9d3b47804f6c8bdd88f46, type: 3}
   spawnObject: {fileID: 0}
   _poolSize: 10
+--- !u!114 &-4730598066336819365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af9ebb798cf6dc540ba4f5d1dcd8889d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rotationSpeed: 100
+  _fireSpeed: 1
+  _spawnPool: {fileID: 3652546391327738430}
+  _lightningBolt: {fileID: 2961274490152033698}
+--- !u!114 &-6343362972707782369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2132e29add9b55408128a2dd97558b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rotationSpeed: 100
+  _fireSpeed: 1
+  _spawnPool: {fileID: 3652546391327738430}
 --- !u!1 &2961274490152033698
 GameObject:
   m_ObjectHideFlags: 0
