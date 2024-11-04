@@ -81510,7 +81510,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1516482766}
-  - component: {fileID: 1516482767}
+  - component: {fileID: 1516482768}
+  - component: {fileID: 1516482769}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -81541,7 +81542,19 @@ Transform:
   - {fileID: 2118721382}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1516482767
+--- !u!114 &1516482768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516482765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce2ceb8fc677e2241b5c3b9e2d8301bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1516482769
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112783,6 +112796,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower_1
       objectReference: {fileID: 0}
+    - target: {fileID: 223681843747420851, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 223681843747420851, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 223681843747420851, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1516482769}
+    - target: {fileID: 223681843747420851, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 223681843747420851, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnCrossbowButtonClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 223681843747420851, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TowerSpace.BuildTower, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 223681843747420851, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 477499265955856690, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: spawnObject
       value: 
@@ -112839,6 +112880,18 @@ PrefabInstance:
       propertyPath: spawnObject
       value: 
       objectReference: {fileID: 648943711}
+    - target: {fileID: 3253393235078284498, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
+      propertyPath: m_Maskable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3253393235078284498, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4131673412180422080, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4699573317936533070, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -112855,10 +112908,18 @@ PrefabInstance:
       propertyPath: spawnObject
       value: 
       objectReference: {fileID: 648943711}
+    - target: {fileID: 5396282029414557163, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
+      propertyPath: m_Maskable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5890764206458864162, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: spawnObject
       value: 
       objectReference: {fileID: 648943711}
+    - target: {fileID: 5995166433875715381, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6230254742541361699, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: spawnObject
       value: 
@@ -112929,6 +112990,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7542682789514983758, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8193360564913105213, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
+      propertyPath: m_Maskable
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9062436380829540824, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}

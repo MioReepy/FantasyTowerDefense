@@ -20,6 +20,7 @@ namespace TowerSpace
         public void OnCrossbowButtonClicked()
         {
             tower.GetComponent<Builder>().OnButtonClick(TowerType.Crossbow);
+            Debug.Log($"Tower Crossbow clicked");
         }
     }
 }

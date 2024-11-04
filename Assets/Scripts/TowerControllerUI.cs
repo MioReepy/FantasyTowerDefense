@@ -37,15 +37,15 @@ namespace TowerSpace
             UpgradeTowerUI uiTower = towerSelectedArgs.TowerSelected.GetComponent<UpgradeTowerUI>();
             uiTower.ShowArrowUpgrade();
             
-            if (uiTower.availableBuild.activeInHierarchy)
-            {
-                uiTower.HideAvailableBuild();
-            }            
-            
-            if (uiTower.availableUpgrade.activeInHierarchy)
-            {
-                uiTower.HideAvailableUpgrade();
-            }
+            // if (uiTower.availableBuild.activeInHierarchy)
+            // {
+            //     uiTower.HideAvailableBuild();
+            // }            
+            //
+            // if (uiTower.availableUpgrade.activeInHierarchy)
+            // {
+            //     uiTower.HideAvailableUpgrade();
+            // }
         }
 
         private void Builder_OnUpgradeUI(object sender, Builder.OnUpgrade towerUpgradeArgs)
@@ -54,7 +54,7 @@ namespace TowerSpace
 
             if (uiTower.availableBuild.activeInHierarchy)
             {
-                uiTower.HideAvailableBuild();
+                // uiTower.HideAvailableBuild();
                 uiTower.ShowAvailableUpgrade();
             }
         }
