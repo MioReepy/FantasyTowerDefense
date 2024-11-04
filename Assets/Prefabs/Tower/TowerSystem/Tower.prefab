@@ -109,6 +109,7 @@ MonoBehaviour:
   _arrowAvailableUpgrade: {fileID: 3415266094520923704}
   availableBuild: {fileID: 313366091777293412}
   availableUpgrade: {fileID: 2137477750275025959}
+  _currentTowerButton: {fileID: 2909957070397596992}
 --- !u!114 &1860334769727628097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1622,6 +1623,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3394705643403743753, guid: 0b21a9b73331755478eb3a190207ea6c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3730103606687826114, guid: 0b21a9b73331755478eb3a190207ea6c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -1830,6 +1835,11 @@ PrefabInstance:
 --- !u!1 &2137477750275025959 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 139296324216960294, guid: 0b21a9b73331755478eb3a190207ea6c, type: 3}
+  m_PrefabInstance: {fileID: 2037661079614101761}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &2909957070397596992 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3757417697624128577, guid: 0b21a9b73331755478eb3a190207ea6c, type: 3}
   m_PrefabInstance: {fileID: 2037661079614101761}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &8141852279221814036 stripped

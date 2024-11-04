@@ -1,3 +1,4 @@
+using TowerSpace;
 using UnityEngine;
 
 namespace UISpace
@@ -7,6 +8,8 @@ namespace UISpace
         [SerializeField] private GameObject _arrowAvailableUpgrade;
         [SerializeField] internal GameObject availableBuild;
         [SerializeField] internal GameObject availableUpgrade;
+        
+        [SerializeField] private Transform _currentTowerButton;
 
         internal void HideArrowUpgrade()
         {
@@ -35,6 +38,15 @@ namespace UISpace
 
         internal void ShowAvailableUpgrade()
         {
+            for (int i = 0; i < _currentTowerButton.childCount; i++)
+            {
+                if (_currentTowerButton.GetChild(i).GetComponent<Tower>()._towerType ==
+                    gameObject.GetComponent<Builder>().tower._towerType)
+                {
+                    _currentTowerButton.GetChild(i).gameObject.SetActive(true);
+                }
+            }
+
             availableUpgrade.gameObject.SetActive(true);
         }
     }

@@ -48,7 +48,7 @@ namespace TowerSpace
                 tower = _buildingTower.transform.GetChild(child).GetComponent<Tower>();
                 if (tower._towerType == towerType)
                 {
-                    tower._currentTower = _buildingTower.transform.GetChild(child).gameObject;;
+                    tower._currentTower = _buildingTower.transform.GetChild(child).gameObject;
                     tower._currentTower.SetActive(true);
                     tower.currentTowerLevel = 0;
                     break;

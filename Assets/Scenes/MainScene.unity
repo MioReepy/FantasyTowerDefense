@@ -431,7 +431,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 173085577158851945, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: m_Name
-      value: Tower_1 (4)
+      value: Tower_5
       objectReference: {fileID: 0}
     - target: {fileID: 477499265955856690, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: spawnObject
@@ -24688,7 +24688,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 173085577158851945, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: m_Name
-      value: Tower_1 (7)
+      value: Tower_8
       objectReference: {fileID: 0}
     - target: {fileID: 477499265955856690, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: spawnObject
@@ -41673,7 +41673,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 173085577158851945, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: m_Name
-      value: Tower_1 (1)
+      value: Tower_2
       objectReference: {fileID: 0}
     - target: {fileID: 477499265955856690, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: spawnObject
@@ -77652,7 +77652,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 173085577158851945, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: m_Name
-      value: Tower_1 (3)
+      value: Tower_4
       objectReference: {fileID: 0}
     - target: {fileID: 477499265955856690, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: spawnObject
@@ -83927,7 +83927,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 173085577158851945, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: m_Name
-      value: Tower_1 (2)
+      value: Tower_3
       objectReference: {fileID: 0}
     - target: {fileID: 477499265955856690, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: spawnObject
@@ -91322,7 +91322,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 173085577158851945, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: m_Name
-      value: Tower_1 (6)
+      value: Tower_7
       objectReference: {fileID: 0}
     - target: {fileID: 477499265955856690, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: spawnObject
@@ -102082,6 +102082,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1941506123}
   m_CullTransparentMesh: 1
+--- !u!224 &1943780771 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2909957070397596992, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
+  m_PrefabInstance: {fileID: 7951686203276770017}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1944262422
 GameObject:
   m_ObjectHideFlags: 0
@@ -106692,7 +106697,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 173085577158851945, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: m_Name
-      value: Tower_1 (5)
+      value: Tower_6
       objectReference: {fileID: 0}
     - target: {fileID: 477499265955856690, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: spawnObject
@@ -112825,6 +112830,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 313366091777293412, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 477499265955856690, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: spawnObject
       value: 
@@ -112893,6 +112902,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4167912121003258906, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
+      propertyPath: position
+      value: 
+      objectReference: {fileID: 1943780771}
     - target: {fileID: 4465004599663231065, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
