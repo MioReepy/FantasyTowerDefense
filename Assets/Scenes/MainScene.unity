@@ -81511,6 +81511,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1516482766}
   - component: {fileID: 1516482768}
+  - component: {fileID: 1516482769}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -81553,8 +81554,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce2ceb8fc677e2241b5c3b9e2d8301bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedTower: {fileID: 0}
-  unselectedTower: {fileID: 0}
+--- !u!114 &1516482769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516482765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e5e1c7d9b5bef248b4ba7a81af9c4fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towers: {fileID: 1516482765}
 --- !u!4 &1519164391 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 3da427a607833db408a9e2b542b43b2e, type: 3}

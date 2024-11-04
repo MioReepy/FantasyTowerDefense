@@ -5,8 +5,7 @@ namespace TowerSpace
 {
     public class TowerControllerUI : MonoBehaviour
     {
-        [SerializeField] private GameObject selectedTower;
-        [SerializeField] private GameObject unselectedTower;
+        private GameObject selectedTower;
         private void Awake()
         {
             SelectingTowers.OnTowerSelected += SelectingTowers_OnShowTowerUI;
@@ -18,8 +17,9 @@ namespace TowerSpace
         {
             if (towerSelectedArgs != null)
             {
-                UpgradeTowerUI uiTower = towerSelectedArgs.TowerSelected.GetComponent<UpgradeTowerUI>();
                 selectedTower = towerSelectedArgs.TowerSelected;
+                
+                UpgradeTowerUI uiTower = selectedTower.GetComponent<UpgradeTowerUI>();
 
                 uiTower.HideArrowUpgrade();
                 
@@ -29,19 +29,10 @@ namespace TowerSpace
 
         private void SelectingTowers_OnHideTowerUI(object sender, SelectingTowers.OnSelected towerSelectedArgs)
         {
-            unselectedTower = towerSelectedArgs.TowerSelected;
-            
-            if (unselectedTower != selectedTower)
-            {
-                UpgradeTowerUI uiTower = unselectedTower.GetComponent<UpgradeTowerUI>();
-                uiTower.ShowArrowUpgrade();
-            
-                HideTowerUI(uiTower);
-                
-                Debug.Log("2");
-            }
-            
-            Debug.Log("1");
+            UpgradeTowerUI uiTower = towerSelectedArgs.TowerSelected.GetComponent<UpgradeTowerUI>();
+            uiTower.ShowArrowUpgrade();
+
+            HideTowerUI(uiTower);
         }
 
         private void Builder_OnUpgradeUI(object sender, Builder.OnUpgrade towerUpgradeArgs)
