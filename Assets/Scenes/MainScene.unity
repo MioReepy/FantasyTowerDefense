@@ -74744,11 +74744,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 25efc4b6a4f777a4e9363f1d7d6b04f0, type: 3}
   m_PrefabInstance: {fileID: 1377625293}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1377695259 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 173085577158851945, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
-  m_PrefabInstance: {fileID: 7951686203276770017}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1378039118
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -81516,7 +81511,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1516482766}
   - component: {fileID: 1516482768}
-  - component: {fileID: 1516482769}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -81559,18 +81553,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce2ceb8fc677e2241b5c3b9e2d8301bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1516482769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1516482765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 703d4a74797fa0d4cb320f580c73d82a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  selectedTower: {fileID: 0}
+  unselectedTower: {fileID: 0}
 --- !u!4 &1519164391 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 3da427a607833db408a9e2b542b43b2e, type: 3}
@@ -112724,18 +112708,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7542682789514983758, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
   m_PrefabInstance: {fileID: 7951686203276770017}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &62935726695643517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1377695259}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 703d4a74797fa0d4cb320f580c73d82a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &3950927798064071453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -112824,7 +112796,7 @@ PrefabInstance:
     - target: {fileID: 223681843747420851, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1516482769}
+      objectReference: {fileID: 0}
     - target: {fileID: 223681843747420851, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -112912,7 +112884,7 @@ PrefabInstance:
     - target: {fileID: 4465004599663231065, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 62935726695643517}
+      objectReference: {fileID: 0}
     - target: {fileID: 4465004599663231065, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnCrossbowButtonClicked
@@ -113040,10 +113012,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 173085577158851945, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 62935726695643517}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

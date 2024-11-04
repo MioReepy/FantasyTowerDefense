@@ -13,15 +13,15 @@ namespace UISpace
             _arrowAvailableUpgrade.gameObject.SetActive(false);
         }
 
-        // internal void HideAvailableBuild()
-        // {
-        //     availableBuild.gameObject.SetActive(false);
-        // }
-        //
-        // internal void HideAvailableUpgrade()
-        // {
-        //     availableUpgrade.gameObject.SetActive(false);
-        // }
+        internal void HideAvailableBuild()
+        {
+            availableBuild.gameObject.SetActive(false);
+        }
+        
+        internal void HideAvailableUpgrade()
+        {
+            availableUpgrade.gameObject.SetActive(false);
+        }
 
         internal void ShowArrowUpgrade()
         {

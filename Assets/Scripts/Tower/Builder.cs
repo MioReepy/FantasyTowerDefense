@@ -58,7 +58,7 @@ namespace TowerSpace
 
         private void UpgradeTower()
         {
-            if (tower.currentTowerLevel < tower.transform.childCount - 1)
+            if (tower.currentTowerLevel < tower.gameObject.transform.childCount - 1)
             {
                 ActiveNewStageTower(false);
                 tower.currentTowerLevel++;

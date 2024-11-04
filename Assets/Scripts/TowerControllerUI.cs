@@ -5,6 +5,8 @@ namespace TowerSpace
 {
     public class TowerControllerUI : MonoBehaviour
     {
+        [SerializeField] private GameObject selectedTower;
+        [SerializeField] private GameObject unselectedTower;
         private void Awake()
         {
             SelectingTowers.OnTowerSelected += SelectingTowers_OnShowTowerUI;
@@ -16,36 +18,30 @@ namespace TowerSpace
         {
             if (towerSelectedArgs != null)
             {
-                Tower currentTower = towerSelectedArgs.TowerSelected.GetComponent<Builder>().tower;
-                
                 UpgradeTowerUI uiTower = towerSelectedArgs.TowerSelected.GetComponent<UpgradeTowerUI>();
-                uiTower.HideArrowUpgrade();
+                selectedTower = towerSelectedArgs.TowerSelected;
 
-                if (currentTower == null)
-                {
-                    uiTower.ShowAvailableBuild();
-                }
-                else
-                {
-                    uiTower.ShowAvailableUpgrade();
-                }
+                uiTower.HideArrowUpgrade();
+                
+                ShowTowerUI(uiTower);
             }
         }
 
         private void SelectingTowers_OnHideTowerUI(object sender, SelectingTowers.OnSelected towerSelectedArgs)
         {
-            UpgradeTowerUI uiTower = towerSelectedArgs.TowerSelected.GetComponent<UpgradeTowerUI>();
-            uiTower.ShowArrowUpgrade();
+            unselectedTower = towerSelectedArgs.TowerSelected;
             
-            // if (uiTower.availableBuild.activeInHierarchy)
-            // {
-            //     uiTower.HideAvailableBuild();
-            // }            
-            //
-            // if (uiTower.availableUpgrade.activeInHierarchy)
-            // {
-            //     uiTower.HideAvailableUpgrade();
-            // }
+            if (unselectedTower != selectedTower)
+            {
+                UpgradeTowerUI uiTower = unselectedTower.GetComponent<UpgradeTowerUI>();
+                uiTower.ShowArrowUpgrade();
+            
+                HideTowerUI(uiTower);
+                
+                Debug.Log("2");
+            }
+            
+            Debug.Log("1");
         }
 
         private void Builder_OnUpgradeUI(object sender, Builder.OnUpgrade towerUpgradeArgs)
@@ -54,8 +50,33 @@ namespace TowerSpace
 
             if (uiTower.availableBuild.activeInHierarchy)
             {
-                // uiTower.HideAvailableBuild();
+                uiTower.HideAvailableBuild();
                 uiTower.ShowAvailableUpgrade();
+            }
+        }
+
+        private void ShowTowerUI(UpgradeTowerUI uiTower)
+        {
+            if (selectedTower.GetComponent<Builder>().tower == null)
+            {
+                uiTower.ShowAvailableBuild();
+            }
+            else
+            {
+                uiTower.ShowAvailableUpgrade();
+            }
+        }
+
+        private static void HideTowerUI(UpgradeTowerUI uiTower)
+        {
+            if (uiTower.availableBuild.activeInHierarchy)
+            {
+                uiTower.HideAvailableBuild();
+            }
+
+            if (uiTower.availableUpgrade.activeInHierarchy)
+            {
+                uiTower.HideAvailableUpgrade();
             }
         }
 
