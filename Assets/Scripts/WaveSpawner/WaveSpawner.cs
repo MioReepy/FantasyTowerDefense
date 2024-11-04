@@ -15,6 +15,7 @@ namespace WaveSpawnerSpace
         [SerializeField] internal float _waveSpawnerWidth = 5f;
         [SerializeField] private float _timeBetweenWaves = 5f;
         [SerializeField] private float _timeBetweenEnemies = 0.5f;
+        [SerializeField] private GameObject _enemyPortal;
         internal float coolDownWaves = 0f;
         private float _coolDownWaves = 5f;
         private int _currentWave = 0;
@@ -79,10 +80,15 @@ namespace WaveSpawnerSpace
             {
                 enemyObject.GetComponent<WaypointNavigator>().UpdateWaypoint(_waypoint);
                 Vector3 spawnPosition = Vector3.Lerp(minBounds, maxBounds, Random.Range(0f, 1f));
-                
+
                 enemyObject.transform.position = spawnPosition;
                 enemyObject.transform.rotation = transform.rotation;
 
+                GameObject enemyPool = EnemyPortalObjectPool.Singleton.GetPoolObject();
+                enemyPool.SetActive(true);
+                enemyPool.transform.position = spawnPosition;
+                enemyPool.transform.rotation = transform.rotation;
+                
                 enemyObject.SetActive(true);
             }
         }

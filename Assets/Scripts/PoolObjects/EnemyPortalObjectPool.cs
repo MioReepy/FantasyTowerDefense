@@ -1,17 +1,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace TowerSpace
+namespace EnemySpace
 {
-    public class BulletObjectPool : MonoBehaviour
+    public class EnemyPortalObjectPool : MonoBehaviour
     {
         [SerializeField] internal GameObject objectToPool;
         [SerializeField] internal GameObject spawnObject;
-        [SerializeField] private int _poolSize = 10;
+        [SerializeField] private int _poolSize = 15;
 
         private List<GameObject> _poolObjects;
 
-        public static BulletObjectPool Singleton;
+        public static EnemyPortalObjectPool Singleton;
         private void Awake() => Singleton = this;
         
         private void Start()
@@ -41,11 +41,6 @@ namespace TowerSpace
             _poolObjects.Add(poolTemp);
 
             return poolTemp;
-        }
-        
-        public static void ReturnToPool(GameObject poolObject)
-        {
-            poolObject.SetActive(false);
         }
     }
 }
