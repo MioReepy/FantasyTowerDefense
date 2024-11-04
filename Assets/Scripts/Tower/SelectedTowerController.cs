@@ -1,5 +1,3 @@
-using System;
-using PlayerSpace;
 using UnityEngine;
 
 namespace TowerSpace
@@ -12,6 +10,7 @@ namespace TowerSpace
         private void Start()
         {
             SelectingTowers.OnTowerSelected += SelectingTowers_OnSelect;
+            SelectingTowers.OnTowerUnselected += SelectingTowers_OnHideTowerUI;
         }
 
         private void SelectingTowers_OnSelect(object sender, SelectingTowers.OnSelected tower)
@@ -24,9 +23,15 @@ namespace TowerSpace
             selectedTowerController = tower.TowerSelected;
         }
 
+        private void SelectingTowers_OnHideTowerUI(object sender, SelectingTowers.OnSelected e)
+        {
+            selectedTowerController = null;
+        }
+
         private void OnDisable()
         {
             SelectingTowers.OnTowerSelected -= SelectingTowers_OnSelect;
+            SelectingTowers.OnTowerUnselected -= SelectingTowers_OnHideTowerUI;
         }
     }
 }
