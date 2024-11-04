@@ -1,10 +1,13 @@
 using System;
+using UnityEngine;
 
 namespace CameraSpace
 {
     [Serializable]
-    public class Boundary
+    public class Boundary : MonoBehaviour
     {
-        public float xMin, xMax, yMin, yMax, zMin, zMax;
+        public float xMin, xMax, zMin, zMax;
     }
+    
+    
 }

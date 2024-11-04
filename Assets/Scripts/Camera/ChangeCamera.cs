@@ -10,6 +10,7 @@ namespace CameraSpace
         #region Cameras
 
         [SerializeField] private CinemachineVirtualCamera[] _zoomCamera;
+        [SerializeField] private CameraMovement _cameraMovement;
 
         private int currentZoomCameraIndex;
 
@@ -27,26 +28,27 @@ namespace CameraSpace
 
         private void ZoomPlusCamera(object sender, EventArgs e)
         {
-            ResetCamera();
-
-            if (currentZoomCameraIndex != _zoomCamera.Length)
+            if (currentZoomCameraIndex < _zoomCamera.Length - 1)
             {
+                ResetCamera();
                 currentZoomCameraIndex++;
+                _zoomCamera[currentZoomCameraIndex].enabled = true;
+                if (_zoomCamera[currentZoomCameraIndex].TryGetComponent(out Boundary boundary))
+                {
+                    _cameraMovement._boundary = boundary;
+                }
             }
-
-            _zoomCamera[currentZoomCameraIndex].enabled = true;
         }
 
         private void ZoomMinusCamera(object sender, EventArgs e)
         {
-            ResetCamera();
-
-            if (currentZoomCameraIndex != 0)
+            if (currentZoomCameraIndex > 0)
             {
+                ResetCamera();
                 currentZoomCameraIndex--;
+                _zoomCamera[currentZoomCameraIndex].enabled = true;
+                _cameraMovement._boundary = _zoomCamera[currentZoomCameraIndex].GetComponent<Boundary>();
             }
-
-            _zoomCamera[currentZoomCameraIndex].enabled = true;
         }
 
         private void ResetCamera()
