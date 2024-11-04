@@ -16,10 +16,12 @@ namespace TowerSpace
 
         public static event EventHandler<OnSelected> OnTowerSelected;
         public static event EventHandler<OnSelected> OnTowerUnselected;
+        
         public class OnSelected : EventArgs
         {
             public GameObject TowerSelected;
         }
+        
         private void Start()
         {
             InputPlayerController.Instance.OnClick += InputPlayerController_OnClick;

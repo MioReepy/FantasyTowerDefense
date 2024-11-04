@@ -1,25 +1,30 @@
-using System;
 using UnityEngine;
 
 namespace TowerSpace
 {
     public class BuildTower : MonoBehaviour
     {
-        private GameObject tower;
-        private void OnEnable()
-        {
-            SelectingTowers.OnTowerSelected += SelectingTowersOnOnTowerSelected;
-        }
-
-        private void SelectingTowersOnOnTowerSelected(object sender, SelectingTowers.OnSelected selectingTowers)
-        {
-            tower = selectingTowers.TowerSelected;
-            Debug.Log(tower);
-        }
-
         public void OnCrossbowButtonClicked()
         {
-            tower.GetComponent<Builder>().OnButtonClick(TowerType.Crossbow);
+            gameObject.GetComponent<Builder>().OnButtonClick(TowerType.Crossbow);
+            Debug.Log($"Tower Crossbow clicked");
+        }
+        
+        public void OnMortalButtonClicked()
+        {
+            gameObject.GetComponent<Builder>().OnButtonClick(TowerType.Mortar);
+            Debug.Log($"Tower Crossbow clicked");
+        }
+        
+        public void OnTeslaButtonClicked()
+        {
+            gameObject.GetComponent<Builder>().OnButtonClick(TowerType.Tesla);
+            Debug.Log($"Tower Crossbow clicked");
+        }
+        
+        public void OnCrystalButtonClicked()
+        {
+            gameObject.GetComponent<Builder>().OnButtonClick(TowerType.Crystal);
             Debug.Log($"Tower Crossbow clicked");
         }
     }
