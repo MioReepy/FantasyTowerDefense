@@ -14,6 +14,8 @@ namespace TowerSpace
         private float _timeLightClick;
 
         internal bool isTowerSelected;
+        
+        internal bool isAvailableBuild = true;
 
         public static event EventHandler<OnSelected> OnTowerSelected;
         public static event EventHandler<OnSelected> OnTowerUnselected;
@@ -53,7 +55,7 @@ namespace TowerSpace
 
         private void OnMouseDown()
         {
-            if (EventSystem.current.IsPointerOverGameObject())
+            if (EventSystem.current.IsPointerOverGameObject() || !isAvailableBuild)
             {
                 return;
             }
