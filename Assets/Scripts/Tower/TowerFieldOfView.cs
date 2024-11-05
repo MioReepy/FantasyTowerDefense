@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using EnemySpace;
 using UnityEngine;
 using WaypointSpase;
 
@@ -75,7 +76,8 @@ namespace TowerSpace
             {
                 Vector3 directionToTarget = visibleTarget[i].position - transform.position;
 
-                if (viewRadius * viewRadius < directionToTarget.sqrMagnitude || !visibleTarget[i].gameObject.activeInHierarchy)
+                if (viewRadius * viewRadius < directionToTarget.sqrMagnitude || !visibleTarget[i].gameObject.activeInHierarchy 
+                                                                             || visibleTarget[i].GetComponent<Enemy>().isDead)
                 {
                     visibleTarget.Remove(visibleTarget[i]);
                 }

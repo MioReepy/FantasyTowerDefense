@@ -243,7 +243,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   viewRadius: 18
-  _delayTime: 0.5
+  _delayTime: 0.2
   visibleTarget: []
 --- !u!114 &803681747191312790
 MonoBehaviour:

@@ -10,7 +10,8 @@ namespace EnemySpace
         [SerializeField] private GameObject _impactEffect;
         
         private Animator _animator;
-
+        internal bool isDead;
+        
         private void Start()
         {
             _animator = GetComponent<Animator>();
@@ -28,6 +29,7 @@ namespace EnemySpace
                 gameObject.GetComponent<Rigidbody>().isKinematic = false;
                 gameObject.GetComponent<WaypointNavigator>().enabled = false;
                 gameObject.GetComponent<EnemyNavigator>().enabled = false;
+                isDead = true;
             }
         }
 
@@ -39,6 +41,7 @@ namespace EnemySpace
             gameObject.GetComponent<Rigidbody>().isKinematic = true;
             gameObject.GetComponent<WaypointNavigator>().enabled = true;
             gameObject.GetComponent<EnemyNavigator>().enabled = true;
+            isDead = false;
             EnemyPool.ReturnToPool(gameObject);
         }
     }
