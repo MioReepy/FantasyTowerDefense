@@ -63,9 +63,9 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4524045572467879168}
-  m_Enabled: 0
-  m_Avatar: {fileID: 9000000, guid: db13331a9ade1df46a30c1179d2f4539, type: 3}
-  m_Controller: {fileID: 9100000, guid: e722c0f3ffbb5e14c8ef32fabc092d13, type: 2}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 0761e75fef7ee8c4d99ad279f2578651, type: 2}
+  m_Controller: {fileID: 9100000, guid: 85dcd69cfff140049a8f1a1b75d1a162, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deac5bc351e2f434cb8255875736b925, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyNavigator: {fileID: 4247667591605308345, guid: add7e67fb68b0d54a9d9893bd0356223, type: 3}
+  _enemyNavigator: {fileID: 0}
   _currentWaypoint: {fileID: 0}
 --- !u!136 &-6191348418463780567
 CapsuleCollider:
@@ -152,7 +152,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &-6992731280893264343
 MonoBehaviour:

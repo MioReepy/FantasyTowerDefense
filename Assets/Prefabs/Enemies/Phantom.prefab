@@ -236,9 +236,9 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2611149553095981223}
-  m_Enabled: 0
-  m_Avatar: {fileID: 9000000, guid: a75b6178589a3c346b2e3dec13411209, type: 3}
-  m_Controller: {fileID: 9100000, guid: 73afe8e677235174585cbe849ff537c2, type: 2}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 750f7b7180d6ecd4e8cee4469e336069, type: 2}
+  m_Controller: {fileID: 9100000, guid: f3ec10f95f7e239499c644b80b73692c, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -325,7 +325,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &-1106765236697834484
 MonoBehaviour:
