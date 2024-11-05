@@ -883,6 +883,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3966833395461399494, guid: 76505b0c628173347a8ff85df55874ae, type: 3}
+      propertyPath: m_Maskable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4297259708385666024, guid: 76505b0c628173347a8ff85df55874ae, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -929,6 +933,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6460209549547367474, guid: 76505b0c628173347a8ff85df55874ae, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6904225420686255730, guid: 76505b0c628173347a8ff85df55874ae, type: 3}
+      propertyPath: m_Maskable
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7358519625038433683, guid: 76505b0c628173347a8ff85df55874ae, type: 3}
@@ -3281,6 +3289,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5689140842820570147, guid: 69e11f6ef020dd047896dbbb26c8c8af, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7871496315207296795, guid: 69e11f6ef020dd047896dbbb26c8c8af, type: 3}
+      propertyPath: m_PreserveAspect
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

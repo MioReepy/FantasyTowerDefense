@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using PlayerSpace;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace TowerSpace
 {
@@ -16,12 +17,12 @@ namespace TowerSpace
 
         public static event EventHandler<OnSelected> OnTowerSelected;
         public static event EventHandler<OnSelected> OnTowerUnselected;
-        
+
         public class OnSelected : EventArgs
         {
             public GameObject TowerSelected;
         }
-        
+
         private void Start()
         {
             InputPlayerController.Instance.OnUnselect += InputPlayerController_OnUnselect;
@@ -37,6 +38,11 @@ namespace TowerSpace
 
         private void OnMouseEnter()
         {
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                return;
+            }
+            
             StartCoroutine(OnEnter());
         }
 
@@ -47,6 +53,11 @@ namespace TowerSpace
 
         private void OnMouseDown()
         {
+            if (EventSystem.current.IsPointerOverGameObject())
+            {
+                return;
+            }
+            
             if (_lightClick.GetComponent<ParticleSystem>().isStopped && !isTowerSelected)
             {
                 isTowerSelected = true;
