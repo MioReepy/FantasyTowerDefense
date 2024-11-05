@@ -19,13 +19,23 @@ namespace TowerSpace
             transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * rotationSpeed);
         }
 
+        protected virtual GameObject GetBullet()
+        {
+            return null;
+        }        
+        
+        protected virtual Transform GetSpawnPosition()
+        {
+            return null;
+        }
+        
         protected virtual void Shoot()
         {
-            GameObject bulletObject = BulletObjectPool.Singleton.GetPoolObject();
+            GameObject bulletObject = GetBullet();
 
             if (bulletObject != null)
             {
-                bulletObject.transform.parent = BulletObjectPool.Singleton.spawnObject.transform;
+                bulletObject.transform.parent = GetSpawnPosition();
                 bulletObject.transform.position = spawnPool.transform.position;
                 bulletObject.transform.rotation = spawnPool.transform.rotation;
                 

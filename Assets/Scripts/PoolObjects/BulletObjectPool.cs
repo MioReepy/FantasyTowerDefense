@@ -5,22 +5,23 @@ namespace TowerSpace
 {
     public class BulletObjectPool : MonoBehaviour
     {
-        [SerializeField] internal GameObject objectToPool;
-        [SerializeField] internal GameObject spawnObject;
-        [SerializeField] private int _poolSize = 10;
+        private GameObject _objectToPool;
+        private GameObject _spawnObject;
 
         private List<GameObject> _poolObjects;
 
-        public static BulletObjectPool Singleton;
-        private void Awake() => Singleton = this;
-        
-        private void Start()
+        protected void SetBulletObject(GameObject objectToPool, GameObject spawnObject)
         {
+            _objectToPool = objectToPool;
+            _spawnObject = spawnObject;
             _poolObjects = new List<GameObject>();
+        }
 
-            for (int j = 0; j < _poolSize; j++)
+        internal void AddBulletToPool(int poolSize)
+        {
+            for (int i = 0; i < poolSize; i++)
             {
-                GameObject poolTemp = Instantiate(objectToPool, spawnObject.transform);
+                GameObject poolTemp = Instantiate(_objectToPool, _spawnObject.transform);
                 poolTemp.SetActive(false);
                 _poolObjects.Add(poolTemp);
             }
@@ -28,24 +29,19 @@ namespace TowerSpace
 
         internal GameObject GetPoolObject()
         {
-            for (int j = 0; j < _poolObjects.Count; j++)
+            foreach (var enemyObject in _poolObjects)
             {
-                if (!_poolObjects[j].activeInHierarchy)
+                if (!enemyObject.activeInHierarchy)
                 {
-                    return _poolObjects[j];
+                    return enemyObject;
                 }
             }
 
-            GameObject poolTemp = Instantiate(objectToPool, spawnObject.transform);
+            GameObject poolTemp = Instantiate(_objectToPool, _spawnObject.transform);
             poolTemp.SetActive(false);
             _poolObjects.Add(poolTemp);
 
             return poolTemp;
-        }
-        
-        public static void ReturnToPool(GameObject poolObject)
-        {
-            poolObject.SetActive(false);
         }
     }
 }

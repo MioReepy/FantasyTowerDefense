@@ -247,8 +247,9 @@ GameObject:
   - component: {fileID: 9500000}
   - component: {fileID: -7676064024396771924}
   - component: {fileID: -978170192879697640}
-  - component: {fileID: 3475525997391304927}
   - component: {fileID: -5109890593626439403}
+  - component: {fileID: 3475525997391304927}
+  - component: {fileID: 3270388300528177521}
   m_Layer: 0
   m_Name: Tow_Crossbow2
   m_TagString: Untagged
@@ -327,21 +328,6 @@ MonoBehaviour:
   rotationSpeed: 100
   fireSpeed: 1
   spawnPool: {fileID: 2856940267840295035}
---- !u!114 &3475525997391304927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100008}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f585a7aafd2c4054fb33c2c10b3b1f25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToPool: {fileID: 3320177568042795438, guid: 5b9b37dcd22cd34419afb23048e2edc0, type: 3}
-  spawnObject: {fileID: 0}
-  _poolSize: 10
 --- !u!114 &-5109890593626439403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -357,6 +343,33 @@ MonoBehaviour:
   rotationSpeed: 100
   fireSpeed: 1
   spawnPool: {fileID: 2856940267840295035}
+--- !u!114 &3475525997391304927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f585a7aafd2c4054fb33c2c10b3b1f25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3270388300528177521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5fd2ef7208d67a4191792fc08744fcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToPool: {fileID: 3320177568042795438, guid: 5b9b37dcd22cd34419afb23048e2edc0, type: 3}
+  spawnObject: {fileID: 0}
+  poolSize: 5
 --- !u!1 &4243101267600975863
 GameObject:
   m_ObjectHideFlags: 0

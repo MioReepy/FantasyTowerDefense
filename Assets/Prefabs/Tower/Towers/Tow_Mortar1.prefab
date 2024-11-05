@@ -179,8 +179,9 @@ GameObject:
   - component: {fileID: 9500000}
   - component: {fileID: -4696186499143117165}
   - component: {fileID: -898003314563158259}
-  - component: {fileID: -6533535844448899760}
   - component: {fileID: 1974236980188461976}
+  - component: {fileID: -6533535844448899760}
+  - component: {fileID: -2524252867322826503}
   m_Layer: 0
   m_Name: Tow_Mortar1
   m_TagString: Untagged
@@ -258,22 +259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 100
   fireSpeed: 1
-  spawnPool: {fileID: 7627261867126892512}
---- !u!114 &-6533535844448899760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f585a7aafd2c4054fb33c2c10b3b1f25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToPool: {fileID: 3076262866650904099, guid: bc813c22dad9d3b47804f6c8bdd88f46, type: 3}
-  spawnObject: {fileID: 0}
-  _poolSize: 10
+  spawnPool: {fileID: 0}
 --- !u!114 &1974236980188461976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,6 +275,33 @@ MonoBehaviour:
   rotationSpeed: 100
   fireSpeed: 1
   spawnPool: {fileID: 7627261867126892512}
+--- !u!114 &-6533535844448899760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f585a7aafd2c4054fb33c2c10b3b1f25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-2524252867322826503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b4fdf7d452ee2346b427755486d3498, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToPool: {fileID: 3076262866650904099, guid: 079f2dc5fce2a7249b6634e6f3f86cfd, type: 3}
+  spawnObject: {fileID: 0}
+  poolSize: 5
 --- !u!1 &3973694927495820495
 GameObject:
   m_ObjectHideFlags: 0

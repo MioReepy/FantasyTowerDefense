@@ -24,5 +24,15 @@ namespace TowerSpace
                 fireCoolDown -= Time.deltaTime;
             }
         }
+        
+        protected override GameObject GetBullet()
+        {
+            return CrystalObjectPool.Singleton.GetPoolObject();
+        }  
+        
+        protected override Transform GetSpawnPosition()
+        {
+            return CrystalObjectPool.Singleton.spawnObject.transform;
+        }
     }
 }

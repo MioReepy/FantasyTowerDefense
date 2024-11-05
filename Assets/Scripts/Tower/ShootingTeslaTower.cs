@@ -34,6 +34,16 @@ namespace TowerSpace
                 _lightningBolt.GetComponent<LightningBoltScript>().EndObject = spawnPool.gameObject;
             }
         }
+        
+        protected override GameObject GetBullet()
+        {
+            return UnvisibleObjectPool.Singleton.GetPoolObject();
+        }  
+        
+        protected override Transform GetSpawnPosition()
+        {
+            return UnvisibleObjectPool.Singleton.spawnObject.transform;
+        }
 
         protected override void Shoot()
         {
