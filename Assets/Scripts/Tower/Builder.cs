@@ -1,14 +1,17 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 namespace TowerSpace
 {
     public class Builder : MonoBehaviour
     {
-        [SerializeField] private GameObject _emptyTower;
         [SerializeField] private GameObject _baseTower;
         [SerializeField] private GameObject _buildingTower;
+        [SerializeField] private GameObject _buildingEffect;
         [SerializeField] internal Tower tower;
+        [SerializeField] private GameObject _emptyTower;
+        [SerializeField] private float timerBuildingTower = 5f;
         
         public static event EventHandler<OnUpgrade> OnUpgradeTower;
         public class OnUpgrade : EventArgs
@@ -19,18 +22,13 @@ namespace TowerSpace
         internal void OnButtonClick(TowerType towerType)
         {
             BuildSelectedTower(towerType);
-
-            OnUpgradeTower?.Invoke(this, new OnUpgrade
-            {
-                SelectedTower = gameObject
-            });
         }
 
         private void BuildSelectedTower(TowerType towerType)
         {
             if (_emptyTower.activeInHierarchy)
             {
-                BuildNewTower(towerType);
+                StartCoroutine(BuildNewTower(towerType));
             }
             else
             {
@@ -38,13 +36,17 @@ namespace TowerSpace
             }
         }
 
-        private void BuildNewTower(TowerType towerType)
+        private IEnumerator BuildNewTower(TowerType towerType)
         {
+            _buildingEffect.SetActive(true);
             _emptyTower.SetActive(false);
-            _baseTower.SetActive(true);
-                
+            
+            yield return new WaitForSeconds(timerBuildingTower);
+            
             for (int child = 0; child < _buildingTower.transform.childCount; child++)
             {
+                _baseTower.SetActive(true);
+
                 tower = _buildingTower.transform.GetChild(child).GetComponent<Tower>();
                 if (tower._towerType == towerType)
                 {
@@ -54,6 +56,14 @@ namespace TowerSpace
                     break;
                 }
             }
+
+            _buildingEffect.SetActive(false);
+
+            OnUpgradeTower?.Invoke(this, new OnUpgrade
+            {
+                SelectedTower = gameObject
+            });
+            
         }
 
         private void UpgradeTower()
