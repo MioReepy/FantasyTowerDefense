@@ -6,12 +6,12 @@ namespace TowerSpace
     {
         private void Start()
         {
-            _towerFieldOfView = GetComponent<TowerFieldOfView>();
+            towerFieldOfView = GetComponent<TowerFieldOfView>();
         }
 
         private void Update()
         {
-            if (_towerFieldOfView.target != null)
+            if (towerFieldOfView.target != null)
             {
                 RotateToDirection();
 

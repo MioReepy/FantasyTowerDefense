@@ -6,10 +6,10 @@ namespace TowerSpace
     public class ShootingTeslaTower : ShootingBaseTower
     {
         [SerializeField] private GameObject _lightningBolt;
-
+        
         private void Start()
         {
-            _towerFieldOfView = GetComponent<TowerFieldOfView>();
+            towerFieldOfView = GetComponent<TowerFieldOfView>();
 
             _lightningBolt.GetComponent<LightningBoltScript>().StartObject = _spawnPool.gameObject;
             _lightningBolt.GetComponent<LightningBoltScript>().EndObject = _spawnPool.gameObject;
@@ -17,7 +17,7 @@ namespace TowerSpace
 
         protected void Update()
         {
-            if (_towerFieldOfView.target != null)
+            if (towerFieldOfView.target != null)
             {
                 RotateToDirection();
 
@@ -30,7 +30,7 @@ namespace TowerSpace
                 _fireCoolDown -= Time.deltaTime;
             }
             
-            if (gameObject.transform.GetComponentInParent<Tower>()._towerType == TowerType.Tesla && _towerFieldOfView.target == null)
+            if (gameObject.transform.GetComponentInParent<Tower>()._towerType == TowerType.Tesla && towerFieldOfView.target == null)
             {
                 _lightningBolt.GetComponent<LightningBoltScript>().EndObject = _spawnPool.gameObject;
             }
@@ -42,7 +42,7 @@ namespace TowerSpace
 
             if (gameObject.transform.GetComponentInParent<Tower>()._towerType == TowerType.Tesla)
             {
-                _lightningBolt.GetComponent<LightningBoltScript>().EndObject = _towerFieldOfView.target.gameObject;
+                _lightningBolt.GetComponent<LightningBoltScript>().EndObject = towerFieldOfView.target.gameObject;
             }
         }
     }

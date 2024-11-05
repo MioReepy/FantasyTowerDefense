@@ -4,19 +4,19 @@ namespace TowerSpace
 {
     public class ShootingBaseTower : MonoBehaviour
     {
-        [SerializeField] private float _rotationSpeed = 100f;
+        [SerializeField] protected float rotationSpeed = 100f;
         [SerializeField] protected float _fireSpeed = 1f;
         [SerializeField] protected Transform _spawnPool;
 
         protected float _fireCoolDown = 0f;
-        protected TowerFieldOfView _towerFieldOfView;
+        protected TowerFieldOfView towerFieldOfView;
 
         protected void RotateToDirection()
         {
-            Vector3 lookRotation = Quaternion.LookRotation(_towerFieldOfView.target.position - transform.position)
+            Vector3 lookRotation = Quaternion.LookRotation(towerFieldOfView.target.position - transform.position)
                 .eulerAngles;
             Quaternion rotation = Quaternion.Euler(0f, lookRotation.y, 0f);
-            transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * _rotationSpeed);
+            transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * rotationSpeed);
         }
 
         private protected virtual void Shoot()
@@ -33,7 +33,7 @@ namespace TowerSpace
                 
                 Bullet bullet = bulletObject.GetComponent<Bullet>();
 
-                bullet.Target = _towerFieldOfView.target;
+                bullet.Target = towerFieldOfView.target;
             }
         }
     }

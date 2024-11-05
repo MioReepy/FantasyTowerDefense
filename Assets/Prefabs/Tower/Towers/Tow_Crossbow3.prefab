@@ -324,7 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2132e29add9b55408128a2dd97558b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotationSpeed: 5
+  rotationSpeed: 100
   _fireSpeed: 1
   _spawnPool: {fileID: 3892138332217297469}
 --- !u!114 &1698908413090326442
@@ -339,7 +339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f585a7aafd2c4054fb33c2c10b3b1f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToPool: {fileID: 3076262866650904099, guid: bc813c22dad9d3b47804f6c8bdd88f46, type: 3}
+  objectToPool: {fileID: 3320177568042795438, guid: 5b9b37dcd22cd34419afb23048e2edc0, type: 3}
   spawnObject: {fileID: 0}
   _poolSize: 10
 --- !u!114 &3454076276505465879
@@ -354,7 +354,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b0bc4ca4a158b3488e6bb5746535947, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotationSpeed: 100
+  rotationSpeed: 100
   _fireSpeed: 1
   _spawnPool: {fileID: 3892138332217297469}
 --- !u!1 &1860170493126613723
