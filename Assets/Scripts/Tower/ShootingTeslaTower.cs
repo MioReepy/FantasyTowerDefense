@@ -10,8 +10,7 @@ namespace TowerSpace
         private void Start()
         {
             towerFieldOfView = GetComponent<TowerFieldOfView>();
-
-            _lightningBolt.GetComponent<LightningBoltScript>().StartObject = spawnPool.gameObject;
+            
             _lightningBolt.GetComponent<LightningBoltScript>().EndObject = spawnPool.gameObject;
         }
 

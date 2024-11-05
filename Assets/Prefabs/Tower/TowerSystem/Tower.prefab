@@ -1102,10 +1102,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2653796394280292332}
     m_Modifications:
-    - target: {fileID: -5913284655674273678, guid: 3297ad837a9b7a34781618380474a01f, type: 3}
-      propertyPath: _lightningBolt
-      value: 
-      objectReference: {fileID: 7884965155244488912}
     - target: {fileID: 100004, guid: 3297ad837a9b7a34781618380474a01f, type: 3}
       propertyPath: m_Name
       value: Tow_Tesla2
@@ -1170,11 +1166,6 @@ PrefabInstance:
 --- !u!4 &727550279628621255 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400004, guid: 3297ad837a9b7a34781618380474a01f, type: 3}
-  m_PrefabInstance: {fileID: 727550279629020995}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &7884965155244488912 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7455077065615222675, guid: 3297ad837a9b7a34781618380474a01f, type: 3}
   m_PrefabInstance: {fileID: 727550279629020995}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1524702863287210940
@@ -3106,10 +3097,6 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3620340381904750904, guid: 00a3cf9a04e762842960b8993da5a63a, type: 3}
-      propertyPath: _lightningBolt
-      value: 
-      objectReference: {fileID: 7884965155244488912}
     - target: {fileID: 8321003335312407757, guid: 00a3cf9a04e762842960b8993da5a63a, type: 3}
       propertyPath: viewRadius
       value: 18
@@ -3724,10 +3711,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2653796394280292332}
     m_Modifications:
-    - target: {fileID: -4730598066336819365, guid: 1d4f518a457f5b54b8010914173ec915, type: 3}
-      propertyPath: _lightningBolt
-      value: 
-      objectReference: {fileID: 5567853332858443387}
     - target: {fileID: 100006, guid: 1d4f518a457f5b54b8010914173ec915, type: 3}
       propertyPath: m_Name
       value: Tow_Tesla3
@@ -3789,11 +3772,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d4f518a457f5b54b8010914173ec915, type: 3}
---- !u!1 &5567853332858443387 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3495005262583623941, guid: 1d4f518a457f5b54b8010914173ec915, type: 3}
-  m_PrefabInstance: {fileID: 9062436380829443966}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9062436380829580792 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400006, guid: 1d4f518a457f5b54b8010914173ec915, type: 3}
