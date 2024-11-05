@@ -9794,9 +9794,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af9ebb798cf6dc540ba4f5d1dcd8889d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotationSpeed: 100
-  _fireSpeed: 1
-  _spawnPool: {fileID: 5239634407003779458}
+  rotationSpeed: 100
+  fireSpeed: 1
+  spawnPool: {fileID: 5239634407003779458}
   _lightningBolt: {fileID: 8831344417124824951}
 --- !u!114 &138476382686849213
 MonoBehaviour:
@@ -9810,9 +9810,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2132e29add9b55408128a2dd97558b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotationSpeed: 100
-  _fireSpeed: 1
-  _spawnPool: {fileID: 5239634407003779458}
+  rotationSpeed: 100
+  fireSpeed: 1
+  spawnPool: {fileID: 5239634407003779458}
 --- !u!1 &310204124118609915
 GameObject:
   m_ObjectHideFlags: 0
@@ -9856,6 +9856,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SimpleLightningBolt
       objectReference: {fileID: 0}
+    - target: {fileID: 4580225061931043300, guid: 6a1cdda5477168a4386b2b377c861483, type: 3}
+      propertyPath: StartObject
+      value: 
+      objectReference: {fileID: 310204124118609915}
     - target: {fileID: 8514052980916672818, guid: 6a1cdda5477168a4386b2b377c861483, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

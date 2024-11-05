@@ -15,13 +15,13 @@ namespace TowerSpace
             {
                 RotateToDirection();
 
-                if (_fireCoolDown <= 0f)
+                if (fireCoolDown <= 0f)
                 {
                     Shoot();
-                    _fireCoolDown = 1 / _fireSpeed;
+                    fireCoolDown = 1 / fireSpeed;
                 }
 
-                _fireCoolDown -= Time.deltaTime;
+                fireCoolDown -= Time.deltaTime;
             }
         }
     }

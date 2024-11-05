@@ -5,10 +5,10 @@ namespace TowerSpace
     public class ShootingBaseTower : MonoBehaviour
     {
         [SerializeField] protected float rotationSpeed = 100f;
-        [SerializeField] protected float _fireSpeed = 1f;
-        [SerializeField] protected Transform _spawnPool;
+        [SerializeField] protected float fireSpeed = 1f;
+        [SerializeField] protected Transform spawnPool;
 
-        protected float _fireCoolDown = 0f;
+        protected float fireCoolDown = 0f;
         protected TowerFieldOfView towerFieldOfView;
 
         protected void RotateToDirection()
@@ -19,15 +19,15 @@ namespace TowerSpace
             transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * rotationSpeed);
         }
 
-        private protected virtual void Shoot()
+        protected virtual void Shoot()
         {
             GameObject bulletObject = BulletObjectPool.Singleton.GetPoolObject();
 
             if (bulletObject != null)
             {
                 bulletObject.transform.parent = BulletObjectPool.Singleton.spawnObject.transform;
-                bulletObject.transform.position = _spawnPool.transform.position;
-                bulletObject.transform.rotation = _spawnPool.transform.rotation;
+                bulletObject.transform.position = spawnPool.transform.position;
+                bulletObject.transform.rotation = spawnPool.transform.rotation;
                 
                 bulletObject.SetActive(true);
                 

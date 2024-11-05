@@ -325,8 +325,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 100
-  _fireSpeed: 1
-  _spawnPool: {fileID: 2856940267840295035}
+  fireSpeed: 1
+  spawnPool: {fileID: 2856940267840295035}
 --- !u!114 &3475525997391304927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,8 +355,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 100
-  _fireSpeed: 1
-  _spawnPool: {fileID: 2856940267840295035}
+  fireSpeed: 1
+  spawnPool: {fileID: 2856940267840295035}
 --- !u!1 &4243101267600975863
 GameObject:
   m_ObjectHideFlags: 0

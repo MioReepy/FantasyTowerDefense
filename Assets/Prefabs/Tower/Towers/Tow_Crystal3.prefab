@@ -340,9 +340,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2132e29add9b55408128a2dd97558b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotationSpeed: 5
-  _fireSpeed: 1
-  _spawnPool: {fileID: 6849293750761052826}
+  rotationSpeed: 100
+  fireSpeed: 1
+  spawnPool: {fileID: 0}
 --- !u!114 &1687743702444608290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,7 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f585a7aafd2c4054fb33c2c10b3b1f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToPool: {fileID: 3076262866650904099, guid: bc813c22dad9d3b47804f6c8bdd88f46, type: 3}
+  objectToPool: {fileID: 4378605199871155009, guid: eb64579b5848bc44ab8ad6b78a03feb0, type: 3}
   spawnObject: {fileID: 0}
   _poolSize: 10
 --- !u!114 &4070081801968975840
@@ -370,9 +370,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fda56f33abfab74ba5ca905b1500048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotationSpeed: 100
-  _fireSpeed: 1
-  _spawnPool: {fileID: 6849293750761052826}
+  rotationSpeed: 100
+  fireSpeed: 1
+  spawnPool: {fileID: 0}
 --- !u!1 &94309149212060360
 GameObject:
   m_ObjectHideFlags: 0
