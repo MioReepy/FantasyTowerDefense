@@ -10,10 +10,11 @@ namespace TowerSpace
         [SerializeField] private GameObject _baseTower;
         [SerializeField] private GameObject _buildingTower;
         [SerializeField] private GameObject _buildingEffect;
-        [SerializeField] internal Tower tower;
         [SerializeField] private GameObject _emptyTower;
         [SerializeField] private float timerBuildingTower = 5f;
 
+        internal Tower tower;
+        
         private SelectingTowers _selectingTowers;
         
         public static event EventHandler<OnUpgrade> OnStartBuildingTower;
@@ -65,18 +66,18 @@ namespace TowerSpace
                 _baseTower.SetActive(true);
 
                 tower = _buildingTower.transform.GetChild(child).GetComponent<Tower>();
+                
                 if (tower._towerType == towerType)
                 {
                     tower._currentTower = _buildingTower.transform.GetChild(child).gameObject;
                     tower._currentTower.SetActive(true);
-                    tower.currentTowerLevel = 0;
                     break;
                 }
             }
-
-            _buildingEffect.SetActive(false);
             
+            _buildingEffect.SetActive(false);
             _selectingTowers.isAvailableBuild = true;
+            tower.currentTowerLevel++;
         }
 
         private IEnumerator UpgradeTower()
@@ -87,29 +88,34 @@ namespace TowerSpace
             });
             
             _selectingTowers.isAvailableBuild = false;
-            _selectingTowers.OnEscapeDown();
-            
-            _buildingEffect.SetActive(true);
-            _emptyTower.SetActive(false);
-            
-            yield return new WaitForSeconds(timerBuildingTower);
-            
-            if (tower.currentTowerLevel < tower.gameObject.transform.childCount - 1)
+
+            if (tower.currentTowerLevel == 0)
             {
-                ActiveNewStageTower(false);
                 tower.currentTowerLevel++;
             }
+
+            Debug.Log($"Upgrade {tower.currentTowerLevel}");
             
+            _selectingTowers.OnEscapeDown();
+
+            _buildingEffect.SetActive(true);
+
+            ActiveNewStageTower(false);
+            
+            tower.currentTowerLevel++;
+
+            yield return new WaitForSeconds(timerBuildingTower);
+
             ActiveNewStageTower(true);
             _buildingEffect.SetActive(false);
-            
+
             _selectingTowers.isAvailableBuild = true;
         }
 
         private void ActiveNewStageTower(bool isActive)
         {
-            tower.transform.GetChild(tower.currentTowerLevel).gameObject.SetActive(isActive);
-            _baseTower.transform.GetChild(tower.currentTowerLevel).gameObject.SetActive(isActive);
+            tower.transform.GetChild(tower.currentTowerLevel - 1).gameObject.SetActive(isActive);
+            _baseTower.transform.GetChild(tower.currentTowerLevel - 1).gameObject.SetActive(isActive);
         }
     }
 }

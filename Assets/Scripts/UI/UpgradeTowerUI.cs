@@ -12,6 +12,8 @@ namespace UISpace
         
         [SerializeField] private Transform _currentTowerButton;
 
+        private GameObject _currentButton;
+
         internal void HideArrowUpgrade()
         {
             _arrowAvailableUpgrade.gameObject.SetActive(false);
@@ -59,34 +61,36 @@ namespace UISpace
 
         internal void ShowAvailableUpgrade()
         {
-            Transform tower = availableUpgrade.gameObject.transform.GetChild(0).transform;
+            SwitchButtons buttons = _currentButton.transform.GetComponent<SwitchButtons>();
 
-            for (int i = 0; i < _currentTowerButton.childCount; i++)
+            int towerCost = _currentButton.transform.GetComponent<Tower>()
+                ._towerCost[_currentButton.transform.GetComponent<Tower>().currentTowerLevel];
+
+            if (towerCost > PlayerStats.Instance.money 
+                || gameObject.GetComponent<Builder>().tower.currentTowerLevel >= gameObject.GetComponent<Builder>().tower.transform.childCount)
             {
-                if (_currentTowerButton.GetChild(i).GetComponent<Tower>()._towerType ==
-                    gameObject.GetComponent<Builder>().tower._towerType)
-                {
-                    SwitchButtons buttons = tower.GetChild(i).transform.GetComponent<SwitchButtons>();
-                    
-                    int towerCost = tower.GetChild(i).transform.GetComponent<Tower>()
-                        ._towerCost[tower.GetChild(i).transform.GetComponent<Tower>().currentTowerLevel];
-
-                    if (towerCost > PlayerStats.Instance.money)
-                    {
-                        buttons.onButton.SetActive(false);
-                        buttons.offButton.SetActive(true);
-                    }
-                    else
-                    {
-                        buttons.onButton.SetActive(true);
-                        buttons.offButton.SetActive(false);
-                    }
-
-                    _currentTowerButton.GetChild(i).gameObject.SetActive(true);
-                }
+                buttons.onButton.SetActive(false);
+                buttons.offButton.SetActive(true);
+            }
+            else
+            {
+                buttons.onButton.SetActive(true);
+                buttons.offButton.SetActive(false);
             }
 
             availableUpgrade.gameObject.SetActive(true);
+        }
+
+        internal void SetCurrentTower(TowerType towerType)
+        {
+            for (int i = 0; i < _currentTowerButton.childCount; i++)
+            {
+                if (_currentTowerButton.GetChild(i).GetComponent<Tower>()._towerType == towerType)
+                {
+                    _currentButton = _currentTowerButton.GetChild(i).gameObject;
+                    _currentButton.SetActive(true);
+                }
+            }
         }
     }
 }

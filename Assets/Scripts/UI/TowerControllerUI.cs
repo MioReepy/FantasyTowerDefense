@@ -19,7 +19,7 @@ namespace TowerSpace
             if (towerSelectedArgs != null)
             {
                 selectedTower = towerSelectedArgs.TowerSelected;
-                
+
                 UpgradeTowerUI uiTower = selectedTower.GetComponent<UpgradeTowerUI>();
 
                 uiTower.HideArrowUpgrade();
