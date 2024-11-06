@@ -77,12 +77,12 @@ namespace TowerSpace
             _selectingTowers.isAvailableBuild = true;
             tower.currentTowerLevel++;
             
+            gameObject.GetComponent<BuyTower>().BuyTowerObject();
+            
             OnEndBuildingTower?.Invoke(this, new OnUpgrade
             {
                 SelectedTower = gameObject
             });
-            
-            gameObject.GetComponent<BuyTower>().BuyTowerObject();
         }
 
         private IEnumerator UpgradeTower()
@@ -110,12 +110,12 @@ namespace TowerSpace
             _buildingEffect.SetActive(false);
             _selectingTowers.isAvailableBuild = true;
             
+            gameObject.GetComponent<BuyTower>().BuyTowerObject();
+            
             OnEndBuildingTower?.Invoke(this, new OnUpgrade
             {
                 SelectedTower = gameObject
             });
-            
-            gameObject.GetComponent<BuyTower>().BuyTowerObject();
         }
 
         private void ActiveNewStageTower(bool isActive)
