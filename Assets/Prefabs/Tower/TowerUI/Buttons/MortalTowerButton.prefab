@@ -36,6 +36,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: MortalTowerButton
       objectReference: {fileID: 0}
+    - target: {fileID: 5148720558086525199, guid: b39d0cae47197ca41ada70f52f461af5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148720558086525199, guid: b39d0cae47197ca41ada70f52f461af5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148720558086525199, guid: b39d0cae47197ca41ada70f52f461af5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 216716473485687780}
+    - target: {fileID: 5148720558086525199, guid: b39d0cae47197ca41ada70f52f461af5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148720558086525199, guid: b39d0cae47197ca41ada70f52f461af5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OnMortalButtonClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148720558086525199, guid: b39d0cae47197ca41ada70f52f461af5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: TowerSpace.BuildTowerButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5148720558086525199, guid: b39d0cae47197ca41ada70f52f461af5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7679797669739854639, guid: b39d0cae47197ca41ada70f52f461af5, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -129,3 +157,14 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b39d0cae47197ca41ada70f52f461af5, type: 3}
+--- !u!114 &216716473485687780 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6823509821360059076, guid: b39d0cae47197ca41ada70f52f461af5, type: 3}
+  m_PrefabInstance: {fileID: 6750918362837600544}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 703d4a74797fa0d4cb320f580c73d82a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -279,6 +279,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MortalTowerButton
       objectReference: {fileID: 0}
+    - target: {fileID: 1979939398725708699, guid: adbaa1670c800414d92e4f023730aaf9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3379381203803256588, guid: adbaa1670c800414d92e4f023730aaf9, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -380,6 +384,10 @@ PrefabInstance:
     - target: {fileID: 1979939398725708699, guid: ae8159e2b96f806469a524fda3726720, type: 3}
       propertyPath: m_Name
       value: TeslaTowerButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1979939398725708699, guid: ae8159e2b96f806469a524fda3726720, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3379381203803256588, guid: ae8159e2b96f806469a524fda3726720, type: 3}
       propertyPath: m_Pivot.x
@@ -483,9 +491,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: CrossbowTowerButton
       objectReference: {fileID: 0}
-    - target: {fileID: 2545927738957437725, guid: 1495bb25d24479a47b586527716f9510, type: 3}
+    - target: {fileID: 1979939398725708699, guid: 1495bb25d24479a47b586527716f9510, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2545927738957437725, guid: 1495bb25d24479a47b586527716f9510, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3379381203803256588, guid: 1495bb25d24479a47b586527716f9510, type: 3}
       propertyPath: m_Pivot.x
@@ -588,6 +600,10 @@ PrefabInstance:
     - target: {fileID: 1979939398725708699, guid: e7f2f006f4f969246b2313a1489c3afd, type: 3}
       propertyPath: m_Name
       value: CrystalTowerButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1979939398725708699, guid: e7f2f006f4f969246b2313a1489c3afd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3379381203803256588, guid: e7f2f006f4f969246b2313a1489c3afd, type: 3}
       propertyPath: m_Pivot.x
