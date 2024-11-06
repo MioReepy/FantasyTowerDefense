@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using EnemySpace;
@@ -13,11 +14,10 @@ namespace WaveSpawnerSpace
         [SerializeField] private Transform _spawnPoint;
         [SerializeField] private Wave[] waves;
         [SerializeField] internal float _waveSpawnerWidth = 5f;
-        [SerializeField] private float _timeBetweenWaves = 5f;
+        [SerializeField] internal float _timeBetweenWaves = 5f;
         [SerializeField] private float _timeBetweenEnemies = 0.5f;
         [SerializeField] private GameObject _enemyPortal;
         internal float coolDownWaves = 0f;
-        private float _coolDownWaves = 5f;
         private int _currentWave = 0;
         private List<Enemies> _enemyObjects;
         internal Vector3 minBounds;
