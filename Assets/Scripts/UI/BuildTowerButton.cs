@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace TowerSpace
 {
-    public class BuildTower : MonoBehaviour
+    public class BuildTowerButton : MonoBehaviour
     {
         public void OnCrossbowButtonClicked()
         {

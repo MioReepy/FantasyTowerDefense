@@ -12,6 +12,18 @@ PrefabInstance:
       propertyPath: _towerType
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 279498164206516767, guid: b39d0cae47197ca41ada70f52f461af5, type: 3}
+      propertyPath: _towerCost.Array.data[0]
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 279498164206516767, guid: b39d0cae47197ca41ada70f52f461af5, type: 3}
+      propertyPath: _towerCost.Array.data[1]
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 279498164206516767, guid: b39d0cae47197ca41ada70f52f461af5, type: 3}
+      propertyPath: _towerCost.Array.data[2]
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 1477564106498546376, guid: b39d0cae47197ca41ada70f52f461af5, type: 3}
       propertyPath: m_Name
       value: Tesla_off
