@@ -81,6 +81,8 @@ namespace TowerSpace
             {
                 SelectedTower = gameObject
             });
+            
+            gameObject.GetComponent<BuyTower>().BuyTowerObject();
         }
 
         private IEnumerator UpgradeTower()
@@ -112,6 +114,8 @@ namespace TowerSpace
             {
                 SelectedTower = gameObject
             });
+            
+            gameObject.GetComponent<BuyTower>().BuyTowerObject();
         }
 
         private void ActiveNewStageTower(bool isActive)

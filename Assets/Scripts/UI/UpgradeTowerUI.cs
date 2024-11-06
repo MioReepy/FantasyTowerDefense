@@ -9,10 +9,9 @@ namespace UISpace
         [SerializeField] private GameObject _arrowAvailableUpgrade;
         [SerializeField] internal GameObject availableBuild;
         [SerializeField] internal GameObject availableUpgrade;
+        [SerializeField] internal Transform currentTowerButton;
         
-        [SerializeField] private Transform _currentTowerButton;
-
-        private GameObject _currentButton;
+        internal GameObject currentButton;
 
         internal void HideArrowUpgrade()
         {
@@ -61,10 +60,10 @@ namespace UISpace
 
         internal void ShowAvailableUpgrade()
         {
-            SwitchButtons buttons = _currentButton.transform.GetComponent<SwitchButtons>();
+            SwitchButtons buttons = currentButton.transform.GetComponent<SwitchButtons>();
 
-            int towerCost = _currentButton.transform.GetComponent<Tower>()
-                ._towerCost[_currentButton.transform.GetComponent<Tower>().currentTowerLevel];
+            int towerCost = currentButton.transform.GetComponent<Tower>()
+                ._towerCost[currentButton.transform.GetComponent<Tower>().currentTowerLevel];
 
             if (towerCost > PlayerStats.Instance.money 
                 || gameObject.GetComponent<Builder>().tower.currentTowerLevel >= gameObject.GetComponent<Builder>().tower.transform.childCount)
@@ -79,16 +78,18 @@ namespace UISpace
             }
 
             availableUpgrade.gameObject.SetActive(true);
+            
+            Debug.Log(currentButton.transform.GetComponent<Tower>().currentTowerLevel);
         }
 
         internal void SetCurrentTower(TowerType towerType)
         {
-            for (int i = 0; i < _currentTowerButton.childCount; i++)
+            for (int i = 0; i < currentTowerButton.childCount; i++)
             {
-                if (_currentTowerButton.GetChild(i).GetComponent<Tower>()._towerType == towerType)
+                if (currentTowerButton.GetChild(i).GetComponent<Tower>()._towerType == towerType)
                 {
-                    _currentButton = _currentTowerButton.GetChild(i).gameObject;
-                    _currentButton.SetActive(true);
+                    currentButton = currentTowerButton.GetChild(i).gameObject;
+                    currentButton.SetActive(true);
                 }
             }
         }

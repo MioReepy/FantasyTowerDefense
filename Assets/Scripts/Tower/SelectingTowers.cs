@@ -134,7 +134,6 @@ namespace TowerSpace
         private void OnDisable()
         {
             InputPlayerController.Instance.OnUnselect -= InputPlayerController_OnUnselect;
-            
         }
     }
 }
