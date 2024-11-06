@@ -14,7 +14,6 @@ namespace TowerSpace
         private float _timeLightClick;
 
         internal bool isTowerSelected;
-        
         internal bool isAvailableBuild = true;
 
         public static event EventHandler<OnSelected> OnTowerSelected;

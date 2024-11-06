@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using PlayerSpace;
 using UnityEngine;
 
 namespace TowerSpace
@@ -14,11 +13,11 @@ namespace TowerSpace
         [SerializeField] private float timerBuildingTower = 5f;
 
         internal Tower tower;
-        
         private SelectingTowers _selectingTowers;
         
-        public static event EventHandler<OnUpgrade> OnStartBuildingTower;
+        public static event EventHandler<OnUpgrade> OnStartBuildingNewTower;
         public static event EventHandler<OnUpgrade> OnStartUpgradeTower;
+        public static event EventHandler<OnUpgrade> OnEndBuildingTower;
         public class OnUpgrade : EventArgs
         {
             public GameObject SelectedTower;
@@ -48,14 +47,13 @@ namespace TowerSpace
 
         private IEnumerator BuildNewTower(TowerType towerType)
         {
-            OnStartBuildingTower?.Invoke(this, new OnUpgrade
+            OnStartBuildingNewTower?.Invoke(this, new OnUpgrade
             {
                 SelectedTower = gameObject
             });
 
             _selectingTowers.isAvailableBuild = false;
             _selectingTowers.OnEscapeDown();
-            
             _buildingEffect.SetActive(true);
             _emptyTower.SetActive(false);
             
@@ -78,6 +76,11 @@ namespace TowerSpace
             _buildingEffect.SetActive(false);
             _selectingTowers.isAvailableBuild = true;
             tower.currentTowerLevel++;
+            
+            OnEndBuildingTower?.Invoke(this, new OnUpgrade
+            {
+                SelectedTower = gameObject
+            });
         }
 
         private IEnumerator UpgradeTower()
@@ -93,23 +96,22 @@ namespace TowerSpace
             {
                 tower.currentTowerLevel++;
             }
-
-            Debug.Log($"Upgrade {tower.currentTowerLevel}");
             
             _selectingTowers.OnEscapeDown();
-
             _buildingEffect.SetActive(true);
-
             ActiveNewStageTower(false);
-            
             tower.currentTowerLevel++;
 
             yield return new WaitForSeconds(timerBuildingTower);
 
             ActiveNewStageTower(true);
             _buildingEffect.SetActive(false);
-
             _selectingTowers.isAvailableBuild = true;
+            
+            OnEndBuildingTower?.Invoke(this, new OnUpgrade
+            {
+                SelectedTower = gameObject
+            });
         }
 
         private void ActiveNewStageTower(bool isActive)
