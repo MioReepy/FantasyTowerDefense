@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32c364b89b0f1254bb20ec50c05cb4de, type: 3}
+  m_Name: Mortal Tower 1
+  m_EditorClassIdentifier: 
+  TowerType: 2
+  towerCost: 120
+  towerDamage: 50
+  towerLevel: 1
+  TowerPrefabs: {fileID: 100004, guid: 4ac1597a34abff34899dcc576594a08f, type: 3}
+  AvailableTowerSprite: {fileID: 21300000, guid: e977c1562987f7e41b442f92c93f4234, type: 3}
+  UnavailableTowerSprite: {fileID: 21300000, guid: 54bc5e6714eb6774692ac7186b60fbaf, type: 3}

@@ -16,8 +16,11 @@ namespace TowerSpace
     public class TowerObject : ScriptableObject
     {
         public TowerType TowerType;
-        public GameObject[] TowerPrefabs;
-        public Sprite AvailableTowerSprite; 
-        public Sprite UnavailableTowerSprite; 
+        public int towerCost;
+        public int towerDamage;
+        public int towerLevel;
+        public GameObject TowerPrefabs;
+        public Sprite AvailableTowerSprite;
+        public Sprite UnavailableTowerSprite;
     }
 }

@@ -1,7 +1,5 @@
-using System;
 using PlayerSpace;
 using UnityEngine;
-using WaveSpawnerSpace;
 
 public class Finish : MonoBehaviour
 {
