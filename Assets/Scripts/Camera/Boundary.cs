@@ -8,6 +8,4 @@ namespace CameraSpace
     {
         public float xMin, xMax, zMin, zMax;
     }
-    
-    
 }

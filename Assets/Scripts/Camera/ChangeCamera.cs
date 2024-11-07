@@ -63,7 +63,6 @@ namespace CameraSpace
         {
             InputPlayerController.Instance.OnZoomPlus += ZoomPlusCamera;
             InputPlayerController.Instance.OnZoomMinus += ZoomMinusCamera;
-
         }
     }
 }

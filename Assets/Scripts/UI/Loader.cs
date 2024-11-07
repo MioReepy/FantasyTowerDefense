@@ -6,11 +6,10 @@ namespace UISpace
     {
         public enum Scene
         {
-            CreatorLogo = 0,
-            GameScene = 1, 
-            Loading = 2,
-            MainMenu = 3,
-            UIScene = 4
+            GameScene = 0, 
+            Loading = 1,
+            MainMenu = 2,
+            UIScene = 3,
         }
 
         private static Scene _targetScene;
