@@ -33,6 +33,18 @@ namespace UISpace
             _arrowAvailableUpgrade.gameObject.SetActive(true);
         }
 
+        internal void SetCurrentButton(TowerType towerType)
+        {
+            for (int i = 0; i < currentTowerButton.childCount; i++)
+            {
+                if (currentTowerButton.GetChild(i).GetComponent<Tower>()._towerType == towerType)
+                {
+                    currentButton = currentTowerButton.transform.GetChild(i).gameObject;
+                    currentButton.SetActive(true);
+                }
+            }
+        }
+
         internal void ShowAvailableBuild()
         {
             Transform tower = availableBuild.gameObject.transform.GetChild(0).transform;
@@ -40,10 +52,8 @@ namespace UISpace
             for (int i = 0; i < tower.childCount; i++)
             {
                 SwitchButtons buttons = tower.GetChild(i).transform.GetComponent<SwitchButtons>();
-                int towerCost = tower.GetChild(i).transform.GetComponent<Tower>()
-                    ._towerCost[tower.GetChild(i).transform.GetComponent<Tower>().currentTowerLevel];
                 
-                if (towerCost > PlayerStats.Instance.money)
+                if (tower.GetChild(i).GetComponent<Tower>()._towerObjects[0].towerCost > PlayerStats.Instance.money)
                 {
                     buttons.onButton.SetActive(false);
                     buttons.offButton.SetActive(true);
@@ -62,11 +72,10 @@ namespace UISpace
         {
             SwitchButtons buttons = currentButton.transform.GetComponent<SwitchButtons>();
 
-            int towerCost = currentButton.transform.GetComponent<Tower>()
-                ._towerCost[currentButton.transform.GetComponent<Tower>().currentTowerLevel];
+            int towerCost = gameObject.GetComponent<TowerInformation>().towerCost;
 
             if (towerCost > PlayerStats.Instance.money 
-                || gameObject.GetComponent<Builder>().tower.currentTowerLevel >= gameObject.GetComponent<Builder>().tower.transform.childCount)
+                || gameObject.GetComponent<TowerInformation>().currentTowerLevel >= gameObject.GetComponent<TowerInformation>().towerObjects.Length)
             {
                 buttons.onButton.SetActive(false);
                 buttons.offButton.SetActive(true);
@@ -78,18 +87,6 @@ namespace UISpace
             }
 
             availableUpgrade.gameObject.SetActive(true);
-        }
-
-        internal void SetCurrentTower(TowerType towerType)
-        {
-            for (int i = 0; i < currentTowerButton.childCount; i++)
-            {
-                if (currentTowerButton.GetChild(i).GetComponent<Tower>()._towerType == towerType)
-                {
-                    currentButton = currentTowerButton.GetChild(i).gameObject;
-                    currentButton.SetActive(true);
-                }
-            }
         }
     }
 }

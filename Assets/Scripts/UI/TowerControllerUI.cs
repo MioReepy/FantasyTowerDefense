@@ -68,7 +68,7 @@ namespace TowerSpace
 
         private void ShowTowerUI(UpgradeTowerUI uiTower)
         {
-            if (selectedTower.GetComponent<Builder>().tower == null)
+            if (selectedTower.GetComponent<TowerInformation>().currentTowerLevel < 1)
             {
                 uiTower.ShowAvailableBuild();
             }

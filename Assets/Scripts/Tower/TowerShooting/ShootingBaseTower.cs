@@ -4,20 +4,16 @@ namespace TowerSpace
 {
     public class ShootingBaseTower : MonoBehaviour
     {
-        private GameObject _tower;
-        protected Transform spawnPool;
-        protected float rotationSpeed = 100f;
-        protected float fireSpeed = 1f;
+        private Transform _spawnPool;
+        private float _rotationSpeed = 100f;
 
         protected float fireCoolDown = 0f;
         protected TowerFieldOfView towerFieldOfView;
 
-        protected void SetShootingBaseTower(GameObject tower, Transform spawnPool, float rotationSpeed, float fireSpeed)
+        protected void SetShootingBaseTower(Transform spawnPool, float rotationSpeed)
         {
-            _tower = tower;
-            this.spawnPool = spawnPool;
-            this.rotationSpeed = rotationSpeed;
-            this.fireSpeed = fireSpeed;
+            _spawnPool = spawnPool;
+            _rotationSpeed = rotationSpeed;
         }
         
         protected void RotateToDirection()
@@ -25,7 +21,7 @@ namespace TowerSpace
             Vector3 lookRotation = Quaternion.LookRotation(towerFieldOfView.target.position - transform.position)
                 .eulerAngles;
             Quaternion rotation = Quaternion.Euler(0f, lookRotation.y, 0f);
-            transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * rotationSpeed);
+            transform.rotation = Quaternion.Lerp(transform.rotation, rotation, Time.deltaTime * _rotationSpeed);
         }
 
         protected virtual GameObject GetBullet()
@@ -44,21 +40,11 @@ namespace TowerSpace
 
             if (bulletObject != null)
             {
-                Tower tower = _tower.GetComponent<Builder>().tower.transform.GetComponent<Tower>();
-
-                if (tower.currentTowerLevel == 0)
-                {
-                    bulletObject.GetComponent<Bullet>().DamagePower = transform.GetComponentInParent<Tower>()._damageTower[tower.currentTowerLevel]; 
-                }
-
-                else
-                {
-                    bulletObject.GetComponent<Bullet>().DamagePower = transform.GetComponentInParent<Tower>()._damageTower[tower.currentTowerLevel - 1]; 
-                }
+                bulletObject.GetComponent<Bullet>().DamagePower = gameObject.GetComponentInParent<Tower>().mainTowerPrefab.GetComponent<TowerInformation>().damageTower; 
                 
                 bulletObject.transform.parent = GetSpawnPosition();
-                bulletObject.transform.position = spawnPool.transform.position;
-                bulletObject.transform.rotation = spawnPool.transform.rotation;
+                bulletObject.transform.position = _spawnPool.transform.position;
+                bulletObject.transform.rotation = _spawnPool.transform.rotation;
                 
                 bulletObject.SetActive(true);
                 

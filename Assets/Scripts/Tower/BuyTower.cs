@@ -9,9 +9,7 @@ public class BuyTower : MonoBehaviour
 
     internal void BuyTowerObject()
     {
-        Tower _buyTowerlevel = gameObject.GetComponent<Builder>().tower.transform.GetComponent<Tower>();
-        Tower _buyTowercost = gameObject.GetComponent<UpgradeTowerUI>().currentButton.transform.GetComponent<Tower>();
-        int costTower = _buyTowercost._towerCost[_buyTowerlevel.currentTowerLevel - 1];
+        int costTower = gameObject.GetComponent<TowerInformation>().towerCost;
 
         PlayerStats.Instance.SetMoney(-costTower);
     }

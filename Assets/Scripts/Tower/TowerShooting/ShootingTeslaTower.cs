@@ -9,12 +9,11 @@ namespace TowerSpace
         [SerializeField] protected float rotationSpeed = 100f;
         [SerializeField] protected float fireSpeed = 1f;
         [SerializeField] protected Transform spawnPool;
-        [SerializeField] private GameObject _tower;
         
         private void Awake()
         {
             towerFieldOfView = GetComponent<TowerFieldOfView>();
-            SetShootingBaseTower(_tower, spawnPool, rotationSpeed, fireSpeed);
+            SetShootingBaseTower(spawnPool, rotationSpeed);
         }
 
         protected void Update()

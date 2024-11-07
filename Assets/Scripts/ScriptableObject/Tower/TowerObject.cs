@@ -19,7 +19,7 @@ namespace TowerSpace
         public int towerCost;
         public int towerDamage;
         public int towerLevel;
-        public GameObject TowerPrefabs;
+        public GameObject TowerPrefab;
         public Sprite AvailableTowerSprite;
         public Sprite UnavailableTowerSprite;
     }

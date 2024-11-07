@@ -16,6 +16,6 @@ MonoBehaviour:
   towerCost: 150
   towerDamage: 50
   towerLevel: 2
-  TowerPrefabs: {fileID: 100004, guid: 3297ad837a9b7a34781618380474a01f, type: 3}
+  TowerPrefab: {fileID: 100004, guid: 3297ad837a9b7a34781618380474a01f, type: 3}
   AvailableTowerSprite: {fileID: 21300000, guid: dbe6f37e950b2db4599be80d656b8985, type: 3}
   UnavailableTowerSprite: {fileID: 21300000, guid: 92c6fbc1833686244a56633c96eadc6f, type: 3}

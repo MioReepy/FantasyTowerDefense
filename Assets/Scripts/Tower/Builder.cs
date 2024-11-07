@@ -7,13 +7,13 @@ namespace TowerSpace
     public class Builder : MonoBehaviour
     {
         [SerializeField] private GameObject _baseTower;
-        [SerializeField] private GameObject _buildingTower;
         [SerializeField] private GameObject _buildingEffect;
         [SerializeField] private GameObject _emptyTower;
         [SerializeField] private float timerBuildingTower = 5f;
-
-        internal Tower tower;
         private SelectingTowers _selectingTowers;
+        private TowerInformation _towerInformation;
+
+        private GameObject _tower;
         
         public static event EventHandler<OnUpgrade> OnStartBuildingNewTower;
         public static event EventHandler<OnUpgrade> OnStartUpgradeTower;
@@ -26,15 +26,13 @@ namespace TowerSpace
         private void Start()
         {
             _selectingTowers = gameObject.GetComponent<SelectingTowers>();
+            _towerInformation = gameObject.GetComponent<TowerInformation>();
         }
 
         internal void OnButtonClick(TowerType towerType)
         {
-            BuildSelectedTower(towerType);
-        }
-
-        private void BuildSelectedTower(TowerType towerType)
-        {
+            gameObject.GetComponent<BuyTower>().BuyTowerObject();
+            
             if (_emptyTower.activeInHierarchy)
             {
                 StartCoroutine(BuildNewTower(towerType));
@@ -56,29 +54,15 @@ namespace TowerSpace
             _selectingTowers.OnEscapeDown();
             _buildingEffect.SetActive(true);
             _emptyTower.SetActive(false);
-            
-            yield return new WaitForSeconds(timerBuildingTower);
-            
-            for (int child = 0; child < _buildingTower.transform.childCount; child++)
-            {
-                _baseTower.SetActive(true);
 
-                tower = _buildingTower.transform.GetChild(child).GetComponent<Tower>();
-                
-                if (tower._towerType == towerType)
-                {
-                    tower._currentTower = _buildingTower.transform.GetChild(child).gameObject;
-                    tower._currentTower.SetActive(true);
-                    break;
-                }
-            }
-            
+            yield return new WaitForSeconds(timerBuildingTower);
+
+            _baseTower.SetActive(true);
+            _tower = Instantiate(_towerInformation.towerPrefab, _towerInformation._currentTower.transform);
+
             _buildingEffect.SetActive(false);
             _selectingTowers.isAvailableBuild = true;
-            tower.currentTowerLevel++;
-            
-            gameObject.GetComponent<BuyTower>().BuyTowerObject();
-            
+
             OnEndBuildingTower?.Invoke(this, new OnUpgrade
             {
                 SelectedTower = gameObject
@@ -93,35 +77,22 @@ namespace TowerSpace
             });
             
             _selectingTowers.isAvailableBuild = false;
-
-            if (tower.currentTowerLevel == 0)
-            {
-                tower.currentTowerLevel++;
-            }
             
             _selectingTowers.OnEscapeDown();
             _buildingEffect.SetActive(true);
-            ActiveNewStageTower(false);
-            tower.currentTowerLevel++;
+            Destroy(_tower);
 
             yield return new WaitForSeconds(timerBuildingTower);
-
-            ActiveNewStageTower(true);
+            
+            _tower = Instantiate(_towerInformation.towerPrefab, _towerInformation._currentTower.transform);
+            
             _buildingEffect.SetActive(false);
             _selectingTowers.isAvailableBuild = true;
-            
-            gameObject.GetComponent<BuyTower>().BuyTowerObject();
             
             OnEndBuildingTower?.Invoke(this, new OnUpgrade
             {
                 SelectedTower = gameObject
             });
-        }
-
-        private void ActiveNewStageTower(bool isActive)
-        {
-            tower.transform.GetChild(tower.currentTowerLevel - 1).gameObject.SetActive(isActive);
-            _baseTower.transform.GetChild(tower.currentTowerLevel - 1).gameObject.SetActive(isActive);
         }
     }
 }
