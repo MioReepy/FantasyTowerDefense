@@ -9,6 +9,11 @@ namespace TowerSpace
         
         public static event EventHandler OnStartGame;
 
+        public static void ResetStaticData()
+        {
+            OnStartGame = null;
+        }
+
         private void Update()
         {
             if (isFirstUpdate)

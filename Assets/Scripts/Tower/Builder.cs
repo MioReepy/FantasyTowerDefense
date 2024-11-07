@@ -23,6 +23,13 @@ namespace TowerSpace
             public GameObject SelectedTower;
         }
 
+        public static void ResetStaticData()
+        {
+            OnStartBuildingNewTower = null;
+            OnStartUpgradeTower = null;
+            OnEndBuildingTower = null;
+        }
+
         private void Start()
         {
             _selectingTowers = gameObject.GetComponent<SelectingTowers>();

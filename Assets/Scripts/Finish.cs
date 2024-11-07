@@ -50,7 +50,6 @@ public class Finish : MonoBehaviour
     internal void EnemyDied()
     {
         _enemyCount--;
-        Debug.Log(_lifeCount);
 
         if (_enemyCount <= 1 && _lifeCount > 0)
         {

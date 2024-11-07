@@ -7,6 +7,7 @@ namespace TowerSpace
     {
         private void Awake()
         {
+            Time.timeScale = 1;
             StartGame.OnStartGame += StartGame_OnStartGame;
         }
 
@@ -16,10 +17,17 @@ namespace TowerSpace
             {
                 gameObject.transform.GetChild(i).gameObject.SetActive(true);
             }
+            
+            Debug.Log("Start");
         }
-        
+
         private void OnDisable()
         {
+            for (int i = 0; i < gameObject.transform.childCount; i++)
+            {
+                gameObject.transform.GetChild(i).gameObject.SetActive(false);
+            }
+            
             StartGame.OnStartGame -= StartGame_OnStartGame;
         }
     }

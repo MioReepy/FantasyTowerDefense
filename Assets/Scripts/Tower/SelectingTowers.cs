@@ -24,6 +24,12 @@ namespace TowerSpace
             public GameObject TowerSelected;
         }
 
+        public static void ResetStaticData()
+        {
+            OnTowerSelected = null;
+            OnTowerUnselected = null;
+        }
+        
         private void Start()
         {
             InputPlayerController.Instance.OnUnselect += InputPlayerController_OnUnselect;
