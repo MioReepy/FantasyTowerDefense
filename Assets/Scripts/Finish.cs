@@ -1,4 +1,6 @@
+using System;
 using PlayerSpace;
+using UISpace;
 using UnityEngine;
 
 public class Finish : MonoBehaviour
@@ -7,6 +9,20 @@ public class Finish : MonoBehaviour
     
     public static Finish Instance;
     private void Awake() => Instance = this;
+
+    private void Start()
+    {
+        PlayerStats.Instance.OnChangeLifes += PlayerStats_OnChangeLifes;
+    }
+
+    private void PlayerStats_OnChangeLifes(object sender, PlayerStats.OnLifes lifes)
+    {
+        if (lifes.lifesCount <= 0)
+        {
+            UISystem.Instance.OpenWindow(WindowType.GameOver);
+            Time.timeScale = 0;
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -28,7 +44,8 @@ public class Finish : MonoBehaviour
 
         if (_enemyCount < 1)
         {
-            Debug.Log("Win");
+            // UISystem.Instance.OpenWindow(WindowType.GameOver);
+            // Time.timeScale = 0;
         }
         
         Debug.Log(_enemyCount);

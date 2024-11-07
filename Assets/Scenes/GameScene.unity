@@ -2910,6 +2910,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower_7
       objectReference: {fileID: 0}
+    - target: {fileID: 173085577158851945, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 223681843747420851, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -8623,6 +8627,10 @@ PrefabInstance:
     - target: {fileID: 173085577158851945, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: m_Name
       value: Tower_6
+      objectReference: {fileID: 0}
+    - target: {fileID: 173085577158851945, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 223681843747420851, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -19958,6 +19966,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower_8
       objectReference: {fileID: 0}
+    - target: {fileID: 173085577158851945, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 223681843747420851, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -25786,6 +25798,10 @@ PrefabInstance:
     - target: {fileID: 173085577158851945, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: m_Name
       value: Tower_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 173085577158851945, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 223681843747420851, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -35036,8 +35052,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.49984497, y: 0.021566862, z: -0.012451635, w: 0.86575687}
-  m_LocalPosition: {x: 90, y: 51, z: 27}
+  m_LocalRotation: {x: 0.30061248, y: 0.023750668, z: -0.0074885553, w: 0.9534212}
+  m_LocalPosition: {x: 90, y: 21, z: 27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -42126,7 +42142,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 8
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -43071,9 +43087,9 @@ ParticleSystem:
         m_RotationOrder: 4
     orbitalX:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0
-      minScalar: 0
+      minMaxState: 3
+      scalar: -0.02
+      minScalar: 0.02
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -43124,9 +43140,9 @@ ParticleSystem:
         m_RotationOrder: 4
     orbitalY:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0
-      minScalar: 0
+      minMaxState: 3
+      scalar: -0.02
+      minScalar: 0.02
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -43177,9 +43193,9 @@ ParticleSystem:
         m_RotationOrder: 4
     orbitalZ:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0
-      minScalar: 0
+      minMaxState: 3
+      scalar: -0.02
+      minScalar: 0.02
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -43493,7 +43509,7 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    inWorldSpace: 0
+    inWorldSpace: 1
   InheritVelocityModule:
     enabled: 0
     m_Mode: 0
@@ -57045,6 +57061,7 @@ GameObject:
   - component: {fileID: 1516482766}
   - component: {fileID: 1516482768}
   - component: {fileID: 1516482769}
+  - component: {fileID: 1516482770}
   m_Layer: 0
   m_Name: Towers
   m_TagString: Untagged
@@ -57100,6 +57117,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towers: {fileID: 1516482765}
+--- !u!114 &1516482770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1516482765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 657a2dc7c64fec240a0a28b64052a1c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1519164391 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 3da427a607833db408a9e2b542b43b2e, type: 3}
@@ -66114,6 +66143,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower_4
       objectReference: {fileID: 0}
+    - target: {fileID: 173085577158851945, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 223681843747420851, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -71596,6 +71629,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower_2
       objectReference: {fileID: 0}
+    - target: {fileID: 173085577158851945, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 223681843747420851, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -76390,6 +76427,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower_5
       objectReference: {fileID: 0}
+    - target: {fileID: 173085577158851945, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 223681843747420851, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -78604,6 +78645,10 @@ PrefabInstance:
     - target: {fileID: 173085577158851945, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: m_Name
       value: Tower_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 173085577158851945, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 223681843747420851, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size

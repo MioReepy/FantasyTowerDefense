@@ -109,7 +109,6 @@ MonoBehaviour:
   _arrowAvailableUpgrade: {fileID: 3415266094520923704}
   availableBuild: {fileID: 313366091777293412}
   availableUpgrade: {fileID: 2137477750275025959}
-  currentTowerButton: {fileID: 2909957070397596992}
 --- !u!114 &1860334769727628097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2165,11 +2164,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81112f7748a89c449b838ab9e05d4126, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &2909957070397596992 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3757417697624128577, guid: 0b21a9b73331755478eb3a190207ea6c, type: 3}
-  m_PrefabInstance: {fileID: 2037661079614101761}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5124826222351163532 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6582067751937948045, guid: 0b21a9b73331755478eb3a190207ea6c, type: 3}
@@ -2356,6 +2350,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5510952348061193321, guid: c6eea52dff353da4b99d2a59ce4efaa3, type: 3}
       propertyPath: InitialModule.startRotationY.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6211125795773073634, guid: c6eea52dff353da4b99d2a59ce4efaa3, type: 3}
+      propertyPath: prewarm
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6211125795773073634, guid: c6eea52dff353da4b99d2a59ce4efaa3, type: 3}
+      propertyPath: simulationSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6211125795773073634, guid: c6eea52dff353da4b99d2a59ce4efaa3, type: 3}
+      propertyPath: EmissionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6211125795773073634, guid: c6eea52dff353da4b99d2a59ce4efaa3, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6211125795773073634, guid: c6eea52dff353da4b99d2a59ce4efaa3, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6211125795773073634, guid: c6eea52dff353da4b99d2a59ce4efaa3, type: 3}

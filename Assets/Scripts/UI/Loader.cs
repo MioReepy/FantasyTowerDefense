@@ -16,12 +16,12 @@ namespace UISpace
         private static Scene _targetScene;
         private static bool _isLodUISystem;
         
-        public static void Load(Scene scene, bool isLoadingScene, bool isLodUISystem)
+        public static void Load(Scene scene, bool isLoadLoadingScene, bool isLodUISystem)
         {
             _targetScene = scene;
             _isLodUISystem = isLodUISystem;
 
-            if (isLoadingScene)
+            if (isLoadLoadingScene)
             {
                 SceneManager.LoadScene(Scene.Loading.ToString());
             }
