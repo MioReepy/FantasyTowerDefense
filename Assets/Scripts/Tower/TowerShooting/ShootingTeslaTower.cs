@@ -6,12 +6,15 @@ namespace TowerSpace
     public class ShootingTeslaTower : ShootingBaseTower
     {
         [SerializeField] private GameObject _lightningBolt;
+        [SerializeField] protected float rotationSpeed = 100f;
+        [SerializeField] protected float fireSpeed = 1f;
+        [SerializeField] protected Transform spawnPool;
+        [SerializeField] private GameObject _tower;
         
-        private void Start()
+        private void Awake()
         {
             towerFieldOfView = GetComponent<TowerFieldOfView>();
-            
-            _lightningBolt.GetComponent<LightningBoltScript>().EndObject = spawnPool.gameObject;
+            SetShootingBaseTower(_tower, spawnPool, rotationSpeed, fireSpeed);
         }
 
         protected void Update()

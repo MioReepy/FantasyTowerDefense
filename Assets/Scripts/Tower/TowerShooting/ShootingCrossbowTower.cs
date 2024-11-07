@@ -4,9 +4,15 @@ namespace TowerSpace
 {
     public class ShootingCrossbowTower : ShootingBaseTower
     {
-        private void Start()
+        [SerializeField] protected float rotationSpeed = 100f;
+        [SerializeField] protected float fireSpeed = 1f;
+        [SerializeField] protected Transform spawnPool;
+        [SerializeField] private GameObject _tower;
+        
+        private void Awake()
         {
             towerFieldOfView = GetComponent<TowerFieldOfView>();
+            SetShootingBaseTower(_tower, spawnPool, rotationSpeed, fireSpeed);
         }
 
         private void Update()
