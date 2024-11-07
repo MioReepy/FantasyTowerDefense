@@ -58,6 +58,7 @@ namespace EnemySpace
             gameObject.GetComponent<EnemyNavigator>().enabled = true;
             isDead = false;
             EnemyPool.ReturnToPool(gameObject);
+            Finish.Instance.EnemyDied();
         }
     }
 }

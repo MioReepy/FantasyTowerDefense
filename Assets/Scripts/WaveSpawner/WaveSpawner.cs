@@ -28,7 +28,7 @@ namespace WaveSpawnerSpace
         private void Start()
         {
             _enemyObjects = new List<Enemies>();
-            
+
             for (int wave = 0; wave < waves.Length; wave++)
             {
                 for (int enemy = 0; enemy < waves[wave].enemies.Length; enemy++)
@@ -37,6 +37,7 @@ namespace WaveSpawnerSpace
                     enemyObject.waveNumber = wave;
                     _enemyObjects.Add(enemyObject);
                     EnemyPool.CreateEnemyPool(enemyObject.enemyObject.enemyType, enemyObject.enemyCount);
+                    Finish.Instance.SetEnemy(enemyObject.enemyCount);
                 }
             }
             

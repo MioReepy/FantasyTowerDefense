@@ -78,8 +78,6 @@ namespace UISpace
             }
 
             availableUpgrade.gameObject.SetActive(true);
-            
-            Debug.Log(currentButton.transform.GetComponent<Tower>().currentTowerLevel);
         }
 
         internal void SetCurrentTower(TowerType towerType)

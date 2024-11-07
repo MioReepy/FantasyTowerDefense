@@ -10,11 +10,6 @@ public class Finish : MonoBehaviour
     public static Finish Instance;
     private void Awake() => Instance = this;
 
-    private void Start()
-    {
-        _enemyCount = WaveSpawner.Instance._enemyObjects.Count;
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
@@ -22,5 +17,22 @@ public class Finish : MonoBehaviour
             other.gameObject.SetActive(false);
             PlayerStats.Instance.SetLifes();
         }
+    }
+
+    internal void SetEnemy(int enemyCount)
+    {
+        _enemyCount += enemyCount;
+    }
+
+    internal void EnemyDied()
+    {
+        _enemyCount--;
+
+        if (_enemyCount < 1)
+        {
+            Debug.Log("Win");
+        }
+        
+        Debug.Log(_enemyCount);
     }
 }
