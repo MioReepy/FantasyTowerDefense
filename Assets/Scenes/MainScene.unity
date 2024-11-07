@@ -89791,6 +89791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startMoney: 500
+  _startLifes: 5
 --- !u!4 &1651453132 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: c8652876a9b0a6e45ae2aa9440b7840d, type: 3}
@@ -105289,6 +105290,7 @@ GameObject:
   - component: {fileID: 1975517784}
   - component: {fileID: 1975517787}
   - component: {fileID: 1975517786}
+  - component: {fileID: 1975517788}
   m_Layer: 5
   m_Name: Lifes
   m_TagString: Untagged
@@ -105355,6 +105357,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1975517783}
   m_CullTransparentMesh: 1
+--- !u!114 &1975517788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975517783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06e9725df1e97a84e93ea535ba734906, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _lifesCounter: {fileID: 1005968050}
 --- !u!1 &1975725684
 GameObject:
   m_ObjectHideFlags: 0

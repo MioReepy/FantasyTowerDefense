@@ -1,17 +1,27 @@
+using System;
 using PlayerSpace;
 using TMPro;
 using UnityEngine;
 
-public class MoneyCounter : MonoBehaviour
+namespace UISpace
 {
-    [SerializeField] private TextMeshProUGUI _coinsCounter;
-    private void Start()
+    public class MoneyCounter : MonoBehaviour
     {
-        PlayerStats.Instance.OnChangeMoney += PlayerStats_OnChangeMoney;
-    }
+        [SerializeField] private TextMeshProUGUI _coinsCounter;
 
-    private void PlayerStats_OnChangeMoney(object sender, PlayerStats.OnCoins moneyArgs)
-    {
-        _coinsCounter.text = moneyArgs.coinsCount.ToString();
+        private void Start()
+        {
+            PlayerStats.Instance.OnChangeMoney += PlayerStats_OnChangeMoney;
+        }
+
+        private void PlayerStats_OnChangeMoney(object sender, PlayerStats.OnCoins moneyArgs)
+        {
+            _coinsCounter.text = moneyArgs.coinsCount.ToString();
+        }
+
+        private void OnDisable()
+        {
+            PlayerStats.Instance.OnChangeMoney -= PlayerStats_OnChangeMoney;
+        }
     }
 }

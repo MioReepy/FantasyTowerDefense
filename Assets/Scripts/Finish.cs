@@ -1,3 +1,4 @@
+using PlayerSpace;
 using UnityEngine;
 
 public class Finish : MonoBehaviour
@@ -7,6 +8,7 @@ public class Finish : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             other.gameObject.SetActive(false);
+            PlayerStats.Instance.SetLifes();
         }
     }
 }
