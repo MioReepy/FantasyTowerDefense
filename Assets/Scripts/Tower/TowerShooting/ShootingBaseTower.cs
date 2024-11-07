@@ -40,12 +40,12 @@ namespace TowerSpace
 
                 if (tower.currentTowerLevel == 0)
                 {
-                    bulletObject.GetComponent<Bullet>().SetDamagePower(transform.GetComponentInParent<Tower>()._damageTower[tower.currentTowerLevel]); 
+                    bulletObject.GetComponent<Bullet>().DamagePower = transform.GetComponentInParent<Tower>()._damageTower[tower.currentTowerLevel]; 
                 }
 
                 else
                 {
-                    bulletObject.GetComponent<Bullet>().SetDamagePower(transform.GetComponentInParent<Tower>()._damageTower[tower.currentTowerLevel - 1]); 
+                    bulletObject.GetComponent<Bullet>().DamagePower = transform.GetComponentInParent<Tower>()._damageTower[tower.currentTowerLevel - 1]; 
                 }
                 
                 bulletObject.transform.parent = GetSpawnPosition();

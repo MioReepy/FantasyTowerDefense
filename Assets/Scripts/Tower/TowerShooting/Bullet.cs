@@ -9,6 +9,7 @@ namespace TowerSpace
 
         private int damagePower;
         public Transform Target { get; set; }
+        public int DamagePower { get; set; }
 
         private void LateUpdate()
         {
@@ -18,12 +19,6 @@ namespace TowerSpace
             {
                 gameObject.SetActive(false);
             }
-        }
-        
-        internal void SetDamagePower(int damage)
-        {
-            damagePower = damage;
-            Debug.Log(damagePower);
         }
     }
 }

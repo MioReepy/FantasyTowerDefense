@@ -1,3 +1,4 @@
+using TowerSpace;
 using UnityEngine;
 using WaveSpawnerSpace;
 using WaypointSpase;
@@ -8,6 +9,7 @@ namespace EnemySpace
     {
         [SerializeField] internal EnemyObject enemy;
         [SerializeField] private GameObject _impactEffect;
+        [SerializeField] internal int _health = 100;
         
         private Animator _animator;
         internal bool isDead;
@@ -21,8 +23,18 @@ namespace EnemySpace
         {
             if (other.gameObject.CompareTag("Bullet"))
             {
-                other.gameObject.SetActive(false);
-                Instantiate(_impactEffect, transform.position, Quaternion.identity);
+                GetDamag(other.gameObject);
+            }
+        }
+
+        private void GetDamag(GameObject bullet)
+        {
+            _health -= bullet.GetComponent<Bullet>().DamagePower;
+            Instantiate(_impactEffect, transform.position, Quaternion.identity);
+
+            if (_health <= 0)
+            {
+                bullet.gameObject.SetActive(false);
                 _animator.SetBool("IsDied", true);
                 gameObject.GetComponent<Collider>().enabled = false;
                 gameObject.GetComponent<Rigidbody>().useGravity = false;
