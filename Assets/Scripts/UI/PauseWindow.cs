@@ -27,14 +27,12 @@ namespace UISpace
 
         private void OnRestartButtonClick()
         {
-            SceneManager.LoadSceneAsync("GameScene");
-            SceneManager.LoadSceneAsync("UIScene", LoadSceneMode.Additive);
+            Loader.Load(Loader.Scene.GameScene, true,true);
         }
 
         private void OnQuitButtonClick()
         {
-            SceneManager.LoadSceneAsync("MainMenu");
-            SceneManager.LoadSceneAsync("UIScene", LoadSceneMode.Additive);
+            Loader.Load(Loader.Scene.MainMenu, true,true);
         }
     }
 }

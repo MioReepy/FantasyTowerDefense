@@ -16,8 +16,7 @@ namespace UISpace
         {
             _playButton.onClick.AddListener(() =>
             {
-                SceneManager.LoadSceneAsync("GameScene");
-                SceneManager.LoadSceneAsync("UIScene", LoadSceneMode.Additive);
+                Loader.Load(Loader.Scene.GameScene, true,true);
             });
             
             _optionsButton.onClick.AddListener(OnSettingsButtonClick);
