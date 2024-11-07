@@ -14,12 +14,13 @@ namespace UISpace
 
         private void Awake()
         {
-            _playButton.onClick.AddListener((() =>
+            _playButton.onClick.AddListener(() =>
             {
-                SceneManager.LoadScene("GameScene");
-            }));
+                SceneManager.LoadSceneAsync("GameScene");
+                SceneManager.LoadSceneAsync("UIScene", LoadSceneMode.Additive);
+            });
             
-            _playButton.onClick.AddListener(OnSettingsButtonClick);
+            _optionsButton.onClick.AddListener(OnSettingsButtonClick);
             
             _exitButton.onClick.AddListener((() =>
             {

@@ -10,7 +10,6 @@ namespace UISpace
         [SerializeField] private WindowBase[] _windows;
 
         private List<WindowBase> _openedWindows;
-        private WindowBase _currentWindow;
 
         private void Awake() => Instance = this;
 
@@ -32,7 +31,6 @@ namespace UISpace
             windowToOpen.transform.SetAsLastSibling();
 
             windowToOpen.Open();
-            _currentWindow = windowToOpen;
             _openedWindows.Add(windowToOpen);
         }
 
@@ -44,7 +42,6 @@ namespace UISpace
 
             _openedWindows[indexOf].Close();
             _openedWindows.Remove(_openedWindows[indexOf]);
-            _currentWindow = _openedWindows[^1];
         }
     }
 }

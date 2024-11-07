@@ -13,6 +13,7 @@ namespace SceneSpase
             if (_timer <= 0)
             {
                 SceneManager.LoadScene("MainMenu");   
+                SceneManager.LoadSceneAsync("UIScene", LoadSceneMode.Additive);
             }
         }
     }

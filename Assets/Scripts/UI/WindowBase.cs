@@ -5,8 +5,8 @@ namespace UISpace
     public enum WindowType
     {
         MainMenu = 0,
-        Settings = 2,
-        Start = 1,
+        Settings = 1,
+        LevelUI = 2,
         SelectStage = 3,
         GameWindow = 4,
         StartLevel = 5,
