@@ -6,6 +6,7 @@ namespace TowerSpace
     {
         [SerializeField] internal TowerType _towerType;
         [SerializeField] internal int[] _towerCost;
+        [SerializeField] internal int[] _damageTower;
         internal GameObject _currentTower;
         internal int currentTowerLevel = 0;
 

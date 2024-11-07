@@ -6,6 +6,8 @@ namespace TowerSpace
     {
         [SerializeField] private float bulletSpeed = 100f;
         [SerializeField] private GameObject _impactEffect;
+
+        private int damagePower;
         public Transform Target { get; set; }
 
         private void LateUpdate()
@@ -16,6 +18,12 @@ namespace TowerSpace
             {
                 gameObject.SetActive(false);
             }
+        }
+        
+        internal void SetDamagePower(int damage)
+        {
+            damagePower = damage;
+            Debug.Log(damagePower);
         }
     }
 }

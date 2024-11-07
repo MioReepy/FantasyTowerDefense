@@ -7,6 +7,7 @@ namespace TowerSpace
         [SerializeField] protected float rotationSpeed = 100f;
         [SerializeField] protected float fireSpeed = 1f;
         [SerializeField] protected Transform spawnPool;
+        [SerializeField] private GameObject _tower;
 
         protected float fireCoolDown = 0f;
         protected TowerFieldOfView towerFieldOfView;
@@ -35,6 +36,18 @@ namespace TowerSpace
 
             if (bulletObject != null)
             {
+                Tower tower = _tower.GetComponent<Builder>().tower.transform.GetComponent<Tower>();
+
+                if (tower.currentTowerLevel == 0)
+                {
+                    bulletObject.GetComponent<Bullet>().SetDamagePower(transform.GetComponentInParent<Tower>()._damageTower[tower.currentTowerLevel]); 
+                }
+
+                else
+                {
+                    bulletObject.GetComponent<Bullet>().SetDamagePower(transform.GetComponentInParent<Tower>()._damageTower[tower.currentTowerLevel - 1]); 
+                }
+                
                 bulletObject.transform.parent = GetSpawnPosition();
                 bulletObject.transform.position = spawnPool.transform.position;
                 bulletObject.transform.rotation = spawnPool.transform.rotation;

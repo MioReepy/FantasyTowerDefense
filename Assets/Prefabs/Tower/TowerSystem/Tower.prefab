@@ -183,6 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _towerType: 2
   _towerCost: 
+  _damageTower: 32000000460000005a000000
 --- !u!1 &1791949625325989413
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,6 +233,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _towerType: 1
   _towerCost: 
+  _damageTower: 23000000370000004b000000
 --- !u!1 &1921342129390575396
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,6 +315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _towerType: 3
   _towerCost: 
+  _damageTower: 1e0000003200000046000000
 --- !u!1 &3213652432030763392
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,6 +399,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _towerType: 0
   _towerCost: 
+  _damageTower: 14000000280000003c000000
 --- !u!1 &5715073031632036877
 GameObject:
   m_ObjectHideFlags: 0
@@ -667,6 +671,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5818588545603872910}
     m_Modifications:
+    - target: {fileID: -7761673393585361887, guid: eacf23fba5fa0e1498775fcc81bcfa39, type: 3}
+      propertyPath: tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
+    - target: {fileID: -7761673393585361887, guid: eacf23fba5fa0e1498775fcc81bcfa39, type: 3}
+      propertyPath: _tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
     - target: {fileID: 100008, guid: eacf23fba5fa0e1498775fcc81bcfa39, type: 3}
       propertyPath: m_Name
       value: Tow_Crossbow1
@@ -719,6 +731,14 @@ PrefabInstance:
       propertyPath: _targetMask.m_Bits
       value: 128
       objectReference: {fileID: 0}
+    - target: {fileID: 4237518500866400990, guid: eacf23fba5fa0e1498775fcc81bcfa39, type: 3}
+      propertyPath: tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
+    - target: {fileID: 4237518500866400990, guid: eacf23fba5fa0e1498775fcc81bcfa39, type: 3}
+      propertyPath: _tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1260,6 +1280,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2653796394280292332}
     m_Modifications:
+    - target: {fileID: -5913284655674273678, guid: 3297ad837a9b7a34781618380474a01f, type: 3}
+      propertyPath: tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
+    - target: {fileID: -5913284655674273678, guid: 3297ad837a9b7a34781618380474a01f, type: 3}
+      propertyPath: _tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
     - target: {fileID: 100004, guid: 3297ad837a9b7a34781618380474a01f, type: 3}
       propertyPath: m_Name
       value: Tow_Tesla2
@@ -1312,6 +1340,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2665327912963644742, guid: 3297ad837a9b7a34781618380474a01f, type: 3}
+      propertyPath: tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
+    - target: {fileID: 2665327912963644742, guid: 3297ad837a9b7a34781618380474a01f, type: 3}
+      propertyPath: _tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
     - target: {fileID: 3818435237738595417, guid: 3297ad837a9b7a34781618380474a01f, type: 3}
       propertyPath: viewRadius
       value: 20
@@ -1636,6 +1672,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5818588545603872910}
     m_Modifications:
+    - target: {fileID: -5210738164264133386, guid: 767f9cd5230d9334eb08119f2b0f3e7a, type: 3}
+      propertyPath: tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
+    - target: {fileID: -5210738164264133386, guid: 767f9cd5230d9334eb08119f2b0f3e7a, type: 3}
+      propertyPath: _tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
     - target: {fileID: 100008, guid: 767f9cd5230d9334eb08119f2b0f3e7a, type: 3}
       propertyPath: m_Name
       value: Tow_Crossbow3
@@ -1684,6 +1728,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3454076276505465879, guid: 767f9cd5230d9334eb08119f2b0f3e7a, type: 3}
+      propertyPath: tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
+    - target: {fileID: 3454076276505465879, guid: 767f9cd5230d9334eb08119f2b0f3e7a, type: 3}
+      propertyPath: _tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2386,6 +2438,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2276547529886296804, guid: 35fec96af36fd6548b955dd3df228d51, type: 3}
+      propertyPath: tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
+    - target: {fileID: 2276547529886296804, guid: 35fec96af36fd6548b955dd3df228d51, type: 3}
+      propertyPath: _tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
+    - target: {fileID: 2305149597396617801, guid: 35fec96af36fd6548b955dd3df228d51, type: 3}
+      propertyPath: tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
+    - target: {fileID: 2305149597396617801, guid: 35fec96af36fd6548b955dd3df228d51, type: 3}
+      propertyPath: _tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
     m_RemovedComponents:
     - {fileID: -1665224235010944112, guid: 35fec96af36fd6548b955dd3df228d51, type: 3}
     m_RemovedGameObjects: []
@@ -2509,6 +2577,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6054044962450280771}
     m_Modifications:
+    - target: {fileID: -5192477637223722742, guid: 4378afb0d24f19447a927754853cdf6c, type: 3}
+      propertyPath: tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
+    - target: {fileID: -5192477637223722742, guid: 4378afb0d24f19447a927754853cdf6c, type: 3}
+      propertyPath: _tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
     - target: {fileID: 100004, guid: 4378afb0d24f19447a927754853cdf6c, type: 3}
       propertyPath: m_Name
       value: Tow_Mortar3
@@ -2557,6 +2633,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5683478837680158897, guid: 4378afb0d24f19447a927754853cdf6c, type: 3}
+      propertyPath: tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
+    - target: {fileID: 5683478837680158897, guid: 4378afb0d24f19447a927754853cdf6c, type: 3}
+      propertyPath: _tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
     - target: {fileID: 7180901137956711087, guid: 4378afb0d24f19447a927754853cdf6c, type: 3}
       propertyPath: _targetMask.m_Bits
       value: 128
@@ -3321,6 +3405,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2814290754411846086, guid: 55be79fdf1c4d7d4b9672aba856cc53e, type: 3}
+      propertyPath: tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
+    - target: {fileID: 2814290754411846086, guid: 55be79fdf1c4d7d4b9672aba856cc53e, type: 3}
+      propertyPath: _tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
+    - target: {fileID: 4882148213168602170, guid: 55be79fdf1c4d7d4b9672aba856cc53e, type: 3}
+      propertyPath: tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
+    - target: {fileID: 4882148213168602170, guid: 55be79fdf1c4d7d4b9672aba856cc53e, type: 3}
+      propertyPath: _tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
     m_RemovedComponents:
     - {fileID: -2877993786835868587, guid: 55be79fdf1c4d7d4b9672aba856cc53e, type: 3}
     m_RemovedGameObjects: []
@@ -3540,6 +3640,22 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 138476382686849213, guid: 00a3cf9a04e762842960b8993da5a63a, type: 3}
+      propertyPath: tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
+    - target: {fileID: 138476382686849213, guid: 00a3cf9a04e762842960b8993da5a63a, type: 3}
+      propertyPath: _tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
+    - target: {fileID: 3620340381904750904, guid: 00a3cf9a04e762842960b8993da5a63a, type: 3}
+      propertyPath: tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
+    - target: {fileID: 3620340381904750904, guid: 00a3cf9a04e762842960b8993da5a63a, type: 3}
+      propertyPath: _tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
     - target: {fileID: 8321003335312407757, guid: 00a3cf9a04e762842960b8993da5a63a, type: 3}
       propertyPath: viewRadius
       value: 18
@@ -3610,10 +3726,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 803681747191312790, guid: f395684eb3615e542bf26ae3bdbb1838, type: 3}
+      propertyPath: tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
+    - target: {fileID: 803681747191312790, guid: f395684eb3615e542bf26ae3bdbb1838, type: 3}
+      propertyPath: _tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
     - target: {fileID: 3540549778815433052, guid: f395684eb3615e542bf26ae3bdbb1838, type: 3}
       propertyPath: _targetMask.m_Bits
       value: 128
       objectReference: {fileID: 0}
+    - target: {fileID: 5175976937530921848, guid: f395684eb3615e542bf26ae3bdbb1838, type: 3}
+      propertyPath: tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
+    - target: {fileID: 5175976937530921848, guid: f395684eb3615e542bf26ae3bdbb1838, type: 3}
+      propertyPath: _tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
     m_RemovedComponents:
     - {fileID: -3592511699492883404, guid: f395684eb3615e542bf26ae3bdbb1838, type: 3}
     m_RemovedGameObjects: []
@@ -3814,6 +3946,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5818588545603872910}
     m_Modifications:
+    - target: {fileID: -5109890593626439403, guid: bc424fb31e73d5e468ca64bb6edc6fb7, type: 3}
+      propertyPath: tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
+    - target: {fileID: -5109890593626439403, guid: bc424fb31e73d5e468ca64bb6edc6fb7, type: 3}
+      propertyPath: _tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
+    - target: {fileID: -978170192879697640, guid: bc424fb31e73d5e468ca64bb6edc6fb7, type: 3}
+      propertyPath: tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
+    - target: {fileID: -978170192879697640, guid: bc424fb31e73d5e468ca64bb6edc6fb7, type: 3}
+      propertyPath: _tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
     - target: {fileID: 100008, guid: bc424fb31e73d5e468ca64bb6edc6fb7, type: 3}
       propertyPath: m_Name
       value: Tow_Crossbow2
@@ -3950,6 +4098,14 @@ PrefabInstance:
       propertyPath: _targetMask.m_Bits
       value: 128
       objectReference: {fileID: 0}
+    - target: {fileID: -898003314563158259, guid: 4ac1597a34abff34899dcc576594a08f, type: 3}
+      propertyPath: tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
+    - target: {fileID: -898003314563158259, guid: 4ac1597a34abff34899dcc576594a08f, type: 3}
+      propertyPath: _tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
     - target: {fileID: 100004, guid: 4ac1597a34abff34899dcc576594a08f, type: 3}
       propertyPath: m_Name
       value: Tow_Mortar1
@@ -3998,6 +4154,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1974236980188461976, guid: 4ac1597a34abff34899dcc576594a08f, type: 3}
+      propertyPath: tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
+    - target: {fileID: 1974236980188461976, guid: 4ac1597a34abff34899dcc576594a08f, type: 3}
+      propertyPath: _tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
     m_RemovedComponents:
     - {fileID: 2244096171661482723, guid: 4ac1597a34abff34899dcc576594a08f, type: 3}
     m_RemovedGameObjects: []
@@ -4017,6 +4181,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7599169425352538252}
     m_Modifications:
+    - target: {fileID: -8712703197884895248, guid: 2862e1d526cbb7d42afed79f73e82174, type: 3}
+      propertyPath: tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
+    - target: {fileID: -8712703197884895248, guid: 2862e1d526cbb7d42afed79f73e82174, type: 3}
+      propertyPath: _tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
     - target: {fileID: -3496988427526045601, guid: 2862e1d526cbb7d42afed79f73e82174, type: 3}
       propertyPath: _targetMask.m_Bits
       value: 128
@@ -4069,6 +4241,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4070081801968975840, guid: 2862e1d526cbb7d42afed79f73e82174, type: 3}
+      propertyPath: tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
+    - target: {fileID: 4070081801968975840, guid: 2862e1d526cbb7d42afed79f73e82174, type: 3}
+      propertyPath: _tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
     m_RemovedComponents:
     - {fileID: 8897719079834504546, guid: 2862e1d526cbb7d42afed79f73e82174, type: 3}
     m_RemovedGameObjects: []
@@ -4154,6 +4334,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2653796394280292332}
     m_Modifications:
+    - target: {fileID: -6343362972707782369, guid: 1d4f518a457f5b54b8010914173ec915, type: 3}
+      propertyPath: tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
+    - target: {fileID: -6343362972707782369, guid: 1d4f518a457f5b54b8010914173ec915, type: 3}
+      propertyPath: _tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
+    - target: {fileID: -4730598066336819365, guid: 1d4f518a457f5b54b8010914173ec915, type: 3}
+      propertyPath: tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
+    - target: {fileID: -4730598066336819365, guid: 1d4f518a457f5b54b8010914173ec915, type: 3}
+      propertyPath: _tower
+      value: 
+      objectReference: {fileID: 173085577158851945}
     - target: {fileID: 100006, guid: 1d4f518a457f5b54b8010914173ec915, type: 3}
       propertyPath: m_Name
       value: Tow_Tesla3
