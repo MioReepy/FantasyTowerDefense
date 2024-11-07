@@ -4096,7 +4096,7 @@ PrefabInstance:
     - target: {fileID: 4167912121003258906, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: position
       value: 
-      objectReference: {fileID: 496539991}
+      objectReference: {fileID: 0}
     - target: {fileID: 4249348639448101568, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: spawnPool
       value: 
@@ -6463,7 +6463,7 @@ MonoBehaviour:
     - enemyObject: {fileID: 11400000, guid: 6d11f3f1fc8944743b391777e5c96f64, type: 2}
       enemyCount: 4
   _waveSpawnerWidth: 5
-  _timeBetweenWaves: 10.5
+  _timeBetweenWaves: 2.5
   _timeBetweenEnemies: 0.5
   _enemyPortal: {fileID: 4374325547042129361, guid: 4c81e9a404e353d43a0d53b2b7b90f1c, type: 3}
 --- !u!114 &118899827
@@ -13096,7 +13096,7 @@ PrefabInstance:
     - target: {fileID: 4167912121003258906, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: position
       value: 
-      objectReference: {fileID: 2035288611}
+      objectReference: {fileID: 0}
     - target: {fileID: 4249348639448101568, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: spawnPool
       value: 
@@ -23899,11 +23899,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: b6a71f7e6f75384448ab2de0d32f5b65, type: 3}
   m_PrefabInstance: {fileID: 455482321}
   m_PrefabAsset: {fileID: 0}
---- !u!224 &456642234 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2909957070397596992, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
-  m_PrefabInstance: {fileID: 1820762823}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &457521066
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26212,11 +26207,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8889634628631724654, guid: 2bee89e5b214ce14ea5eb2347b3d5d02, type: 3}
   m_PrefabInstance: {fileID: 493941023}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &496539991 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2909957070397596992, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
-  m_PrefabInstance: {fileID: 74992888}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &497217733
 GameObject:
@@ -29029,7 +29019,7 @@ PrefabInstance:
     - target: {fileID: 4167912121003258906, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: position
       value: 
-      objectReference: {fileID: 1183655612}
+      objectReference: {fileID: 0}
     - target: {fileID: 4249348639448101568, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: spawnPool
       value: 
@@ -32231,11 +32221,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: b6a71f7e6f75384448ab2de0d32f5b65, type: 3}
   m_PrefabInstance: {fileID: 616491132}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &617882190 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2909957070397596992, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
-  m_PrefabInstance: {fileID: 2114302055}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &619321815
 GameObject:
@@ -37102,7 +37087,7 @@ PrefabInstance:
     - target: {fileID: 4167912121003258906, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: position
       value: 
-      objectReference: {fileID: 1203726881}
+      objectReference: {fileID: 0}
     - target: {fileID: 4249348639448101568, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: spawnPool
       value: 
@@ -67028,11 +67013,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!224 &1183655612 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2909957070397596992, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
-  m_PrefabInstance: {fileID: 561413372}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1184465519
 GameObject:
   m_ObjectHideFlags: 0
@@ -67842,11 +67822,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 8af93fd40fb409245b22b0e5c4c09cfb, type: 3}
   m_PrefabInstance: {fileID: 1203559952}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &1203726881 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2909957070397596992, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
-  m_PrefabInstance: {fileID: 719268899}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1204009650
 GameObject:
@@ -70044,11 +70019,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: b6a71f7e6f75384448ab2de0d32f5b65, type: 3}
   m_PrefabInstance: {fileID: 1240835413}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &1241420490 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2909957070397596992, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
-  m_PrefabInstance: {fileID: 1976740410}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1241525239
 PrefabInstance:
@@ -97928,7 +97898,7 @@ PrefabInstance:
     - target: {fileID: 4167912121003258906, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: position
       value: 
-      objectReference: {fileID: 456642234}
+      objectReference: {fileID: 0}
     - target: {fileID: 4249348639448101568, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: spawnPool
       value: 
@@ -104002,11 +103972,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1941506123}
   m_CullTransparentMesh: 1
---- !u!224 &1943780771 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2909957070397596992, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
-  m_PrefabInstance: {fileID: 7951686203276770017}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1944262422
 GameObject:
   m_ObjectHideFlags: 0
@@ -106101,7 +106066,7 @@ PrefabInstance:
     - target: {fileID: 4167912121003258906, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: position
       value: 
-      objectReference: {fileID: 1241420490}
+      objectReference: {fileID: 0}
     - target: {fileID: 4249348639448101568, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: spawnPool
       value: 
@@ -108972,11 +108937,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2034755556}
   m_CullTransparentMesh: 1
---- !u!224 &2035288611 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 2909957070397596992, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
-  m_PrefabInstance: {fileID: 219830531}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2035662118
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -113057,7 +113017,7 @@ PrefabInstance:
     - target: {fileID: 4167912121003258906, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: position
       value: 
-      objectReference: {fileID: 617882190}
+      objectReference: {fileID: 0}
     - target: {fileID: 4249348639448101568, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: spawnPool
       value: 
@@ -115853,7 +115813,7 @@ PrefabInstance:
     - target: {fileID: 4167912121003258906, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: position
       value: 
-      objectReference: {fileID: 1943780771}
+      objectReference: {fileID: 0}
     - target: {fileID: 4249348639448101568, guid: 89c397c82dd18064a9f58ce677ef6be2, type: 3}
       propertyPath: spawnPool
       value: 

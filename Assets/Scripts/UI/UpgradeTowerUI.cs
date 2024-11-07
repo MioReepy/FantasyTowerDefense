@@ -9,7 +9,6 @@ namespace UISpace
         [SerializeField] private GameObject _arrowAvailableUpgrade;
         [SerializeField] internal GameObject availableBuild;
         [SerializeField] internal GameObject availableUpgrade;
-        [SerializeField] internal Transform currentTowerButton;
         
         internal GameObject currentButton;
 
@@ -35,11 +34,11 @@ namespace UISpace
 
         internal void SetCurrentButton(TowerType towerType)
         {
-            for (int i = 0; i < currentTowerButton.childCount; i++)
+            for (int i = 0; i < availableUpgrade.transform.childCount; i++)
             {
-                if (currentTowerButton.GetChild(i).GetComponent<Tower>()._towerType == towerType)
+                if (availableUpgrade.transform.GetChild(i).GetComponent<Tower>()._towerType == towerType)
                 {
-                    currentButton = currentTowerButton.transform.GetChild(i).gameObject;
+                    currentButton = availableUpgrade.transform.transform.GetChild(i).gameObject;
                     currentButton.SetActive(true);
                 }
             }
@@ -47,7 +46,7 @@ namespace UISpace
 
         internal void ShowAvailableBuild()
         {
-            Transform tower = availableBuild.gameObject.transform.GetChild(0).transform;
+            Transform tower = availableBuild.gameObject.transform;
 
             for (int i = 0; i < tower.childCount; i++)
             {
