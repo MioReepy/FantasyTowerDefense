@@ -1,4 +1,3 @@
-using System;
 using PlayerSpace;
 using UISpace;
 using UnityEngine;
@@ -6,6 +5,7 @@ using UnityEngine;
 public class Finish : MonoBehaviour
 {
     private int _enemyCount;
+    private int _lifeCount;
     
     public static Finish Instance;
     private void Awake() => Instance = this;
@@ -13,10 +13,13 @@ public class Finish : MonoBehaviour
     private void Start()
     {
         PlayerStats.Instance.OnChangeLifes += PlayerStats_OnChangeLifes;
+        _lifeCount = PlayerStats.Instance.lifes;
     }
 
     private void PlayerStats_OnChangeLifes(object sender, PlayerStats.OnLifes lifes)
     {
+        _lifeCount = lifes.lifesCount;
+        
         if (lifes.lifesCount <= 0)
         {
             UISystem.Instance.OpenWindow(WindowType.GameOver);
@@ -30,6 +33,12 @@ public class Finish : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             PlayerStats.Instance.SetLifes();
+            _enemyCount--;
+
+            if (_enemyCount < 1 && _lifeCount > 0)
+            {
+                ShowCompleteLevel();
+            }
         }
     }
 
@@ -41,13 +50,17 @@ public class Finish : MonoBehaviour
     internal void EnemyDied()
     {
         _enemyCount--;
+        Debug.Log(_lifeCount);
 
-        if (_enemyCount < 1)
+        if (_enemyCount <= 1 && _lifeCount > 0)
         {
-            // UISystem.Instance.OpenWindow(WindowType.GameOver);
-            // Time.timeScale = 0;
+            ShowCompleteLevel();
         }
-        
-        Debug.Log(_enemyCount);
+    }
+
+    private void ShowCompleteLevel()
+    {
+        UISystem.Instance.OpenWindow(WindowType.CompleteLevel);
+        Time.timeScale = 0;
     }
 }

@@ -9,6 +9,7 @@ namespace UISpace
         LevelUI = 2,
         Pause = 3,
         GameOver = 4,
+        CompleteLevel = 5,
     }
     
     public abstract class WindowBase : MonoBehaviour

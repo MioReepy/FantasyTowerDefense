@@ -32,7 +32,6 @@ namespace EnemySpace
         private void GetDamag(GameObject bullet)
         {
             _health -= bullet.GetComponent<Bullet>().DamagePower;
-            PlayerStats.Instance.SetMoney(_reward);
             Instantiate(_impactEffect, transform.position, Quaternion.identity);
 
             if (_health <= 0)
@@ -50,6 +49,7 @@ namespace EnemySpace
 
         public void EnemyDied()
         {
+            PlayerStats.Instance.SetMoney(_reward);
             _animator.SetBool("IsDied", false);
             gameObject.GetComponent<Collider>().enabled = true;
             gameObject.GetComponent<Rigidbody>().useGravity = true;
