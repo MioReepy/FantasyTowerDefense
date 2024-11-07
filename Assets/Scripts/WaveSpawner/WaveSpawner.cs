@@ -18,7 +18,7 @@ namespace WaveSpawnerSpace
         [SerializeField] private GameObject _enemyPortal;
         internal float coolDownWaves = 0f;
         internal int _currentWave = 0;
-        private List<Enemies> _enemyObjects;
+        internal List<Enemies> _enemyObjects;
         internal Vector3 minBounds;
         internal Vector3 maxBounds;
 

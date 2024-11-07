@@ -6130,7 +6130,7 @@ MonoBehaviour:
     - enemyObject: {fileID: 11400000, guid: 6d11f3f1fc8944743b391777e5c96f64, type: 2}
       enemyCount: 4
   _waveSpawnerWidth: 5
-  _timeBetweenWaves: 10.5
+  _timeBetweenWaves: 2.5
   _timeBetweenEnemies: 0.5
   _enemyPortal: {fileID: 4374325547042129361, guid: 4c81e9a404e353d43a0d53b2b7b90f1c, type: 3}
 --- !u!114 &118899827

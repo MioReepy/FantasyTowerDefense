@@ -33,7 +33,7 @@ namespace PlayerSpace
 
         internal void SetMoney(int money)
         {
-            this.money -= money;
+            this.money += money;
             
             OnChangeMoney?.Invoke(this, new OnCoins
             {

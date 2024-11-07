@@ -1,3 +1,4 @@
+using PlayerSpace;
 using TowerSpace;
 using UnityEngine;
 using WaveSpawnerSpace;
@@ -10,6 +11,7 @@ namespace EnemySpace
         [SerializeField] internal EnemyObject enemy;
         [SerializeField] private GameObject _impactEffect;
         [SerializeField] internal int _health = 100;
+        [SerializeField] int _reward = 50;
         
         private Animator _animator;
         internal bool isDead;
@@ -30,6 +32,7 @@ namespace EnemySpace
         private void GetDamag(GameObject bullet)
         {
             _health -= bullet.GetComponent<Bullet>().DamagePower;
+            PlayerStats.Instance.SetMoney(_reward);
             Instantiate(_impactEffect, transform.position, Quaternion.identity);
 
             if (_health <= 0)
