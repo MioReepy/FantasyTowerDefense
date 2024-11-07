@@ -180,8 +180,6 @@ GameObject:
   - component: {fileID: -1544407003171332763}
   - component: {fileID: 2814290754411846086}
   - component: {fileID: 4882148213168602170}
-  - component: {fileID: -461131931549607190}
-  - component: {fileID: 488178679666125632}
   m_Layer: 0
   m_Name: Tow_Crystal1
   m_TagString: Untagged
@@ -257,9 +255,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2132e29add9b55408128a2dd97558b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 100
-  fireSpeed: 1
-  spawnPool: {fileID: 1331724736064770866}
 --- !u!114 &4882148213168602170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,33 +270,7 @@ MonoBehaviour:
   rotationSpeed: 100
   fireSpeed: 1
   spawnPool: {fileID: 1331724736064770866}
---- !u!114 &-461131931549607190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f585a7aafd2c4054fb33c2c10b3b1f25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &488178679666125632
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 801af2fb5800865438438b844e9adad6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToPool: {fileID: 4378605199871155009, guid: eb64579b5848bc44ab8ad6b78a03feb0, type: 3}
-  spawnObject: {fileID: 0}
-  poolSize: 5
+  _tower: {fileID: 0}
 --- !u!1 &5039836736427133509
 GameObject:
   m_ObjectHideFlags: 0

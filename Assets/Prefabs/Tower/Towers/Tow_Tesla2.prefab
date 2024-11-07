@@ -9614,8 +9614,6 @@ GameObject:
   - component: {fileID: 3818435237738595417}
   - component: {fileID: -5913284655674273678}
   - component: {fileID: 2665327912963644742}
-  - component: {fileID: 1311831542916383720}
-  - component: {fileID: -5305840483571424476}
   m_Layer: 0
   m_Name: Tow_Tesla2
   m_TagString: Untagged
@@ -9723,10 +9721,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af9ebb798cf6dc540ba4f5d1dcd8889d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _lightningBolt: {fileID: 7455077065615222675}
   rotationSpeed: 100
   fireSpeed: 1
   spawnPool: {fileID: 7064159101067976622}
-  _lightningBolt: {fileID: 7455077065615222675}
+  _tower: {fileID: 0}
 --- !u!114 &2665327912963644742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9739,36 +9738,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2132e29add9b55408128a2dd97558b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationSpeed: 100
-  fireSpeed: 1
-  spawnPool: {fileID: 7064159101067976622}
---- !u!114 &1311831542916383720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f585a7aafd2c4054fb33c2c10b3b1f25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-5305840483571424476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50d78ed929318ad439853e3c4fca158c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectToPool: {fileID: 3076262866650904099, guid: bc813c22dad9d3b47804f6c8bdd88f46, type: 3}
-  spawnObject: {fileID: 0}
-  poolSize: 4
 --- !u!1 &100006
 GameObject:
   m_ObjectHideFlags: 0
