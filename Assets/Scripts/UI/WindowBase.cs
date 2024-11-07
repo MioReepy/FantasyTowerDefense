@@ -7,11 +7,7 @@ namespace UISpace
         MainMenu = 0,
         Settings = 1,
         LevelUI = 2,
-        SelectStage = 3,
-        GameWindow = 4,
-        StartLevel = 5,
-        CompleteLevel = 6,
-        ReatartLevel = 7,
+        Pause = 3,
     }
     
     public abstract class WindowBase : MonoBehaviour
@@ -19,13 +15,14 @@ namespace UISpace
         public abstract WindowType Type { get; }
 
         protected UISystem UISystem => UISystem.Instance;
+        public bool IsOpen { get; set; }
 
-        public virtual void Open()
+        public void Open()
         {
             gameObject.SetActive(true);
         }
 
-        public virtual void Close()
+        public void Close()
         {
             gameObject.SetActive(false);
         }
