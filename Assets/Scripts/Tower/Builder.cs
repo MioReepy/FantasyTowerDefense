@@ -38,6 +38,7 @@ namespace TowerSpace
         internal void OnButtonClick(TowerType towerType)
         {
             gameObject.GetComponent<BuyTower>().BuyTowerObject();
+            MusicManager.Instance.TowerBuildingSound();
             
             if (_emptyTower.activeInHierarchy)
             {

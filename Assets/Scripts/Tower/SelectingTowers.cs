@@ -69,6 +69,7 @@ namespace TowerSpace
             {
                 isTowerSelected = true;
                 StartCoroutine(OnMouseClick());
+                MusicManager.Instance.TowerSelectedTower();
                 
                 OnTowerSelected?.Invoke(this, new OnSelected
                 {

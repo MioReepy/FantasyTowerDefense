@@ -65,5 +65,19 @@ public class MusicManager : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(_audioClip.EnemyDieSound, Camera.main.transform.position, 1f);
         }
+    }    
+    public void TowerBuildingSound()
+    {
+        if (Camera.main != null)
+        {
+            AudioSource.PlayClipAtPoint(_audioClip.TowerBuildingSound, Camera.main.transform.position, 1f);
+        }
+    }
+    public void TowerSelectedTower()
+    {
+        if (Camera.main != null)
+        {
+            AudioSource.PlayClipAtPoint(_audioClip.TowerSelectedTower, Camera.main.transform.position, 1f);
+        }
     }
 }

@@ -12,5 +12,7 @@ namespace MusicSpase
         public AudioClip MortalShotSound;
         public AudioClip CrystalShotSound;
         public AudioClip TeslaShotSound;
+        public AudioClip TowerBuildingSound;
+        public AudioClip TowerSelectedTower;
     }
 }
