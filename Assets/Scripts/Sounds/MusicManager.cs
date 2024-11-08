@@ -4,10 +4,13 @@ using UnityEngine;
 public class MusicManager : MonoBehaviour
 {
     [SerializeField] private AudioClipSO _audioClip;
-    public static MusicManager Instance;
 
-    private void Awake()
+    public void OnMouseButtonClick()
     {
-        Instance = this;
+        if (Camera.main != null)
+        {
+            AudioSource.PlayClipAtPoint(_audioClip.ClickButtonSound, Camera.main.transform.position, 1f);
+            Debug.Log(Camera.main.transform.position);
+        }
     }
 }

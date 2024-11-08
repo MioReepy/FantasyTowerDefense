@@ -10,7 +10,6 @@ namespace PlayerSpace
         private PlayerInput _playerInputController;
         
         private InputAction _actionMove;
-        private InputAction _scrollMove;
         private InputAction _unSelect;
         private InputAction _zoomPlus;
         private InputAction _zoomMinus;

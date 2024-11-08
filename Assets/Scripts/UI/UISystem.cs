@@ -31,6 +31,7 @@ namespace UISpace
 
             windowToOpen.Open();
             openedWindows.Add(windowToOpen);
+            
         }
 
         public void Close(WindowType windowType)

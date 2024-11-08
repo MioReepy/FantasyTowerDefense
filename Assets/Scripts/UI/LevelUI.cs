@@ -1,15 +1,12 @@
-using System;
-using PlayerSpace;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace UISpace
 {
-    public class LevelUI : WindowBase
+    public class LevelUI : MonoBehaviour
     {
         [SerializeField] private Button _settingsButton;
         [SerializeField] private Button _pauseButton;
-        public override WindowType Type => WindowType.LevelUI;
         
         private void Awake()
         {

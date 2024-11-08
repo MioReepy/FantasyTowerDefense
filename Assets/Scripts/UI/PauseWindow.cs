@@ -22,6 +22,7 @@ namespace UISpace
         {
             UISystem.Instance.Close(WindowType.Pause);
             Time.timeScale = 1;
+            
         }
 
         private void OnRestartButtonClick()

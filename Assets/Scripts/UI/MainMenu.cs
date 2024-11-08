@@ -17,7 +17,7 @@ namespace UISpace
                
             _playButton.onClick.AddListener(() =>
             {
-                Loader.Load(Loader.Scene.GameScene, true,true);
+                Loader.Load(Loader.Scene.GameScene, false,true);
             });
             
             _optionsButton.onClick.AddListener(OnSettingsButtonClick);
