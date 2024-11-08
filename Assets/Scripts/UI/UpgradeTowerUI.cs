@@ -71,8 +71,9 @@ namespace UISpace
         {
             SwitchButtons buttons = currentButton.transform.GetComponent<SwitchButtons>();
 
-            int towerCost = gameObject.GetComponent<TowerInformation>().towerCost;
-
+            int towerCost = gameObject.GetComponent<TowerInformation>()
+                .towerObjects[gameObject.GetComponent<TowerInformation>().currentTowerLevel].towerCost;
+            
             if (towerCost > PlayerStats.Instance.money 
                 || gameObject.GetComponent<TowerInformation>().currentTowerLevel > gameObject.GetComponent<TowerInformation>().towerObjects.Length - 2)
             {

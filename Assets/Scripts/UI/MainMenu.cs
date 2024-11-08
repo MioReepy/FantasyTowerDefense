@@ -12,8 +12,6 @@ namespace UISpace
         
         public override WindowType Type => WindowType.MainMenu;
 
-        public static event EventHandler OnMusicOn;
-
         private void Awake()
         {
                
@@ -28,8 +26,6 @@ namespace UISpace
             {
                 Application.Quit();
             });
-            
-            OnMusicOn?.Invoke(this, EventArgs.Empty);
         }
 
         private void OnSettingsButtonClick()

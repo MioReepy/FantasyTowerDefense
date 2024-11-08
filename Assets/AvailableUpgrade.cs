@@ -41,8 +41,18 @@ namespace TowerSpace
                 return;
             }
 
-            if (towerInformation.towerObjects[towerInformation.currentTowerLevel - 1].towerCost > PlayerStats.Instance.money 
-                || !gameObject.GetComponent<SelectingTowers>().isAvailableBuild)
+            int towerCost = gameObject.GetComponent<TowerInformation>()
+                .towerObjects[gameObject.GetComponent<TowerInformation>().currentTowerLevel].towerCost;
+
+            if (towerCost > PlayerStats.Instance.money
+                || gameObject.GetComponent<TowerInformation>().currentTowerLevel >
+                gameObject.GetComponent<TowerInformation>().towerObjects.Length - 2)
+            {
+                _arrow.SetActive(false);
+                return;
+            }
+                
+            if (!gameObject.GetComponent<SelectingTowers>().isAvailableBuild)
             {
                 _arrow.SetActive(false);
             }
