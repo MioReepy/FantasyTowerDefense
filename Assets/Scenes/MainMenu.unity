@@ -132,6 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 46162576}
   - component: {fileID: 46162575}
+  - component: {fileID: 46162577}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -205,6 +206,14 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &46162577
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46162573}
+  m_Enabled: 1
 --- !u!1 &60140088
 GameObject:
   m_ObjectHideFlags: 0
@@ -1210,6 +1219,7 @@ MonoBehaviour:
   _playButton: {fileID: 1410636531}
   _optionsButton: {fileID: 580537077}
   _exitButton: {fileID: 924701732}
+  _audioClip: {fileID: 11400000, guid: fda777ae144030c42af3a933a027dd41, type: 2}
 --- !u!1 &1932047737
 GameObject:
   m_ObjectHideFlags: 0

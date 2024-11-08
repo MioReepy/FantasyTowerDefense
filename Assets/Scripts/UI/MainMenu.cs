@@ -1,5 +1,5 @@
+using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace UISpace
@@ -9,11 +9,14 @@ namespace UISpace
         [SerializeField] private Button _playButton;
         [SerializeField] private Button _optionsButton;
         [SerializeField] private Button _exitButton;
-
+        
         public override WindowType Type => WindowType.MainMenu;
+
+        public static event EventHandler OnMusicOn;
 
         private void Awake()
         {
+               
             _playButton.onClick.AddListener(() =>
             {
                 Loader.Load(Loader.Scene.GameScene, true,true);
@@ -21,10 +24,12 @@ namespace UISpace
             
             _optionsButton.onClick.AddListener(OnSettingsButtonClick);
             
-            _exitButton.onClick.AddListener((() =>
+            _exitButton.onClick.AddListener(() =>
             {
                 Application.Quit();
-            }));
+            });
+            
+            OnMusicOn?.Invoke(this, EventArgs.Empty);
         }
 
         private void OnSettingsButtonClick()

@@ -34992,7 +34992,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
@@ -35052,8 +35052,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.30061248, y: 0.023750668, z: -0.0074885553, w: 0.9534212}
-  m_LocalPosition: {x: 90, y: 21, z: 27}
+  m_LocalRotation: {x: 0.49984497, y: 0.021566862, z: -0.012451635, w: 0.86575687}
+  m_LocalPosition: {x: 90, y: 51, z: 27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -57129,6 +57129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 657a2dc7c64fec240a0a28b64052a1c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _audioClip: {fileID: 11400000, guid: fda777ae144030c42af3a933a027dd41, type: 2}
 --- !u!4 &1519164391 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 3da427a607833db408a9e2b542b43b2e, type: 3}

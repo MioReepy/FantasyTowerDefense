@@ -3,12 +3,16 @@ using UnityEngine;
 
 namespace TowerSpace
 {
-    public class ShowTowers : MonoBehaviour
+    public class StartLevel : MonoBehaviour
     {
+        public static event EventHandler OnMusicOn;
+        
         private void Awake()
         {
             Time.timeScale = 1;
             StartGame.OnStartGame += StartGame_OnStartGame;
+            
+            OnMusicOn?.Invoke(this, EventArgs.Empty);
         }
 
         private void StartGame_OnStartGame(object sender, EventArgs e)
@@ -17,8 +21,6 @@ namespace TowerSpace
             {
                 gameObject.transform.GetChild(i).gameObject.SetActive(true);
             }
-            
-            Debug.Log("Start");
         }
 
         private void OnDisable()
