@@ -74,7 +74,7 @@ namespace UISpace
             int towerCost = gameObject.GetComponent<TowerInformation>().towerCost;
 
             if (towerCost > PlayerStats.Instance.money 
-                || gameObject.GetComponent<TowerInformation>().currentTowerLevel >= gameObject.GetComponent<TowerInformation>().towerObjects.Length)
+                || gameObject.GetComponent<TowerInformation>().currentTowerLevel > gameObject.GetComponent<TowerInformation>().towerObjects.Length - 2)
             {
                 buttons.onButton.SetActive(false);
                 buttons.offButton.SetActive(true);

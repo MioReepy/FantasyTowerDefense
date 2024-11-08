@@ -29,13 +29,13 @@ namespace TowerSpace
                         break;
                     }
                 }
-                
+
                 for (int i = 0; i < _currentTower._towerObjects.Length; i++)
                 {
                     towerObjects[i] = _currentTower._towerObjects[i];
                 }
             }
-            
+
             _currentTower.gameObject.SetActive(true);
             _currentTowerObject = towerObjects[currentTowerLevel];
             towerCost = _currentTowerObject.towerCost;

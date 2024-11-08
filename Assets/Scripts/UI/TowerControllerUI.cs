@@ -12,7 +12,6 @@ namespace TowerSpace
             SelectingTowers.OnTowerUnselected += SelectingTowers_OnHideTowerUI;
             Builder.OnStartBuildingNewTower += Builder_OnStartBuildingNewTower;
             Builder.OnStartUpgradeTower += Builder_OnStartUpgradeUI;
-            Builder.OnEndBuildingTower += Builder_OnEndBuildingTower;
         }
 
         private void SelectingTowers_OnShowTowerUI(object sender, SelectingTowers.OnSelected towerSelectedArgs)
@@ -33,11 +32,6 @@ namespace TowerSpace
         {
             UpgradeTowerUI uiTower = towerSelectedArgs.TowerSelected.GetComponent<UpgradeTowerUI>();
             HideTowerUI(uiTower);
-
-            if (towerSelectedArgs.TowerSelected.GetComponent<SelectingTowers>().isAvailableBuild)
-            {
-                uiTower.ShowArrowUpgrade();
-            }
         }
 
         private void Builder_OnStartBuildingNewTower(object sender, Builder.OnUpgrade towerUpgradeArgs)
@@ -58,12 +52,6 @@ namespace TowerSpace
             {
                 uiTower.HideAvailableUpgrade();
             }
-        }
-
-        private void Builder_OnEndBuildingTower(object sender, Builder.OnUpgrade towerSelectedArgs)
-        {
-            UpgradeTowerUI uiTower = towerSelectedArgs.SelectedTower.GetComponent<UpgradeTowerUI>();
-            uiTower.ShowArrowUpgrade();
         }
 
         private void ShowTowerUI(UpgradeTowerUI uiTower)
@@ -97,7 +85,6 @@ namespace TowerSpace
             SelectingTowers.OnTowerUnselected -= SelectingTowers_OnHideTowerUI;
             Builder.OnStartBuildingNewTower -= Builder_OnStartBuildingNewTower;
             Builder.OnStartUpgradeTower -= Builder_OnStartUpgradeUI;
-            Builder.OnEndBuildingTower -= Builder_OnEndBuildingTower;
         }
     }   
 }

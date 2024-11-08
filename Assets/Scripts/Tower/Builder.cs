@@ -17,7 +17,7 @@ namespace TowerSpace
         
         public static event EventHandler<OnUpgrade> OnStartBuildingNewTower;
         public static event EventHandler<OnUpgrade> OnStartUpgradeTower;
-        public static event EventHandler<OnUpgrade> OnEndBuildingTower;
+
         public class OnUpgrade : EventArgs
         {
             public GameObject SelectedTower;
@@ -27,7 +27,6 @@ namespace TowerSpace
         {
             OnStartBuildingNewTower = null;
             OnStartUpgradeTower = null;
-            OnEndBuildingTower = null;
         }
 
         private void Start()
@@ -69,11 +68,6 @@ namespace TowerSpace
 
             _buildingEffect.SetActive(false);
             _selectingTowers.isAvailableBuild = true;
-
-            OnEndBuildingTower?.Invoke(this, new OnUpgrade
-            {
-                SelectedTower = gameObject
-            });
         }
 
         private IEnumerator UpgradeTower()
@@ -95,11 +89,6 @@ namespace TowerSpace
             
             _buildingEffect.SetActive(false);
             _selectingTowers.isAvailableBuild = true;
-            
-            OnEndBuildingTower?.Invoke(this, new OnUpgrade
-            {
-                SelectedTower = gameObject
-            });
         }
     }
 }

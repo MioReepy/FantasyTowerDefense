@@ -57129,7 +57129,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 657a2dc7c64fec240a0a28b64052a1c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _audioClip: {fileID: 11400000, guid: fda777ae144030c42af3a933a027dd41, type: 2}
 --- !u!4 &1519164391 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 3da427a607833db408a9e2b542b43b2e, type: 3}
