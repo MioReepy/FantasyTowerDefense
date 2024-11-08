@@ -42,8 +42,16 @@ public class MusicManager : MonoBehaviour
         {
             AudioSource.PlayClipAtPoint(_audioClip.CrystalShotSound, Camera.main.transform.position, 1f);
         }
-    }    
-    
+    }
+
+    public void TeslaShotSound()
+    {
+        if (Camera.main != null)
+        {
+            AudioSource.PlayClipAtPoint(_audioClip.TeslaShotSound, Camera.main.transform.position, 1f);
+        }
+    }
+
     public void PlayerDamageSound()
     {
         if (Camera.main != null)
@@ -51,12 +59,11 @@ public class MusicManager : MonoBehaviour
             AudioSource.PlayClipAtPoint(_audioClip.PlayerDamageSound, Camera.main.transform.position, 1f);
         }
     }
-    
-    public void TeslaShotSound()
+    public void EnemyDieSound()
     {
         if (Camera.main != null)
         {
-            AudioSource.PlayClipAtPoint(_audioClip.TeslaShotSound, Camera.main.transform.position, 1f);
+            AudioSource.PlayClipAtPoint(_audioClip.EnemyDieSound, Camera.main.transform.position, 1f);
         }
     }
 }

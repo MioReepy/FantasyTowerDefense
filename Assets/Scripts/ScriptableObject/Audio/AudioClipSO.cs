@@ -7,6 +7,7 @@ namespace MusicSpase
     {
         public AudioClip ClickButtonSound;
         public AudioClip PlayerDamageSound;
+        public AudioClip EnemyDieSound;
         public AudioClip CrossbowShotSound;
         public AudioClip MortalShotSound;
         public AudioClip CrystalShotSound;
