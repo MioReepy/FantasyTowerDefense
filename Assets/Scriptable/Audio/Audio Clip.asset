@@ -12,4 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05d8a6546f26d7b42bfa471e9b3b6816, type: 3}
   m_Name: Audio Clip
   m_EditorClassIdentifier: 
-  ClickButtonSound: {fileID: 8300000, guid: 12b2a79a7b5fc6740ba21c5d1c069c06, type: 3}
+  ClickButtonSound: {fileID: 8300000, guid: bad8afa4e42fb53428a109580ef7a590, type: 3}
+  EnemyDamageSound: {fileID: 0}
+  CrossbowShotSound: {fileID: 8300000, guid: bcbfb729373596743aa3829fe4c3c9e2, type: 3}
+  CrossbowEnemyDamageSound: {fileID: 0}
+  MortalShotSound: {fileID: 8300000, guid: 85807ad4749d1734f91faf5900e21cb3, type: 3}
+  MortalEnemyDamageSound: {fileID: 0}
+  CrystalShotSound: {fileID: 8300000, guid: 3c3fa95d88c02454e92f4329bc536677, type: 3}
+  CrystalEnemyDamageSound: {fileID: 0}
+  TeslaShotSound: {fileID: 8300000, guid: bef7c45b496f36e42b75fca9d53f7b2b, type: 3}
+  TeslaEnemyDamageSound: {fileID: 0}

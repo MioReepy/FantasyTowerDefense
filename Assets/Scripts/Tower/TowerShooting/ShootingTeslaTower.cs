@@ -24,6 +24,7 @@ namespace TowerSpace
 
                 if (fireCoolDown <= 0f)
                 {
+                    MusicManager.Instance.TeslaShotSound();
                     Shoot();
                     fireCoolDown = 1 / fireSpeed;
                 }

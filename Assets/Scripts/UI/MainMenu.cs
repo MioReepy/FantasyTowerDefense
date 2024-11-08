@@ -12,11 +12,12 @@ namespace UISpace
         
         public override WindowType Type => WindowType.MainMenu;
 
-        private void Awake()
+        private void Start()
         {
                
             _playButton.onClick.AddListener(() =>
             {
+                MusicManager.Instance.OnMouseButtonClick();
                 Loader.Load(Loader.Scene.GameScene, true,true);
             });
             
@@ -24,12 +25,14 @@ namespace UISpace
             
             _exitButton.onClick.AddListener(() =>
             {
+                MusicManager.Instance.OnMouseButtonClick();
                 Application.Quit();
             });
         }
 
         private void OnSettingsButtonClick()
         {
+            MusicManager.Instance.OnMouseButtonClick();
             UISystem.Instance.OpenWindow(WindowType.Settings);
         }
     }
