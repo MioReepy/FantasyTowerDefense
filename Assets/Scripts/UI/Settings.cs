@@ -16,12 +16,24 @@ namespace UISpace
         private void Awake()
         {
             _closeButton.onClick.AddListener(OnCloseButtonClick);
+            _musicVolumeSlider.onValueChanged.AddListener(OnChangeMusicVolume);
+            _soundVolumeSlider.onValueChanged.AddListener(OnChangeSoundVolume);
+            _musicVolumeSlider.value = PlayerPrefs.GetFloat(MusicManager.PREFS_MUSIC_EFFECT_VOLUME, 0.5f);
         }
 
-        private void Update()
+        private void Start()
         {
-            SoundManager.Instance.ChangeSoundVolume(_soundVolumeSlider.value);
-            MusicManager.Instance.ChangeMusicVolume(_musicVolumeSlider.value);
+            _soundVolumeSlider.value = PlayerPrefs.GetFloat(SoundManager.PREFS_SOUND_EFFECT_VOLUME, 0.5f);
+        }
+
+        private void OnChangeSoundVolume(float value)
+        {
+            SoundManager.Instance.ChangeSoundVolume(value);
+        }
+        
+        private void OnChangeMusicVolume(float value)
+        {
+            MusicManager.Instance.ChangeMusicVolume(value);
         }
 
         private void OnCloseButtonClick()

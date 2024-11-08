@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
+    internal const string PREFS_SOUND_EFFECT_VOLUME = "SoundEffectVolume";
     [SerializeField] private AudioClipSO _audioClip;
     private float _volume = 0.5f;
     public static SoundManager Instance;
@@ -10,16 +11,14 @@ public class SoundManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        PlayerPrefs.GetFloat(PREFS_SOUND_EFFECT_VOLUME, 0.5f);
     }
 
     public void ChangeSoundVolume(float volume)
     {
         _volume = volume;
-    }
-    
-    public float GetSoundVolume()
-    {
-        return _volume;
+        PlayerPrefs.SetFloat(PREFS_SOUND_EFFECT_VOLUME, _volume);
+        PlayerPrefs.Save();
     }
     
     public void OnMouseButtonClick()
