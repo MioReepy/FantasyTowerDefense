@@ -1,3 +1,4 @@
+using MusicSpase;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,7 @@ namespace UISpace
         [SerializeField] private Button _closeButton;
         [SerializeField] private Slider _musicVolumeSlider;
         [SerializeField] private Slider _soundVolumeSlider;
+        [SerializeField] private AudioClipSO _audioClip;
         
         public override WindowType Type => WindowType.Settings;
         
@@ -20,6 +22,7 @@ namespace UISpace
         {
             UISystem.Instance.Close(WindowType.Settings);
             Time.timeScale = 1;
+            AudioSource.PlayClipAtPoint(_audioClip.ClickButtonSound, Camera.main.transform.position, 1f);
         }
     }
 }

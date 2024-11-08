@@ -10,7 +10,6 @@ public class MusicManager : MonoBehaviour
         if (Camera.main != null)
         {
             AudioSource.PlayClipAtPoint(_audioClip.ClickButtonSound, Camera.main.transform.position, 1f);
-            Debug.Log(Camera.main.transform.position);
         }
     }
 }

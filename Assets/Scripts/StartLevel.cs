@@ -1,4 +1,5 @@
 using System;
+using UISpace;
 using UnityEngine;
 
 namespace TowerSpace
@@ -17,6 +18,8 @@ namespace TowerSpace
             {
                 gameObject.transform.GetChild(i).gameObject.SetActive(true);
             }
+            
+            UISystem.Instance.OpenWindow(WindowType.LevelUI);
         }
 
         private void OnDisable()
