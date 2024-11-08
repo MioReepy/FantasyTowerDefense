@@ -18,11 +18,17 @@ namespace UISpace
             _closeButton.onClick.AddListener(OnCloseButtonClick);
         }
 
+        private void Update()
+        {
+            SoundManager.Instance.ChangeSoundVolume(_soundVolumeSlider.value);
+            MusicManager.Instance.ChangeMusicVolume(_musicVolumeSlider.value);
+        }
+
         private void OnCloseButtonClick()
         {
             UISystem.Instance.Close(WindowType.Settings);
             Time.timeScale = 1;
-            AudioSource.PlayClipAtPoint(_audioClip.ClickButtonSound, Camera.main.transform.position, 1f);
+            AudioSource.PlayClipAtPoint(_audioClip.ClickButtonSound, Camera.main.transform.position, _soundVolumeSlider.value);
         }
     }
 }

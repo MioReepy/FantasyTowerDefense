@@ -23,18 +23,16 @@ namespace UISpace
         {
             UISystem.Instance.Close(WindowType.Pause);
             Time.timeScale = 1;
-            AudioSource.PlayClipAtPoint(_audioClip.ClickButtonSound, Camera.main.transform.position, 1f);
+            AudioSource.PlayClipAtPoint(_audioClip.ClickButtonSound, Camera.main.transform.position, SoundManager.Instance.GetSoundVolume());
         }
 
         private void OnRestartButtonClick()
         {
-            AudioSource.PlayClipAtPoint(_audioClip.ClickButtonSound, Camera.main.transform.position, 1f);
             Loader.Load(Loader.Scene.GameScene, true,true);
         }
 
         private void OnQuitButtonClick()
         {
-            AudioSource.PlayClipAtPoint(_audioClip.ClickButtonSound, Camera.main.transform.position, 1f);
             Loader.Load(Loader.Scene.MainMenu, true,true);
         }
     }

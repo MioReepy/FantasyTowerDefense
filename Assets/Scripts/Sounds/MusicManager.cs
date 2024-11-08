@@ -1,83 +1,19 @@
-using MusicSpase;
 using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
-    [SerializeField] private AudioClipSO _audioClip;
-
+    private AudioSource _audioSource;
+    private float _volume = 0.5f;
     public static MusicManager Instance;
 
     private void Awake()
     {
         Instance = this;
-    }
-
-    public void OnMouseButtonClick()
-    {
-        if (Camera.main != null)
-        {
-            AudioSource.PlayClipAtPoint(_audioClip.ClickButtonSound, Camera.main.transform.position, 1f);
-        }
+        _audioSource = GetComponent<AudioSource>();
     }
     
-    public void CrossbowShotSound()
+    public void ChangeMusicVolume(float volume)
     {
-        if (Camera.main != null)
-        {
-            AudioSource.PlayClipAtPoint(_audioClip.CrossbowShotSound, Camera.main.transform.position, 1f);
-        }
-    }    
-    
-    public void MortalShotSound()
-    {
-        if (Camera.main != null)
-        {
-            AudioSource.PlayClipAtPoint(_audioClip.MortalShotSound, Camera.main.transform.position, 1f);
-        }
-    }    
-    
-    public void CrystalShotSound()
-    {
-        if (Camera.main != null)
-        {
-            AudioSource.PlayClipAtPoint(_audioClip.CrystalShotSound, Camera.main.transform.position, 1f);
-        }
-    }
-
-    public void TeslaShotSound()
-    {
-        if (Camera.main != null)
-        {
-            AudioSource.PlayClipAtPoint(_audioClip.TeslaShotSound, Camera.main.transform.position, 1f);
-        }
-    }
-
-    public void PlayerDamageSound()
-    {
-        if (Camera.main != null)
-        {
-            AudioSource.PlayClipAtPoint(_audioClip.PlayerDamageSound, Camera.main.transform.position, 1f);
-        }
-    }
-    public void EnemyDieSound()
-    {
-        if (Camera.main != null)
-        {
-            AudioSource.PlayClipAtPoint(_audioClip.EnemyDieSound, Camera.main.transform.position, 1f);
-        }
-    }    
-    public void TowerBuildingSound()
-    {
-        if (Camera.main != null)
-        {
-            AudioSource.PlayClipAtPoint(_audioClip.TowerBuildingSound, Camera.main.transform.position, 1f);
-        }
-    }
-    public void TowerSelectedTower()
-    {
-        if (Camera.main != null)
-        {
-            AudioSource.PlayClipAtPoint(_audioClip.TowerSelectedTower, Camera.main.transform.position, 1f);
-        }
+        _audioSource.volume = volume;
     }
 }

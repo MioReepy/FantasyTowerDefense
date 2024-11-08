@@ -22,7 +22,7 @@ namespace TowerSpace
 
                 if (fireCoolDown <= 0f)
                 {
-                    MusicManager.Instance.CrossbowShotSound();
+                    SoundManager.Instance.CrossbowShotSound();
                     Shoot();
                     fireCoolDown = 1 / fireSpeed;
                 }

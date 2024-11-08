@@ -17,7 +17,7 @@ namespace UISpace
                
             _playButton.onClick.AddListener(() =>
             {
-                MusicManager.Instance.OnMouseButtonClick();
+                SoundManager.Instance.OnMouseButtonClick();
                 Loader.Load(Loader.Scene.GameScene, true,true);
             });
             
@@ -25,14 +25,14 @@ namespace UISpace
             
             _exitButton.onClick.AddListener(() =>
             {
-                MusicManager.Instance.OnMouseButtonClick();
+                SoundManager.Instance.OnMouseButtonClick();
                 Application.Quit();
             });
         }
 
         private void OnSettingsButtonClick()
         {
-            MusicManager.Instance.OnMouseButtonClick();
+            SoundManager.Instance.OnMouseButtonClick();
             UISystem.Instance.OpenWindow(WindowType.Settings);
         }
     }

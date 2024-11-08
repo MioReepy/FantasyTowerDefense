@@ -13,12 +13,11 @@ MonoBehaviour:
   m_Name: Audio Clip
   m_EditorClassIdentifier: 
   ClickButtonSound: {fileID: 8300000, guid: bad8afa4e42fb53428a109580ef7a590, type: 3}
-  EnemyDamageSound: {fileID: 0}
+  PlayerDamageSound: {fileID: 8300000, guid: 3c5751e1d3f19ca4db3508da21622c4b, type: 3}
+  EnemyDieSound: {fileID: 8300000, guid: bbf160c508786ef4bbaa61ac809b6b76, type: 3}
   CrossbowShotSound: {fileID: 8300000, guid: bcbfb729373596743aa3829fe4c3c9e2, type: 3}
-  CrossbowEnemyDamageSound: {fileID: 0}
   MortalShotSound: {fileID: 8300000, guid: 85807ad4749d1734f91faf5900e21cb3, type: 3}
-  MortalEnemyDamageSound: {fileID: 0}
   CrystalShotSound: {fileID: 8300000, guid: 3c3fa95d88c02454e92f4329bc536677, type: 3}
-  CrystalEnemyDamageSound: {fileID: 0}
   TeslaShotSound: {fileID: 8300000, guid: bef7c45b496f36e42b75fca9d53f7b2b, type: 3}
-  TeslaEnemyDamageSound: {fileID: 0}
+  TowerBuildingSound: {fileID: 8300000, guid: c74c9ca48a47565489ab6eca1c410a8b, type: 3}
+  TowerSelectedTower: {fileID: 8300000, guid: 1a1eb6203695bd14cba7b84e15a69393, type: 3}

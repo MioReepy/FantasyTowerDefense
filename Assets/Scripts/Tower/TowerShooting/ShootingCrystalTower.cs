@@ -22,7 +22,7 @@ namespace TowerSpace
 
                 if (fireCoolDown <= 0f)
                 {
-                    MusicManager.Instance.CrystalShotSound();
+                    SoundManager.Instance.CrystalShotSound();
                     Shoot();
                     fireCoolDown = 1 / fireSpeed;
                 }

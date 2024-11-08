@@ -1,6 +1,5 @@
 using PlayerSpace;
 using TowerSpace;
-using UISpace;
 using UnityEngine;
 
 public class BuyTower : MonoBehaviour
@@ -12,5 +11,6 @@ public class BuyTower : MonoBehaviour
         int costTower = gameObject.GetComponent<TowerInformation>().towerCost;
 
         PlayerStats.Instance.SetMoney(-costTower);
+        SoundManager.Instance.TowerSelectedTower();
     }
 }
