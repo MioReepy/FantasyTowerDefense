@@ -8,7 +8,6 @@ namespace WaveSpawnerSpace
     {
         private EnemyObject _objectToPool;
         private GameObject _spawnObject;
-
         private List<GameObject> _poolObjects;
 
         protected void SetEnemyObjectAndSpawnObject(EnemyObject objectToPool, GameObject spawnObject)

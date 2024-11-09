@@ -18,12 +18,12 @@ namespace UISpace
             _closeButton.onClick.AddListener(OnCloseButtonClick);
             _musicVolumeSlider.onValueChanged.AddListener(OnChangeMusicVolume);
             _soundVolumeSlider.onValueChanged.AddListener(OnChangeSoundVolume);
-            _musicVolumeSlider.value = PlayerPrefs.GetFloat(MusicManager.PREFS_MUSIC_EFFECT_VOLUME, 0.5f);
+            _musicVolumeSlider.value = PlayerPrefs.GetFloat(MusicManager.PrefsMusicEffectVolume, 0.5f);
         }
 
         private void Start()
         {
-            _soundVolumeSlider.value = PlayerPrefs.GetFloat(SoundManager.PREFS_SOUND_EFFECT_VOLUME, 0.5f);
+            _soundVolumeSlider.value = PlayerPrefs.GetFloat(SoundManager.PrefsSoundEffectVolume, 0.5f);
         }
 
         private void OnChangeSoundVolume(float value)

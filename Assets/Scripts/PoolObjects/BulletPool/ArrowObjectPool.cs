@@ -7,7 +7,6 @@ namespace TowerSpace
         [SerializeField] internal GameObject objectToPool;
         [SerializeField] internal GameObject spawnObject;
         [SerializeField] internal int poolSize = 10;
-        
         public static ArrowObjectPool Singleton;
 
         private void Awake()

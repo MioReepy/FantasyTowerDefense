@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36654d878a1ba9b4eb851ed8343cb804, type: 3}
+  m_Script: {fileID: 11500000, guid: 54b98622c90c4e4b9ca3510b2e15a204, type: 3}
   m_Name: Spook Enemy
   m_EditorClassIdentifier: 
-  ID: 3
   prefabEnemy: {fileID: 2143963233178108554, guid: 64926770d352a2d4a904e19f65d72d80, type: 3}
   enemyType: 2
-  enemyHP: 10
-  enemySpeed: 8
+  enemySpeed: 7

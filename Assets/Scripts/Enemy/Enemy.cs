@@ -1,3 +1,4 @@
+using GameController;
 using PlayerSpace;
 using TowerSpace;
 using UnityEngine;
@@ -43,29 +44,28 @@ namespace EnemySpace
             if (_currentHelth <= 0)
             {
                 bullet.gameObject.SetActive(false);
-                _animator.SetBool("IsDied", true);
-                gameObject.GetComponent<Collider>().enabled = false;
-                gameObject.GetComponent<Rigidbody>().useGravity = false;
-                gameObject.GetComponent<Rigidbody>().isKinematic = false;
-                gameObject.GetComponent<WaypointNavigator>().enabled = false;
-                gameObject.GetComponent<EnemyNavigator>().enabled = false;
-                isDead = true;
+                SetEnemyStats(false);
                 Finish.Instance.EnemyDied();
             }
         }
-
+        
         public void EnemyDied()
         {
             PlayerStats.Instance.SetMoney(_reward);
-            _animator.SetBool("IsDied", false);
-            gameObject.GetComponent<Collider>().enabled = true;
-            gameObject.GetComponent<Rigidbody>().useGravity = true;
-            gameObject.GetComponent<Rigidbody>().isKinematic = true;
-            gameObject.GetComponent<WaypointNavigator>().enabled = true;
-            gameObject.GetComponent<EnemyNavigator>().enabled = true;
-            isDead = false;
+            SetEnemyStats(true);
             _currentHelth = _health;
             EnemyPool.ReturnToPool(gameObject);
+        }
+        
+        private void SetEnemyStats(bool isEnable)
+        {
+            _animator.SetBool("IsDied", !isEnable);
+            gameObject.GetComponent<Collider>().enabled = isEnable;
+            gameObject.GetComponent<Rigidbody>().useGravity = isEnable;
+            gameObject.GetComponent<Rigidbody>().isKinematic = isEnable;
+            gameObject.GetComponent<WaypointNavigator>().enabled = isEnable;
+            gameObject.GetComponent<EnemyNavigator>().enabled = isEnable;
+            isDead = !isEnable;
         }
     }
 }

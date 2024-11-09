@@ -1,12 +1,15 @@
 using TowerSpace;
 using UnityEngine;
 
-public class RestartStaticDataManager : MonoBehaviour
+namespace GameController
 {
-    private void Awake()
+    public class RestartStaticDataManager : MonoBehaviour
     {
-        Builder.ResetStaticData();
-        SelectingTowers.ResetStaticData();
-        StartGame.ResetStaticData();
+        private void Awake()
+        {
+            Builder.ResetStaticData();
+            SelectingTowers.ResetStaticData();
+            StartGame.ResetStaticData();
+        }
     }
 }

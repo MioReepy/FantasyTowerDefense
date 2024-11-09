@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class UseGravitation : MonoBehaviour
 {
-    [SerializeField] private bool _isUseGravitation = false;
+    [SerializeField] private bool _isUseGravitation;
     [SerializeField] private float _gravitationForce = 100f;
     
     private void OnCollisionStay(Collision other)

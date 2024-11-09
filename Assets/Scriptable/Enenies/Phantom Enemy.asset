@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf322463f6ad65e40bcc7bb11a55416a, type: 3}
+  m_Script: {fileID: 11500000, guid: 54b98622c90c4e4b9ca3510b2e15a204, type: 3}
   m_Name: Phantom Enemy
   m_EditorClassIdentifier: 
-  ID: 2
   prefabEnemy: {fileID: 2611149553095981223, guid: add7e67fb68b0d54a9d9893bd0356223, type: 3}
   enemyType: 1
-  enemyHP: 10
-  enemySpeed: 10
+  enemySpeed: 9

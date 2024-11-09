@@ -23,7 +23,7 @@ namespace UISpace
         {
             UISystem.Instance.Close(WindowType.Pause);
             Time.timeScale = 1;
-            AudioSource.PlayClipAtPoint(_audioClip.ClickButtonSound, Camera.main.transform.position, PlayerPrefs.GetFloat(SoundManager.PREFS_SOUND_EFFECT_VOLUME, 0.5f));
+            AudioSource.PlayClipAtPoint(_audioClip.ClickButtonSound, Camera.main.transform.position, PlayerPrefs.GetFloat(SoundManager.PrefsSoundEffectVolume, 0.5f));
         }
 
         private void OnRestartButtonClick()

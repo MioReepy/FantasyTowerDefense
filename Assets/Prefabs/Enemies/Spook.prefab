@@ -324,7 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b1d5c6e9dcf94d4fbe99d0822e61a47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 11400000, guid: 6d11f3f1fc8944743b391777e5c96f64, type: 2}
+  enemy: {fileID: 11400000, guid: 8c5286b22022fe7489a8b99bfb9ec467, type: 2}
   _impactEffect: {fileID: 7388991303198605836, guid: ebd769dac08fc674f8a44336dfcdaf92, type: 3}
   _health: 80
   _reward: 15

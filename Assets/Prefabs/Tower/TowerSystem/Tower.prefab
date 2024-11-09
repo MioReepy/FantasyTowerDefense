@@ -176,7 +176,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6054044962450280771}
   - component: {fileID: 8296250990242967325}
-  - component: {fileID: 2171850487336976247}
   - component: {fileID: 8416463342900676296}
   m_Layer: 0
   m_Name: Mortar
@@ -218,18 +217,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ca97992f69b282c4da5abf0827683cd8, type: 2}
   - {fileID: 11400000, guid: cb24891bc8a5772418507218c2e4cf7f, type: 2}
   mainTowerPrefab: {fileID: 173085577158851945}
---- !u!114 &2171850487336976247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 415983794055822966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f585a7aafd2c4054fb33c2c10b3b1f25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8416463342900676296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,7 +242,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7599169425352538252}
   - component: {fileID: 5084159741981209851}
-  - component: {fileID: 2936951566585532366}
   - component: {fileID: 3473632881668469410}
   m_Layer: 0
   m_Name: Crystal
@@ -297,18 +283,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 358f1cbe568d3be45b93986dbd2ba7a3, type: 2}
   - {fileID: 11400000, guid: 959d713da7ff7b544a45b253a374f3ad, type: 2}
   mainTowerPrefab: {fileID: 173085577158851945}
---- !u!114 &2936951566585532366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1791949625325989413}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f585a7aafd2c4054fb33c2c10b3b1f25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3473632881668469410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -366,7 +340,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2653796394280292332}
   - component: {fileID: 7830835489186817342}
-  - component: {fileID: 7757304101029896702}
   - component: {fileID: 4756981519894046899}
   m_Layer: 0
   m_Name: Tesla
@@ -408,18 +381,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d2a118f4aaf69a64fad789dac0c20b0a, type: 2}
   - {fileID: 11400000, guid: 958d38ff903519d4cb8c1946884ee838, type: 2}
   mainTowerPrefab: {fileID: 173085577158851945}
---- !u!114 &7757304101029896702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2912263195378500921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f585a7aafd2c4054fb33c2c10b3b1f25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &4756981519894046899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -479,7 +440,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5818588545603872910}
   - component: {fileID: 5876149075335829769}
-  - component: {fileID: 3139867016821827083}
   - component: {fileID: 9065102082289277605}
   m_Layer: 0
   m_Name: Crossbow
@@ -521,18 +481,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d71e7f5dbdc022a4dbb8c1538883d15c, type: 2}
   - {fileID: 11400000, guid: c9d68fc7f5f38b34daa1f4681573dcdc, type: 2}
   mainTowerPrefab: {fileID: 173085577158851945}
---- !u!114 &3139867016821827083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5131172620213736280}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f585a7aafd2c4054fb33c2c10b3b1f25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &9065102082289277605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1048,15 +996,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3959761450975937533, guid: 76505b0c628173347a8ff85df55874ae, type: 3}
-      propertyPath: _towerObjects.Array.data[0]
+      propertyPath: '_towerObjects.Array.data[0]'
       value: 
       objectReference: {fileID: 11400000, guid: f721a0b495ce33d438a8ae63ab4f4708, type: 2}
     - target: {fileID: 3959761450975937533, guid: 76505b0c628173347a8ff85df55874ae, type: 3}
-      propertyPath: _towerObjects.Array.data[1]
+      propertyPath: '_towerObjects.Array.data[1]'
       value: 
       objectReference: {fileID: 11400000, guid: 358f1cbe568d3be45b93986dbd2ba7a3, type: 2}
     - target: {fileID: 3959761450975937533, guid: 76505b0c628173347a8ff85df55874ae, type: 3}
-      propertyPath: _towerObjects.Array.data[2]
+      propertyPath: '_towerObjects.Array.data[2]'
       value: 
       objectReference: {fileID: 11400000, guid: 959d713da7ff7b544a45b253a374f3ad, type: 2}
     - target: {fileID: 3966833395461399494, guid: 76505b0c628173347a8ff85df55874ae, type: 3}
@@ -1136,15 +1084,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6144101823451606813, guid: 76505b0c628173347a8ff85df55874ae, type: 3}
-      propertyPath: _towerObjects.Array.data[0]
+      propertyPath: '_towerObjects.Array.data[0]'
       value: 
       objectReference: {fileID: 11400000, guid: 66e71143f726aa14586b105eeb7ea572, type: 2}
     - target: {fileID: 6144101823451606813, guid: 76505b0c628173347a8ff85df55874ae, type: 3}
-      propertyPath: _towerObjects.Array.data[1]
+      propertyPath: '_towerObjects.Array.data[1]'
       value: 
       objectReference: {fileID: 11400000, guid: ca97992f69b282c4da5abf0827683cd8, type: 2}
     - target: {fileID: 6144101823451606813, guid: 76505b0c628173347a8ff85df55874ae, type: 3}
-      propertyPath: _towerObjects.Array.data[2]
+      propertyPath: '_towerObjects.Array.data[2]'
       value: 
       objectReference: {fileID: 11400000, guid: cb24891bc8a5772418507218c2e4cf7f, type: 2}
     - target: {fileID: 6234303031638256759, guid: 76505b0c628173347a8ff85df55874ae, type: 3}
@@ -1172,15 +1120,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7653494616280222381, guid: 76505b0c628173347a8ff85df55874ae, type: 3}
-      propertyPath: _towerObjects.Array.data[0]
+      propertyPath: '_towerObjects.Array.data[0]'
       value: 
       objectReference: {fileID: 11400000, guid: 7e8ea9fff7afd9a42ac2bc4d68b31865, type: 2}
     - target: {fileID: 7653494616280222381, guid: 76505b0c628173347a8ff85df55874ae, type: 3}
-      propertyPath: _towerObjects.Array.data[1]
+      propertyPath: '_towerObjects.Array.data[1]'
       value: 
       objectReference: {fileID: 11400000, guid: d71e7f5dbdc022a4dbb8c1538883d15c, type: 2}
     - target: {fileID: 7653494616280222381, guid: 76505b0c628173347a8ff85df55874ae, type: 3}
-      propertyPath: _towerObjects.Array.data[2]
+      propertyPath: '_towerObjects.Array.data[2]'
       value: 
       objectReference: {fileID: 11400000, guid: c9d68fc7f5f38b34daa1f4681573dcdc, type: 2}
     - target: {fileID: 7834735537330133525, guid: 76505b0c628173347a8ff85df55874ae, type: 3}
@@ -1344,15 +1292,15 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9165382587415628024, guid: 76505b0c628173347a8ff85df55874ae, type: 3}
-      propertyPath: _towerObjects.Array.data[0]
+      propertyPath: '_towerObjects.Array.data[0]'
       value: 
       objectReference: {fileID: 11400000, guid: 0a7789bbf198a9d4baa70c4e32180655, type: 2}
     - target: {fileID: 9165382587415628024, guid: 76505b0c628173347a8ff85df55874ae, type: 3}
-      propertyPath: _towerObjects.Array.data[1]
+      propertyPath: '_towerObjects.Array.data[1]'
       value: 
       objectReference: {fileID: 11400000, guid: d2a118f4aaf69a64fad789dac0c20b0a, type: 2}
     - target: {fileID: 9165382587415628024, guid: 76505b0c628173347a8ff85df55874ae, type: 3}
-      propertyPath: _towerObjects.Array.data[2]
+      propertyPath: '_towerObjects.Array.data[2]'
       value: 
       objectReference: {fileID: 11400000, guid: 958d38ff903519d4cb8c1946884ee838, type: 2}
     m_RemovedComponents:

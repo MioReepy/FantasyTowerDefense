@@ -9,7 +9,7 @@ namespace EnemySpace
         [SerializeField] private float _rotationSpeed = 100f;
         [SerializeField] private float _stopDistance = 10f;
 
-        internal bool _isReachedDestination;
+        internal bool isReachedDestination;
         private Vector3 _destination;
 
         private void Update()
@@ -27,14 +27,14 @@ namespace EnemySpace
                 }
                 else
                 {
-                    _isReachedDestination = false;
+                    isReachedDestination = false;
                 }
             }
         }
 
         private void EnemyMove(Vector3 destinationDirection)
         {
-            _isReachedDestination = true;
+            isReachedDestination = true;
             Quaternion targetRotation = Quaternion.LookRotation(destinationDirection);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation,
                 _rotationSpeed * Time.deltaTime);
@@ -44,7 +44,7 @@ namespace EnemySpace
         internal void SetDestination(Waypoint waypoint)
         {
             _destination = Vector3.Lerp(waypoint.minBounds, waypoint.maxBounds, Random.Range(0f, 1f));
-            _isReachedDestination = false;
+            isReachedDestination = false;
         }
     }
 }

@@ -3797,7 +3797,6 @@ GameObject:
   - component: {fileID: 118899827}
   - component: {fileID: 118899829}
   - component: {fileID: 118899828}
-  - component: {fileID: 118899831}
   - component: {fileID: 118899830}
   m_Layer: 0
   m_Name: WaveSpawner
@@ -3839,19 +3838,19 @@ MonoBehaviour:
   - enemies:
     - enemyObject: {fileID: 11400000, guid: d244078a24f6dcc4594b731a20059deb, type: 2}
       enemyCount: 5
-    - enemyObject: {fileID: 11400000, guid: 6d11f3f1fc8944743b391777e5c96f64, type: 2}
+    - enemyObject: {fileID: 11400000, guid: 8c5286b22022fe7489a8b99bfb9ec467, type: 2}
       enemyCount: 2
   - enemies:
     - enemyObject: {fileID: 11400000, guid: d244078a24f6dcc4594b731a20059deb, type: 2}
       enemyCount: 7
-    - enemyObject: {fileID: 11400000, guid: 6d11f3f1fc8944743b391777e5c96f64, type: 2}
+    - enemyObject: {fileID: 11400000, guid: 8c5286b22022fe7489a8b99bfb9ec467, type: 2}
       enemyCount: 9
   - enemies:
     - enemyObject: {fileID: 11400000, guid: d244078a24f6dcc4594b731a20059deb, type: 2}
       enemyCount: 6
-    - enemyObject: {fileID: 11400000, guid: 6d11f3f1fc8944743b391777e5c96f64, type: 2}
+    - enemyObject: {fileID: 11400000, guid: 8c5286b22022fe7489a8b99bfb9ec467, type: 2}
       enemyCount: 7
-    - enemyObject: {fileID: 11400000, guid: 7bfb7c56d75fc314abca5b713e3990ae, type: 2}
+    - enemyObject: {fileID: 11400000, guid: 62ecbd41dac56574b9c97041d29bf357, type: 2}
       enemyCount: 6
   _waveSpawnerWidth: 5
   _timeBetweenWaves: 10.5
@@ -3883,7 +3882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d4abfb8d7e6bb4491a33595639bc54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToPool: {fileID: 11400000, guid: 6d11f3f1fc8944743b391777e5c96f64, type: 2}
+  objectToPool: {fileID: 11400000, guid: 8c5286b22022fe7489a8b99bfb9ec467, type: 2}
   spawnObject: {fileID: 729228553}
 --- !u!114 &118899829
 MonoBehaviour:
@@ -3897,7 +3896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dec927860121cc34e9c0c26f858f0585, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToPool: {fileID: 11400000, guid: 7bfb7c56d75fc314abca5b713e3990ae, type: 2}
+  objectToPool: {fileID: 11400000, guid: 62ecbd41dac56574b9c97041d29bf357, type: 2}
   spawnObject: {fileID: 359821581}
 --- !u!114 &118899830
 MonoBehaviour:
@@ -3914,18 +3913,6 @@ MonoBehaviour:
   objectToPool: {fileID: 4374325547042129361, guid: 4c81e9a404e353d43a0d53b2b7b90f1c, type: 3}
   spawnObject: {fileID: 1165140001}
   _poolSize: 15
---- !u!114 &118899831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 118899822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1feae2d3e59e96042a5e7b9995624a53, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &121020510
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -25,7 +25,7 @@ namespace WaypointSpase
 
         private void SetCurrentWaypoint()
         {
-            if (!_enemyNavigator._isReachedDestination)
+            if (!_enemyNavigator.isReachedDestination)
             {
                 _currentWaypoint = _currentWaypoint.nextWaypoint;
                 _enemyNavigator.SetDestination(_currentWaypoint);

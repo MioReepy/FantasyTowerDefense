@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace EnemySpace
@@ -8,9 +9,7 @@ namespace EnemySpace
         [SerializeField] internal GameObject objectToPool;
         [SerializeField] internal GameObject spawnObject;
         [SerializeField] private int _poolSize = 15;
-
         private List<GameObject> _poolObjects;
-
         public static EnemyPortalObjectPool Singleton;
         private void Awake() => Singleton = this;
         
@@ -28,12 +27,9 @@ namespace EnemySpace
 
         internal GameObject GetPoolObject()
         {
-            for (int j = 0; j < _poolObjects.Count; j++)
+            foreach (var enemyObject in _poolObjects.Where(enemyObject => !enemyObject.activeInHierarchy))
             {
-                if (!_poolObjects[j].activeInHierarchy)
-                {
-                    return _poolObjects[j];
-                }
+                return enemyObject;
             }
 
             GameObject poolTemp = Instantiate(objectToPool, spawnObject.transform);

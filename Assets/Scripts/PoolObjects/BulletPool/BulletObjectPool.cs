@@ -1,13 +1,13 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace TowerSpace
 {
-    public class BulletObjectPool : MonoBehaviour
+    public abstract class BulletObjectPool : MonoBehaviour
     {
         private GameObject _objectToPool;
         private GameObject _spawnObject;
-
         private List<GameObject> _poolObjects;
 
         protected void SetBulletObject(GameObject objectToPool, GameObject spawnObject)
@@ -29,12 +29,9 @@ namespace TowerSpace
 
         internal GameObject GetPoolObject()
         {
-            foreach (var enemyObject in _poolObjects)
+            foreach (var enemyObject in _poolObjects.Where(enemyObject => !enemyObject.activeInHierarchy))
             {
-                if (!enemyObject.activeInHierarchy)
-                {
-                    return enemyObject;
-                }
+                return enemyObject;
             }
 
             GameObject poolTemp = Instantiate(_objectToPool, _spawnObject.transform);

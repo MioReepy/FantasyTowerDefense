@@ -13,11 +13,8 @@ namespace PlayerSpace
         private InputAction _unSelect;
         private InputAction _zoomPlus;
         private InputAction _zoomMinus;
-        
         private CameraMovement _playerController;
-
         public static InputPlayerController Instance;
-        
         public event EventHandler OnUnselect;
         public event EventHandler OnZoomPlus;
         public event EventHandler OnZoomMinus;

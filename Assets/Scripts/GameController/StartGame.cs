@@ -1,12 +1,11 @@
 using System;
 using UnityEngine;
 
-namespace TowerSpace
+namespace GameController
 {
     public class StartGame : MonoBehaviour
     {
         private bool isFirstUpdate = true;
-        
         public static event EventHandler OnStartGame;
 
         public static void ResetStaticData()

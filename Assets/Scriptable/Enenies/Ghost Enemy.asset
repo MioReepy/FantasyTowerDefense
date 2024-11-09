@@ -9,11 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ed279e43b5989e4c9d9ea38121ef038, type: 3}
+  m_Script: {fileID: 11500000, guid: 54b98622c90c4e4b9ca3510b2e15a204, type: 3}
   m_Name: Ghost Enemy
   m_EditorClassIdentifier: 
-  ID: 1
   prefabEnemy: {fileID: 4524045572467879168, guid: 14f1f307a97058a49b01c5ef42cbbfcd, type: 3}
   enemyType: 0
-  enemyHP: 10
-  enemySpeed: 6
+  enemySpeed: 5

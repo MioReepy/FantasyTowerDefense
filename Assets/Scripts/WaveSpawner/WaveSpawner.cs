@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using EnemySpace;
+using GameController;
 using UnityEngine;
 using WaypointSpase;
 using Random = UnityEngine.Random;
