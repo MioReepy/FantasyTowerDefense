@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace WaveSpawnerSpace
 {
-    public class EnemyPool
+    public class EnemyPool : MonoBehaviour
     {
         public static void CreateEnemyPool(EnemyType enemyType, int poolSize)
         {

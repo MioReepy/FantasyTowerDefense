@@ -1,3 +1,4 @@
+using System;
 using PlayerSpace;
 using TowerSpace;
 using UnityEngine;
@@ -12,10 +13,16 @@ namespace EnemySpace
         [SerializeField] private GameObject _impactEffect;
         [SerializeField] internal int _health = 100;
         [SerializeField] int _reward = 50;
-        
+
+        private int _currentHelth;
         private Animator _animator;
         internal bool isDead;
-        
+
+        private void Awake()
+        {
+            _currentHelth = _health;
+        }
+
         private void Start()
         {
             _animator = GetComponent<Animator>();
@@ -58,6 +65,7 @@ namespace EnemySpace
             gameObject.GetComponent<WaypointNavigator>().enabled = true;
             gameObject.GetComponent<EnemyNavigator>().enabled = true;
             isDead = false;
+            _currentHelth = _health;
             EnemyPool.ReturnToPool(gameObject);
         }
     }

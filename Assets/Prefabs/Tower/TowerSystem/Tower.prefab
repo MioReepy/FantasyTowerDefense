@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 5945564339141868158}
   - component: {fileID: 8193295155746540985}
   - component: {fileID: 4167912121003258906}
+  - component: {fileID: 6324526111684342101}
   - component: {fileID: 1860334769727628097}
   - component: {fileID: 9326343872890841}
   - component: {fileID: 8880307677602467182}
-  - component: {fileID: 3610503388391744527}
   m_Layer: 0
   m_Name: Tower
   m_TagString: Untagged
@@ -110,6 +110,20 @@ MonoBehaviour:
   _arrowAvailableUpgrade: {fileID: 3415266094520923704}
   availableBuild: {fileID: 313366091777293412}
   availableUpgrade: {fileID: 2137477750275025959}
+--- !u!114 &6324526111684342101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173085577158851945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eea3bd54dc4f50a499e8750eee195fc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _arrow: {fileID: 3415266094520923704}
+  _availableBuild: {fileID: 313366091777293412}
 --- !u!114 &1860334769727628097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,20 +166,6 @@ MonoBehaviour:
   towerPrefab: {fileID: 0}
   towerCost: 0
   damageTower: 0
---- !u!114 &3610503388391744527
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 173085577158851945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eea3bd54dc4f50a499e8750eee195fc1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _arrow: {fileID: 3415266094520923704}
-  _availableBuild: {fileID: 313366091777293412}
 --- !u!1 &415983794055822966
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,8 +176,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6054044962450280771}
   - component: {fileID: 8296250990242967325}
-  - component: {fileID: 2588785508762279288}
-  - component: {fileID: 4526500472777467880}
+  - component: {fileID: 2171850487336976247}
+  - component: {fileID: 8416463342900676296}
   m_Layer: 0
   m_Name: Mortar
   m_TagString: Untagged
@@ -218,7 +218,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ca97992f69b282c4da5abf0827683cd8, type: 2}
   - {fileID: 11400000, guid: cb24891bc8a5772418507218c2e4cf7f, type: 2}
   mainTowerPrefab: {fileID: 173085577158851945}
---- !u!114 &2588785508762279288
+--- !u!114 &2171850487336976247
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f585a7aafd2c4054fb33c2c10b3b1f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4526500472777467880
+--- !u!114 &8416463342900676296
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -244,7 +244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToPool: {fileID: 3076262866650904099, guid: 079f2dc5fce2a7249b6634e6f3f86cfd, type: 3}
   spawnObject: {fileID: 0}
-  poolSize: 5
+  poolSize: 10
 --- !u!1 &1791949625325989413
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,8 +255,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7599169425352538252}
   - component: {fileID: 5084159741981209851}
-  - component: {fileID: 5352323543828926339}
-  - component: {fileID: 8578546356735643313}
+  - component: {fileID: 2936951566585532366}
+  - component: {fileID: 3473632881668469410}
   m_Layer: 0
   m_Name: Crystal
   m_TagString: Untagged
@@ -297,7 +297,19 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 358f1cbe568d3be45b93986dbd2ba7a3, type: 2}
   - {fileID: 11400000, guid: 959d713da7ff7b544a45b253a374f3ad, type: 2}
   mainTowerPrefab: {fileID: 173085577158851945}
---- !u!114 &5352323543828926339
+--- !u!114 &2936951566585532366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791949625325989413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f585a7aafd2c4054fb33c2c10b3b1f25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3473632881668469410
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -311,19 +323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToPool: {fileID: 4378605199871155009, guid: eb64579b5848bc44ab8ad6b78a03feb0, type: 3}
   spawnObject: {fileID: 0}
-  poolSize: 5
---- !u!114 &8578546356735643313
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1791949625325989413}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f585a7aafd2c4054fb33c2c10b3b1f25, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  poolSize: 10
 --- !u!1 &1921342129390575396
 GameObject:
   m_ObjectHideFlags: 0
@@ -366,8 +366,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2653796394280292332}
   - component: {fileID: 7830835489186817342}
-  - component: {fileID: 3391865609846525595}
-  - component: {fileID: 3140394072515437633}
+  - component: {fileID: 7757304101029896702}
+  - component: {fileID: 4756981519894046899}
   m_Layer: 0
   m_Name: Tesla
   m_TagString: Untagged
@@ -408,7 +408,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d2a118f4aaf69a64fad789dac0c20b0a, type: 2}
   - {fileID: 11400000, guid: 958d38ff903519d4cb8c1946884ee838, type: 2}
   mainTowerPrefab: {fileID: 173085577158851945}
---- !u!114 &3391865609846525595
+--- !u!114 &7757304101029896702
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -420,7 +420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f585a7aafd2c4054fb33c2c10b3b1f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3140394072515437633
+--- !u!114 &4756981519894046899
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -434,7 +434,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToPool: {fileID: 3076262866650904099, guid: bc813c22dad9d3b47804f6c8bdd88f46, type: 3}
   spawnObject: {fileID: 0}
-  poolSize: 4
+  poolSize: 10
 --- !u!1 &3213652432030763392
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,8 +479,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5818588545603872910}
   - component: {fileID: 5876149075335829769}
-  - component: {fileID: 3266846395546802008}
-  - component: {fileID: 6072096655897257013}
+  - component: {fileID: 3139867016821827083}
+  - component: {fileID: 9065102082289277605}
   m_Layer: 0
   m_Name: Crossbow
   m_TagString: Untagged
@@ -521,7 +521,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d71e7f5dbdc022a4dbb8c1538883d15c, type: 2}
   - {fileID: 11400000, guid: c9d68fc7f5f38b34daa1f4681573dcdc, type: 2}
   mainTowerPrefab: {fileID: 173085577158851945}
---- !u!114 &3266846395546802008
+--- !u!114 &3139867016821827083
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -533,7 +533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f585a7aafd2c4054fb33c2c10b3b1f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6072096655897257013
+--- !u!114 &9065102082289277605
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -547,7 +547,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToPool: {fileID: 3320177568042795438, guid: 5b9b37dcd22cd34419afb23048e2edc0, type: 3}
   spawnObject: {fileID: 0}
-  poolSize: 5
+  poolSize: 10
 --- !u!1 &5715073031632036877
 GameObject:
   m_ObjectHideFlags: 0
@@ -706,7 +706,7 @@ GameObject:
   - component: {fileID: 230281226005385601}
   - component: {fileID: 2993210102406812523}
   - component: {fileID: 3408139737747999609}
-  - component: {fileID: 2716802667720039479}
+  - component: {fileID: 8124835605680498584}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -753,7 +753,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_VertexColorAlwaysGammaSpace: 0
+  m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -799,7 +799,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &2716802667720039479
+--- !u!114 &8124835605680498584
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1355,7 +1355,11 @@ PrefabInstance:
       propertyPath: _towerObjects.Array.data[2]
       value: 
       objectReference: {fileID: 11400000, guid: 958d38ff903519d4cb8c1946884ee838, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2086215152614181121, guid: 76505b0c628173347a8ff85df55874ae, type: 3}
+    - {fileID: 717461618057923412, guid: 76505b0c628173347a8ff85df55874ae, type: 3}
+    - {fileID: 4627153270032334929, guid: 76505b0c628173347a8ff85df55874ae, type: 3}
+    - {fileID: 2558371569702137009, guid: 76505b0c628173347a8ff85df55874ae, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2168,7 +2172,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2086215152614181121, guid: 0b21a9b73331755478eb3a190207ea6c, type: 3}
+    - {fileID: 717461618057923412, guid: 0b21a9b73331755478eb3a190207ea6c, type: 3}
+    - {fileID: 4627153270032334929, guid: 0b21a9b73331755478eb3a190207ea6c, type: 3}
+    - {fileID: 2558371569702137009, guid: 0b21a9b73331755478eb3a190207ea6c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

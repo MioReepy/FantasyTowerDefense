@@ -6,7 +6,7 @@ public class BuyTower : MonoBehaviour
 {
     private int _counter;
 
-    internal void BuyTowerObject()
+    public void BuyTowerObject()
     {
         int costTower = gameObject.GetComponent<TowerInformation>().towerCost;
 

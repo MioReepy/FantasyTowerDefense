@@ -5485,8 +5485,8 @@ GameObject:
   - component: {fileID: 248889621}
   - component: {fileID: 248889620}
   - component: {fileID: 248889619}
-  - component: {fileID: 248889623}
   - component: {fileID: 248889624}
+  - component: {fileID: 248889623}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -5593,15 +5593,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 248889618}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df9875fcc66b6ef4ab5e844abc917ac9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5329920ee8d8f8b409abd8a149dc1205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _windows:
-  - {fileID: 536761503}
-  - {fileID: 1001013289}
-  - {fileID: 1242132025}
-  - {fileID: 154804332}
-  - {fileID: 1290833989}
+  _windows: []
 --- !u!114 &248889624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5611,7 +5606,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 248889618}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0af33f360dc651149a81ef13b9c7d34d, type: 3}
+  m_Script: {fileID: 11500000, guid: e84f15ee99bda834591efb0553f2be46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &249644408
@@ -22464,8 +22459,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ea64129a8d8b47419814af0d3ced4a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _quitButton: {fileID: 402414104}
-  _restartButton: {fileID: 648081634}
+  _quitButton: {fileID: 0}
+  _restartButton: {fileID: 0}
 --- !u!1 &1242365386
 GameObject:
   m_ObjectHideFlags: 0
@@ -24248,10 +24243,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea10840935ed17745a75adf263fc19b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _continueButton: {fileID: 1757093611}
-  _restartButton: {fileID: 59133483}
-  _quitButton: {fileID: 1402325507}
-  _audioClip: {fileID: 11400000, guid: fda777ae144030c42af3a933a027dd41, type: 2}
 --- !u!1 &1298839379
 GameObject:
   m_ObjectHideFlags: 0
@@ -38884,7 +38875,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 11400000, guid: fda777ae144030c42af3a933a027dd41, type: 2}
-  _settings: {fileID: 1001013289}
 --- !u!4 &2055639199
 Transform:
   m_ObjectHideFlags: 0
