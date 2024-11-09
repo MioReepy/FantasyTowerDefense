@@ -5,8 +5,8 @@ namespace CameraSpace
     public class CameraMovement : MonoBehaviour
     {
         [SerializeField] private float _cameraSpeed;
-        internal Boundary boundary;
         private Vector3 _moveInput;
+        internal Boundary boundary;
 
         public Vector2 MoveInput
         {

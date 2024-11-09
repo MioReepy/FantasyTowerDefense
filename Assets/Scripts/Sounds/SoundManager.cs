@@ -5,13 +5,13 @@ public class SoundManager : MonoBehaviour
 {
     internal const string PREFS_SOUND_EFFECT_VOLUME = "SoundEffectVolume";
     [SerializeField] private AudioClipSO _audioClip;
-    private float _volume = 0.5f;
+    private float _volume;
     public static SoundManager Instance;
 
     private void Awake()
     {
         Instance = this;
-        PlayerPrefs.GetFloat(PREFS_SOUND_EFFECT_VOLUME, 0.5f);
+        _volume = PlayerPrefs.GetFloat(PREFS_SOUND_EFFECT_VOLUME, 0.5f);
     }
 
     public void ChangeSoundVolume(float volume)

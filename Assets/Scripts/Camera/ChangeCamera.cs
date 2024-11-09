@@ -8,10 +8,8 @@ namespace CameraSpace
     public class ChangeCamera : MonoBehaviour
     {
         #region Cameras
-
         [SerializeField] private CinemachineVirtualCamera[] _zoomCamera;
         [SerializeField] private CameraMovement _cameraMovement;
-
         private int currentZoomCameraIndex;
 
         #endregion
@@ -33,6 +31,7 @@ namespace CameraSpace
                 ResetCamera();
                 currentZoomCameraIndex++;
                 _zoomCamera[currentZoomCameraIndex].enabled = true;
+                
                 if (_zoomCamera[currentZoomCameraIndex].TryGetComponent(out Boundary boundary))
                 {
                     _cameraMovement.boundary = boundary;
@@ -53,9 +52,9 @@ namespace CameraSpace
 
         private void ResetCamera()
         {
-            foreach (var camera in _zoomCamera)
+            foreach (var virtualCamera in _zoomCamera)
             {
-                camera.enabled = false;
+                virtualCamera.enabled = false;
             }
         }
 

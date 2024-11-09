@@ -1,4 +1,3 @@
-using System;
 using PlayerSpace;
 using TowerSpace;
 using UnityEngine;
@@ -38,10 +37,10 @@ namespace EnemySpace
 
         private void GetDamag(GameObject bullet)
         {
-            _health -= bullet.GetComponent<Bullet>().DamagePower;
+            _currentHelth -= bullet.GetComponent<Bullet>().DamagePower;
             Instantiate(_impactEffect, transform.position, Quaternion.identity);
 
-            if (_health <= 0)
+            if (_currentHelth <= 0)
             {
                 bullet.gameObject.SetActive(false);
                 _animator.SetBool("IsDied", true);
