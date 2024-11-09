@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Crossbow Tower 2
   m_EditorClassIdentifier: 
   TowerType: 0
-  towerCost: 120
-  towerDamage: 40
+  towerCost: 100
+  towerDamage: 30
   towerLevel: 2
   TowerPrefab: {fileID: 100008, guid: bc424fb31e73d5e468ca64bb6edc6fb7, type: 3}
   AvailableTowerSprite: {fileID: 21300000, guid: e30eb9c3272550d49acfb818d86bd67b, type: 3}

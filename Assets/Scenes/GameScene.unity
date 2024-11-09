@@ -4197,7 +4197,7 @@ MonoBehaviour:
     - enemyObject: {fileID: 11400000, guid: 6d11f3f1fc8944743b391777e5c96f64, type: 2}
       enemyCount: 4
   _waveSpawnerWidth: 5
-  _timeBetweenWaves: 2.5
+  _timeBetweenWaves: 10.5
   _timeBetweenEnemies: 0.5
   _enemyPortal: {fileID: 4374325547042129361, guid: 4c81e9a404e353d43a0d53b2b7b90f1c, type: 3}
 --- !u!114 &118899827
@@ -34247,8 +34247,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.4026218, y: 0.022794245, z: -0.010029708, w: 0.9150276}
-  m_LocalPosition: {x: 90, y: 36, z: 27}
+  m_LocalRotation: {x: 0.49984497, y: 0.021566862, z: -0.012451635, w: 0.86575687}
+  m_LocalPosition: {x: 90, y: 51, z: 27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -59679,7 +59679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b35abbdec7d404e4fb3be34b0dbd1e67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _startMoney: 500
+  _startMoney: 350
   _startLifes: 5
 --- !u!4 &1651453132 stripped
 Transform:

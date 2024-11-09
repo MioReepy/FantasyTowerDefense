@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Mortal Tower 3
   m_EditorClassIdentifier: 
   TowerType: 2
-  towerCost: 240
-  towerDamage: 90
+  towerCost: 200
+  towerDamage: 70
   towerLevel: 3
   TowerPrefab: {fileID: 100004, guid: 4378afb0d24f19447a927754853cdf6c, type: 3}
   AvailableTowerSprite: {fileID: 21300000, guid: e977c1562987f7e41b442f92c93f4234, type: 3}

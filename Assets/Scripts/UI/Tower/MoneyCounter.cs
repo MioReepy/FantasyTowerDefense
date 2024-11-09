@@ -9,6 +9,11 @@ namespace UISpace
     {
         [SerializeField] private TextMeshProUGUI _coinsCounter;
 
+        private void Awake()
+        {
+            _coinsCounter.text = PlayerStats.Instance.money.ToString();
+        }
+
         private void Start()
         {
             PlayerStats.Instance.OnChangeMoney += PlayerStats_OnChangeMoney;

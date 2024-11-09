@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Tesla Power 3
   m_EditorClassIdentifier: 
   TowerType: 3
-  towerCost: 200
-  towerDamage: 70
+  towerCost: 150
+  towerDamage: 50
   towerLevel: 3
   TowerPrefab: {fileID: 100006, guid: 1d4f518a457f5b54b8010914173ec915, type: 3}
   AvailableTowerSprite: {fileID: 21300000, guid: dbe6f37e950b2db4599be80d656b8985, type: 3}

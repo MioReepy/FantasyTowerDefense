@@ -7,7 +7,7 @@ namespace PlayerSpace
     {
         public static PlayerStats Instance;
 
-        [SerializeField] private int _startMoney = 500;
+        [SerializeField] private int _startMoney = 300;
         [SerializeField] private int _startLifes = 5;
         internal int money;
         internal int lifes;
