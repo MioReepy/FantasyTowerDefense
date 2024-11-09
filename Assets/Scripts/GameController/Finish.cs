@@ -34,6 +34,7 @@ public class Finish : MonoBehaviour
             other.gameObject.SetActive(false);
             PlayerStats.Instance.SetLifes();
             _enemyCount--;
+            Debug.Log(_enemyCount);
             SoundManager.Instance.PlayerDamageSound();
             
             if (_enemyCount < 1 && _lifeCount > 0)
@@ -52,8 +53,9 @@ public class Finish : MonoBehaviour
     {
         SoundManager.Instance.EnemyDieSound();
         _enemyCount--;
+        Debug.Log(_enemyCount);
 
-        if (_enemyCount <= 1 && _lifeCount > 0)
+        if (_enemyCount < 1 && _lifeCount > 0)
         {
             ShowCompleteLevel();
         }

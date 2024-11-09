@@ -35,7 +35,7 @@ namespace TowerSpace
             TowerInformation towerInformation = gameObject.GetComponent<TowerInformation>();
 
             if (towerInformation.towerObjects != null &&
-                towerInformation.currentTowerLevel > towerInformation.towerObjects.Length - 2)
+                towerInformation.currentTowerLevel > towerInformation.towerObjects.Length - 1)
             {
                 _arrow.SetActive(false);
                 return;
@@ -44,9 +44,7 @@ namespace TowerSpace
             int towerCost = gameObject.GetComponent<TowerInformation>()
                 .towerObjects[gameObject.GetComponent<TowerInformation>().currentTowerLevel].towerCost;
 
-            if (towerCost > PlayerStats.Instance.money
-                || gameObject.GetComponent<TowerInformation>().currentTowerLevel >
-                gameObject.GetComponent<TowerInformation>().towerObjects.Length - 2)
+            if (towerCost > PlayerStats.Instance.money)
             {
                 _arrow.SetActive(false);
                 return;
