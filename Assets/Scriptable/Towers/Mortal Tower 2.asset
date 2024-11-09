@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TowerType: 2
   towerCost: 160
-  towerDamage: 50
+  towerDamage: 45
   towerLevel: 2
   TowerPrefab: {fileID: 100004, guid: f395684eb3615e542bf26ae3bdbb1838, type: 3}
   AvailableTowerSprite: {fileID: 21300000, guid: e977c1562987f7e41b442f92c93f4234, type: 3}

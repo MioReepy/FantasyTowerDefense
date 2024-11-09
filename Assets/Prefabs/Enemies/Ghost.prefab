@@ -168,7 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 11400000, guid: d244078a24f6dcc4594b731a20059deb, type: 2}
   _impactEffect: {fileID: 7388991303198605836, guid: ebd769dac08fc674f8a44336dfcdaf92, type: 3}
-  _health: 50
+  _health: 80
   _reward: 10
 --- !u!1 &4524045572467879170
 GameObject:

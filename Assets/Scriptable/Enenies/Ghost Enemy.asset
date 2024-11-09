@@ -16,4 +16,4 @@ MonoBehaviour:
   prefabEnemy: {fileID: 4524045572467879168, guid: 14f1f307a97058a49b01c5ef42cbbfcd, type: 3}
   enemyType: 0
   enemyHP: 10
-  enemySpeed: 4
+  enemySpeed: 6

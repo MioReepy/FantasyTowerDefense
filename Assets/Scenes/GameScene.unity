@@ -168,7 +168,7 @@ Transform:
   m_GameObject: {fileID: 3581223}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.0056854, z: -0, w: 0.99998385}
-  m_LocalPosition: {x: 1.36, y: 0.5, z: -17.99}
+  m_LocalPosition: {x: 1.42, y: 0.5, z: -12.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4160,7 +4160,7 @@ Transform:
   m_GameObject: {fileID: 118899822}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 87.01, y: 3.5, z: 121.77}
+  m_LocalPosition: {x: 87.01, y: 3.5, z: 114.39}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4183,22 +4183,24 @@ MonoBehaviour:
   waves:
   - enemies:
     - enemyObject: {fileID: 11400000, guid: d244078a24f6dcc4594b731a20059deb, type: 2}
-      enemyCount: 3
-  - enemies:
-    - enemyObject: {fileID: 11400000, guid: d244078a24f6dcc4594b731a20059deb, type: 2}
-      enemyCount: 4
-    - enemyObject: {fileID: 11400000, guid: 7bfb7c56d75fc314abca5b713e3990ae, type: 2}
-      enemyCount: 5
-  - enemies:
-    - enemyObject: {fileID: 11400000, guid: d244078a24f6dcc4594b731a20059deb, type: 2}
-      enemyCount: 6
-    - enemyObject: {fileID: 11400000, guid: 7bfb7c56d75fc314abca5b713e3990ae, type: 2}
       enemyCount: 5
     - enemyObject: {fileID: 11400000, guid: 6d11f3f1fc8944743b391777e5c96f64, type: 2}
       enemyCount: 4
+  - enemies:
+    - enemyObject: {fileID: 11400000, guid: d244078a24f6dcc4594b731a20059deb, type: 2}
+      enemyCount: 7
+    - enemyObject: {fileID: 11400000, guid: 6d11f3f1fc8944743b391777e5c96f64, type: 2}
+      enemyCount: 9
+  - enemies:
+    - enemyObject: {fileID: 11400000, guid: d244078a24f6dcc4594b731a20059deb, type: 2}
+      enemyCount: 6
+    - enemyObject: {fileID: 11400000, guid: 6d11f3f1fc8944743b391777e5c96f64, type: 2}
+      enemyCount: 7
+    - enemyObject: {fileID: 11400000, guid: 7bfb7c56d75fc314abca5b713e3990ae, type: 2}
+      enemyCount: 5
   _waveSpawnerWidth: 5
   _timeBetweenWaves: 10.5
-  _timeBetweenEnemies: 0.5
+  _timeBetweenEnemies: 1
   _enemyPortal: {fileID: 4374325547042129361, guid: 4c81e9a404e353d43a0d53b2b7b90f1c, type: 3}
 --- !u!114 &118899827
 MonoBehaviour:
@@ -34247,7 +34249,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.49984497, y: 0.021566862, z: -0.012451635, w: 0.86575687}
+  m_LocalRotation: {x: 0.4922708, y: 0.0216747, z: -0.012262954, w: 0.8700858}
   m_LocalPosition: {x: 90, y: 51, z: 27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -75942,14 +75944,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2130984883}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.49984497, y: 0.021566862, z: -0.012451635, w: 0.86575687}
+  m_LocalRotation: {x: 0.4922708, y: 0.0216747, z: -0.012262954, w: 0.8700858}
   m_LocalPosition: {x: 90, y: 51, z: 27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1246163071}
   m_Father: {fileID: 1792723944}
-  m_LocalEulerAnglesHint: {x: 60, y: 2.854, z: 0}
+  m_LocalEulerAnglesHint: {x: 59, y: 2.854, z: 0}
 --- !u!114 &2130984886
 MonoBehaviour:
   m_ObjectHideFlags: 0
