@@ -61,8 +61,8 @@ namespace CameraSpace
 
         private void OnDisable()
         {
-            InputPlayerController.Instance.OnZoomPlus += ZoomPlusCamera;
-            InputPlayerController.Instance.OnZoomMinus += ZoomMinusCamera;
+            InputPlayerController.Instance.OnZoomPlus -= ZoomPlusCamera;
+            InputPlayerController.Instance.OnZoomMinus -= ZoomMinusCamera;
         }
     }
 }
