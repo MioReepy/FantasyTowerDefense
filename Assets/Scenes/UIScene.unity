@@ -5597,11 +5597,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _windows:
+  - {fileID: 536761503}
   - {fileID: 1001013289}
-  - {fileID: 1290833989}
   - {fileID: 1242132025}
   - {fileID: 154804332}
-  - {fileID: 536761503}
+  - {fileID: 1290833989}
 --- !u!114 &248889624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38865,7 +38865,7 @@ GameObject:
   - component: {fileID: 2055639199}
   - component: {fileID: 2055639197}
   m_Layer: 0
-  m_Name: MusicManager
+  m_Name: SoundManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38884,6 +38884,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioClip: {fileID: 11400000, guid: fda777ae144030c42af3a933a027dd41, type: 2}
+  _settings: {fileID: 1001013289}
 --- !u!4 &2055639199
 Transform:
   m_ObjectHideFlags: 0

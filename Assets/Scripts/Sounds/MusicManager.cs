@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
-    internal const string PREFS_MUSIC_EFFECT_VOLUME = "SoundEffectVolume";
+    internal const string PREFS_MUSIC_EFFECT_VOLUME = "MusicEffectVolume";
     private AudioSource _audioSource;
     public static MusicManager Instance;
 
