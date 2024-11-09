@@ -71,19 +71,26 @@ namespace UISpace
         {
             SwitchButtons buttons = currentButton.transform.GetComponent<SwitchButtons>();
 
-            int towerCost = gameObject.GetComponent<TowerInformation>()
-                .towerObjects[gameObject.GetComponent<TowerInformation>().currentTowerLevel].towerCost;
+            buttons.onButton.SetActive(true);
+            buttons.offButton.SetActive(false);
             
-            if (towerCost > PlayerStats.Instance.money 
-                || gameObject.GetComponent<TowerInformation>().currentTowerLevel > gameObject.GetComponent<TowerInformation>().towerObjects.Length - 2)
+            if (gameObject.GetComponent<TowerInformation>().currentTowerLevel <
+                gameObject.GetComponent<TowerInformation>().towerObjects.Length)
+            {
+                int towerCost = gameObject.GetComponent<TowerInformation>()
+                    .towerObjects[gameObject.GetComponent<TowerInformation>().currentTowerLevel].towerCost;
+                
+                if (towerCost > PlayerStats.Instance.money)
+                {
+                    buttons.onButton.SetActive(false);
+                    buttons.offButton.SetActive(true);
+                }
+            }
+            
+            if (gameObject.GetComponent<TowerInformation>().currentTowerLevel > gameObject.GetComponent<TowerInformation>().towerObjects.Length - 1)
             {
                 buttons.onButton.SetActive(false);
                 buttons.offButton.SetActive(true);
-            }
-            else
-            {
-                buttons.onButton.SetActive(true);
-                buttons.offButton.SetActive(false);
             }
 
             availableUpgrade.gameObject.SetActive(true);

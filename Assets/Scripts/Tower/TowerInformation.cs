@@ -25,7 +25,7 @@ namespace TowerSpace
                     {
                         this.towerType = towerType;
                         _currentTower = _towersParent.GetChild(i).GetComponent<Tower>();
-                        towerObjects = new TowerObject[_towersParent.childCount];
+                        towerObjects = new TowerObject[_currentTower._towerObjects.Length];
                         break;
                     }
                 }
