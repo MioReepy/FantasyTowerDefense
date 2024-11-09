@@ -43,29 +43,29 @@ namespace UnityStandardAssets.ImageEffects
                 {
                     EditorGUILayout.HelpBox ("Invalid texture dimensions!\nPick another texture or adjust dimension to e.g. 256x16.", MessageType.Warning);
                 }
-                else if (GUILayout.Button ("Convert and Apply"))
-                {
-                    string path = AssetDatabase.GetAssetPath (tex);
-                    TextureImporter textureImporter = AssetImporter.GetAtPath(path) as TextureImporter;
-                    bool doImport = textureImporter.isReadable == false;
-                    if (textureImporter.mipmapEnabled == true) {
-                        doImport = true;
-                    }
-                    if (textureImporter.textureFormat != TextureImporterFormat.AutomaticTruecolor) {
-                        doImport = true;
-                    }
-
-                    if (doImport)
-                    {
-                        textureImporter.isReadable = true;
-                        textureImporter.mipmapEnabled = false;
-                        textureImporter.textureFormat = TextureImporterFormat.AutomaticTruecolor;
-                        AssetDatabase.ImportAsset (path, ImportAssetOptions.ForceUpdate);
-                        //tex = AssetDatabase.LoadMainAssetAtPath(path);
-                    }
-
-                    (target as ColorCorrectionLookup).Convert(tex, path);
-                }
+                // else if (GUILayout.Button ("Convert and Apply"))
+                // {
+                //     string path = AssetDatabase.GetAssetPath (tex);
+                //     TextureImporter textureImporter = AssetImporter.GetAtPath(path) as TextureImporter;
+                //     bool doImport = textureImporter.isReadable == false;
+                //     if (textureImporter.mipmapEnabled == true) {
+                //         doImport = true;
+                //     }
+                //     if (textureImporter.textureFormat != TextureImporterFormat.AutomaticTruecolor) {
+                //         doImport = true;
+                //     }
+                //
+                //     if (doImport)
+                //     {
+                //         textureImporter.isReadable = true;
+                //         textureImporter.mipmapEnabled = false;
+                //         textureImporter.textureFormat = TextureImporterFormat.AutomaticTruecolor;
+                //         AssetDatabase.ImportAsset (path, ImportAssetOptions.ForceUpdate);
+                //         //tex = AssetDatabase.LoadMainAssetAtPath(path);
+                //     }
+                //
+                //     (target as ColorCorrectionLookup).Convert(tex, path);
+                // }
             }
 
             if ((target as ColorCorrectionLookup).basedOnTempTex != "")

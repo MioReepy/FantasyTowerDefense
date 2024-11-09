@@ -35,7 +35,7 @@ namespace CameraSpace
                 _zoomCamera[currentZoomCameraIndex].enabled = true;
                 if (_zoomCamera[currentZoomCameraIndex].TryGetComponent(out Boundary boundary))
                 {
-                    _cameraMovement._boundary = boundary;
+                    _cameraMovement.boundary = boundary;
                 }
             }
         }
@@ -47,7 +47,7 @@ namespace CameraSpace
                 ResetCamera();
                 currentZoomCameraIndex--;
                 _zoomCamera[currentZoomCameraIndex].enabled = true;
-                _cameraMovement._boundary = _zoomCamera[currentZoomCameraIndex].GetComponent<Boundary>();
+                _cameraMovement.boundary = _zoomCamera[currentZoomCameraIndex].GetComponent<Boundary>();
             }
         }
 
