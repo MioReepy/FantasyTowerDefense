@@ -22,13 +22,13 @@ namespace TowerSpace
                     {
                         _arrow.SetActive(false);
 
-                        if (Tower[j].towerCost < PlayerStats.Instance.money)
-                        {
-                            _arrow.SetActive(true);
-                            return;
-                        }
+                        if (Tower[j].towerCost >= PlayerStats.Instance.money) continue;
+                        
+                        _arrow.SetActive(true);
+                        return;
                     }
                 }
+                
                 return;
             }
             

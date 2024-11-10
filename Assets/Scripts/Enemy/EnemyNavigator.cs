@@ -14,21 +14,19 @@ namespace EnemySpace
 
         private void Update()
         {
-            if (transform.position != _destination)
-            {
-                Vector3 destinationDirection = _destination - transform.position;
-                destinationDirection.y = 0f;
-                
-                float destinationDistance = destinationDirection.magnitude;
+            if (transform.position == _destination) return;
+            
+            Vector3 destinationDirection = _destination - transform.position;
+            destinationDirection.y = 0f;
+            float destinationDistance = destinationDirection.magnitude;
 
-                if (destinationDistance >= _stopDistance)
-                {
-                    EnemyMove(destinationDirection);
-                }
-                else
-                {
-                    isReachedDestination = false;
-                }
+            if (destinationDistance >= _stopDistance)
+            {
+                EnemyMove(destinationDirection);
+            }
+            else
+            {
+                isReachedDestination = false;
             }
         }
 

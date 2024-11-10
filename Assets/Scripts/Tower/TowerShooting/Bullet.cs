@@ -6,7 +6,6 @@ namespace TowerSpace
     {
         [SerializeField] private float bulletSpeed = 100f;
         [SerializeField] private GameObject _impactEffect;
-
         private int damagePower;
         public Transform Target { get; set; }
         public int DamagePower { get; set; }

@@ -14,14 +14,9 @@ namespace UISpace
         {
             WaveSpawner.Instance.coolDownWaves -= Time.deltaTime;
 
-            if (WaveSpawner.Instance._currentWave <= WaveSpawner.Instance.waves.Length - 1)
-            {
-                _counter.text = $"Waves: {WaveSpawner.Instance._currentWave + 1}/{WaveSpawner.Instance.waves.Length}";
-            }
-            else
-            {
-                _counter.text = $"Waves: {WaveSpawner.Instance._currentWave}/{WaveSpawner.Instance.waves.Length}";
-            }
+            _counter.text = WaveSpawner.Instance._currentWave <= WaveSpawner.Instance.waves.Length - 1 
+                ? $"Waves: {WaveSpawner.Instance._currentWave + 1}/{WaveSpawner.Instance.waves.Length}" 
+                : $"Waves: {WaveSpawner.Instance._currentWave}/{WaveSpawner.Instance.waves.Length}";
             
             if (WaveSpawner.Instance.coolDownWaves < 0)
             {

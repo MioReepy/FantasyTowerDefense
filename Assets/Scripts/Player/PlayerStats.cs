@@ -17,7 +17,6 @@ namespace PlayerSpace
         {
             public int coinsCount;
         }
-        
         public event EventHandler<OnLifes> OnChangeLifes;
         public class OnLifes : EventArgs
         {

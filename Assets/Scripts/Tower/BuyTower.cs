@@ -9,7 +9,6 @@ public class BuyTower : MonoBehaviour
     public void BuyTowerObject()
     {
         int costTower = gameObject.GetComponent<TowerInformation>().towerCost;
-
         PlayerStats.Instance.SetMoney(-costTower);
         SoundManager.Instance.TowerSelectedTower();
     }

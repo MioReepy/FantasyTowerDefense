@@ -32,28 +32,26 @@ namespace TowerSpace
                     target = null;
                 }
 
-                if (visibleTarget.Count > 0)
+                if (visibleTarget.Count <= 0) continue;
+                
+                int index = 1;
+                    
+                for (int i = 0; i < visibleTarget.Count; i++)
                 {
-                    int index = 1;
-                    
-                    for (int i = 0; i < visibleTarget.Count; i++)
+                    if (target == null && visibleTarget[i] == null)
                     {
-                        if (target == null && visibleTarget[i] == null)
-                        {
-                            break;
-                        }
-                        
-                        if (visibleTarget[i].GetComponent<WaypointNavigator>()._currentWaypoint.transform
-                                .GetSiblingIndex() > index)
-                        {
-                            target = visibleTarget[i].transform;
-                            index = visibleTarget[i].GetComponent<WaypointNavigator>()._currentWaypoint.transform
-                                .GetSiblingIndex();
-                        }
+                        break;
                     }
+
+                    if (visibleTarget[i].GetComponent<WaypointNavigator>()._currentWaypoint.transform
+                            .GetSiblingIndex() <= index) continue;
                     
-                    DeleteInVisibleTarger();
+                    target = visibleTarget[i].transform;
+                    index = visibleTarget[i].GetComponent<WaypointNavigator>()._currentWaypoint.transform
+                        .GetSiblingIndex();
                 }
+                    
+                DeleteInVisibleTarger();
             }
         }
 
@@ -76,8 +74,8 @@ namespace TowerSpace
             {
                 Vector3 directionToTarget = visibleTarget[i].position - transform.position;
 
-                if (viewRadius * viewRadius < directionToTarget.sqrMagnitude || !visibleTarget[i].gameObject.activeInHierarchy 
-                                                                             || visibleTarget[i].GetComponent<Enemy>().isDead)
+                if (viewRadius * viewRadius < directionToTarget.sqrMagnitude 
+                    || !visibleTarget[i].gameObject.activeInHierarchy || visibleTarget[i].GetComponent<Enemy>().isDead)
                 {
                     visibleTarget.Remove(visibleTarget[i]);
                 }

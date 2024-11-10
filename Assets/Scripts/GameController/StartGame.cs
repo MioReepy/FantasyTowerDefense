@@ -15,12 +15,11 @@ namespace GameController
 
         private void Update()
         {
-            if (isFirstUpdate)
-            {
-                OnStartGame?.Invoke(this, EventArgs.Empty);
+            if (!isFirstUpdate) return;
+            
+            OnStartGame?.Invoke(this, EventArgs.Empty);
                 
-                isFirstUpdate = false;
-            }
+            isFirstUpdate = false;
         }
     }
 }

@@ -12,7 +12,6 @@ namespace TowerSpace
         [SerializeField] private GameObject _lightClick;
         private float _timeLight;
         private float _timeLightClick;
-
         internal bool isTowerSelected;
         internal bool isAvailableBuild = true;
 
@@ -64,18 +63,17 @@ namespace TowerSpace
             {
                 return;
             }
+
+            if (!_lightClick.GetComponent<ParticleSystem>().isStopped || isTowerSelected) return;
             
-            if (_lightClick.GetComponent<ParticleSystem>().isStopped && !isTowerSelected)
-            {
-                isTowerSelected = true;
-                StartCoroutine(OnMouseClick());
-                SoundManager.Instance.TowerSelectedTower();
+            isTowerSelected = true;
+            StartCoroutine(OnMouseClick());
+            SoundManager.Instance.TowerSelectedTower();
                 
-                OnTowerSelected?.Invoke(this, new OnSelected
-                {
-                    TowerSelected = gameObject
-                });
-            }
+            OnTowerSelected?.Invoke(this, new OnSelected
+            {
+                TowerSelected = gameObject
+            });
         }
 
         internal void OnEscapeDown()
@@ -85,8 +83,7 @@ namespace TowerSpace
                 TowerSelected = gameObject
             });
             
-            if (_lightClick.GetComponent<ParticleSystem>().isPlaying ||
-                _lightClick.GetComponent<ParticleSystem>().isPaused)
+            if (_lightClick.GetComponent<ParticleSystem>().isPlaying || _lightClick.GetComponent<ParticleSystem>().isPaused)
             {
                 StartCoroutine(OnEscapeClick());
             }
@@ -96,13 +93,12 @@ namespace TowerSpace
 
         private IEnumerator OnEnter()
         {
-            if (_lightClick.GetComponent<ParticleSystem>().isStopped)
-            {
-                _light.SetActive(true);
-                _light.GetComponent<ParticleSystem>().Play();
-                yield return new WaitForSeconds(_timeLight);
-                _light.GetComponent<ParticleSystem>().Pause();
-            }
+            if (!_lightClick.GetComponent<ParticleSystem>().isStopped) yield break;
+            
+            _light.SetActive(true);
+            _light.GetComponent<ParticleSystem>().Play();
+            yield return new WaitForSeconds(_timeLight);
+            _light.GetComponent<ParticleSystem>().Pause();
         }
 
         private IEnumerator OnExit()

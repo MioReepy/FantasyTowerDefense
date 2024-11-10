@@ -6,16 +6,9 @@ namespace UISpace
 {
     public class UpgradeTowerUI : MonoBehaviour
     {
-        [SerializeField] private GameObject _arrowAvailableUpgrade;
         [SerializeField] internal GameObject availableBuild;
         [SerializeField] internal GameObject availableUpgrade;
-        
-        internal GameObject currentButton;
-
-        internal void HideArrowUpgrade()
-        {
-            _arrowAvailableUpgrade.gameObject.SetActive(false);
-        }
+        private GameObject _currentButton;
 
         internal void HideAvailableBuild()
         {
@@ -27,20 +20,14 @@ namespace UISpace
             availableUpgrade.gameObject.SetActive(false);
         }
 
-        internal void ShowArrowUpgrade()
-        {
-            _arrowAvailableUpgrade.gameObject.SetActive(true);
-        }
-
         internal void SetCurrentButton(TowerType towerType)
         {
             for (int i = 0; i < availableUpgrade.transform.childCount; i++)
             {
-                if (availableUpgrade.transform.GetChild(i).GetComponent<Tower>()._towerType == towerType)
-                {
-                    currentButton = availableUpgrade.transform.transform.GetChild(i).gameObject;
-                    currentButton.SetActive(true);
-                }
+                if (availableUpgrade.transform.GetChild(i).GetComponent<Tower>()._towerType != towerType) continue;
+                
+                _currentButton = availableUpgrade.transform.transform.GetChild(i).gameObject;
+                _currentButton.SetActive(true);
             }
         }
 
@@ -69,7 +56,7 @@ namespace UISpace
 
         internal void ShowAvailableUpgrade()
         {
-            SwitchButtons buttons = currentButton.transform.GetComponent<SwitchButtons>();
+            SwitchButtons buttons = _currentButton.transform.GetComponent<SwitchButtons>();
 
             buttons.onButton.SetActive(true);
             buttons.offButton.SetActive(false);

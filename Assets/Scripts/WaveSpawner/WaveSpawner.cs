@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using EnemySpace;
 using GameController;
 using UnityEngine;
@@ -19,9 +20,9 @@ namespace WaveSpawnerSpace
         [SerializeField] private GameObject _enemyPortal;
         internal float coolDownWaves = 0f;
         internal int _currentWave = 0;
-        internal List<Enemies> _enemyObjects;
-        internal Vector3 minBounds;
-        internal Vector3 maxBounds;
+        private List<Enemies> _enemyObjects;
+        private Vector3 _minBounds;
+        private Vector3 _maxBounds;
 
         public static WaveSpawner Instance;
         private void Awake() => Instance = this;
@@ -42,9 +43,8 @@ namespace WaveSpawnerSpace
                 }
             }
             
-            minBounds = transform.position + transform.right * _waveSpawnerWidth / 2;
-            maxBounds = transform.position - transform.right * _waveSpawnerWidth / 2;
-            
+            _minBounds = transform.position + transform.right * _waveSpawnerWidth / 2;
+            _maxBounds = transform.position - transform.right * _waveSpawnerWidth / 2;
             StartCoroutine(Spawn());
         }
 
@@ -55,13 +55,8 @@ namespace WaveSpawnerSpace
                 coolDownWaves = _timeBetweenWaves;
                 yield return new WaitForSeconds(_timeBetweenWaves);
                 
-                foreach (var enemy in _enemyObjects)
+                foreach (var enemy in _enemyObjects.Where(enemy => enemy.waveNumber == _currentWave))
                 {
-                    if (enemy.waveNumber != _currentWave)
-                    {
-                        continue;
-                    }
-                    
                     for (int i = 0; i < enemy.enemyCount; i++)
                     {
                         SpawnEnemy(enemy.enemyObject.enemyType);
@@ -77,21 +72,17 @@ namespace WaveSpawnerSpace
         {
             GameObject enemyObject = EnemyPool.GetEnemy(enemyType);
 
-            if (enemyObject != null)
-            {
-                enemyObject.GetComponent<WaypointNavigator>().UpdateWaypoint(_waypoint);
-                Vector3 spawnPosition = Vector3.Lerp(minBounds, maxBounds, Random.Range(0f, 1f));
-
-                enemyObject.transform.position = spawnPosition;
-                enemyObject.transform.rotation = transform.rotation;
-
-                GameObject enemyPool = EnemyPortalObjectPool.Singleton.GetPoolObject();
-                enemyPool.SetActive(true);
-                enemyPool.transform.position = spawnPosition;
-                enemyPool.transform.rotation = transform.rotation;
-                
-                enemyObject.SetActive(true);
-            }
+            if (enemyObject == null) return;
+            
+            enemyObject.GetComponent<WaypointNavigator>().UpdateWaypoint(_waypoint);
+            Vector3 spawnPosition = Vector3.Lerp(_minBounds, _maxBounds, Random.Range(0f, 1f));
+            enemyObject.transform.position = spawnPosition;
+            enemyObject.transform.rotation = transform.rotation;
+            GameObject enemyPool = EnemyPortalObjectPool.Singleton.GetPoolObject();
+            enemyPool.SetActive(true);
+            enemyPool.transform.position = spawnPosition;
+            enemyPool.transform.rotation = transform.rotation;
+            enemyObject.SetActive(true);
         }
     }
 }

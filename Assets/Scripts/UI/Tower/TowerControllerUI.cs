@@ -16,16 +16,11 @@ namespace TowerSpace
 
         private void SelectingTowers_OnShowTowerUI(object sender, SelectingTowers.OnSelected towerSelectedArgs)
         {
-            if (towerSelectedArgs != null)
-            {
-                selectedTower = towerSelectedArgs.TowerSelected;
-
-                UpgradeTowerUI uiTower = selectedTower.GetComponent<UpgradeTowerUI>();
-
-                uiTower.HideArrowUpgrade();
-                
-                ShowTowerUI(uiTower);
-            }
+            if (towerSelectedArgs == null) return;
+            
+            selectedTower = towerSelectedArgs.TowerSelected;
+            UpgradeTowerUI uiTower = selectedTower.GetComponent<UpgradeTowerUI>();
+            ShowTowerUI(uiTower);
         }
 
         private void SelectingTowers_OnHideTowerUI(object sender, SelectingTowers.OnSelected towerSelectedArgs)

@@ -20,28 +20,25 @@ namespace GameController
         private void PlayerStats_OnChangeLifes(object sender, PlayerStats.OnLifes lifes)
         {
             _lifeCount = lifes.lifesCount;
-        
-            if (lifes.lifesCount <= 0)
-            {
-                UISystem.Instance.OpenWindow(WindowType.GameOver);
-                Time.timeScale = 0;
-            }
+
+            if (lifes.lifesCount > 0) return;
+            
+            UISystem.Instance.OpenWindow(WindowType.GameOver);
+            Time.timeScale = 0;
         }
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.CompareTag("Enemy"))
-            {
-                other.gameObject.SetActive(false);
-                PlayerStats.Instance.SetLifes();
-                _enemyCount--;
-                Debug.Log(_enemyCount);
-                SoundManager.Instance.PlayerDamageSound();
+            if (!other.CompareTag("Enemy")) return;
             
-                if (_enemyCount < 1 && _lifeCount > 0)
-                {
-                    ShowCompleteLevel();
-                }
+            other.gameObject.SetActive(false);
+            PlayerStats.Instance.SetLifes();
+            _enemyCount--;
+            SoundManager.Instance.PlayerDamageSound();
+            
+            if (_enemyCount < 1 && _lifeCount > 0)
+            {
+                ShowCompleteLevel();
             }
         }
 
@@ -55,10 +52,9 @@ namespace GameController
             SoundManager.Instance.EnemyDieSound();
             _enemyCount--;
 
-            if (_enemyCount < 1 && _lifeCount > 0)
-            {
-                ShowCompleteLevel();
-            }
+            if (_enemyCount >= 1 || _lifeCount <= 0) return;
+            
+            ShowCompleteLevel();
         }
 
         private void ShowCompleteLevel()

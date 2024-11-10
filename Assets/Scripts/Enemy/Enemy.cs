@@ -41,12 +41,11 @@ namespace EnemySpace
             _currentHelth -= bullet.GetComponent<Bullet>().DamagePower;
             Instantiate(_impactEffect, transform.position, Quaternion.identity);
 
-            if (_currentHelth <= 0)
-            {
-                bullet.gameObject.SetActive(false);
-                SetEnemyStats(false);
-                Finish.Instance.EnemyDied();
-            }
+            if (_currentHelth > 0) return;
+            
+            bullet.gameObject.SetActive(false);
+            SetEnemyStats(false);
+            Finish.Instance.EnemyDied();
         }
         
         public void EnemyDied()

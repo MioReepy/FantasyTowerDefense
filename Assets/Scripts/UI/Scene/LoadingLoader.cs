@@ -4,7 +4,7 @@ namespace UISpace
 {
     public class LoadingLoader : MonoBehaviour
     {
-        internal bool isFirstLoad = true;
+        private bool _isFirstLoad = true;
 
         [SerializeField] private Transform backgrounds;
         private void Awake()
@@ -19,11 +19,10 @@ namespace UISpace
         
         private void Update()
         {
-            if (isFirstLoad)
-            {
-                isFirstLoad = false;
-                Loader.LoaderCallback();
-            }
+            if (!_isFirstLoad) return;
+            
+            _isFirstLoad = false;
+            Loader.LoaderCallback();
         }
     }
 }

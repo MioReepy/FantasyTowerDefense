@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using EnemySpace;
 using UnityEngine;
 
@@ -29,12 +30,9 @@ namespace WaveSpawnerSpace
 
         internal GameObject GetPoolObject()
         {
-            foreach (var enemyObject in _poolObjects)
+            foreach (var enemyObject in _poolObjects.Where(enemyObject => !enemyObject.activeInHierarchy))
             {
-                if (!enemyObject.activeInHierarchy)
-                {
-                    return enemyObject;
-                }
+                return enemyObject;
             }
 
             GameObject poolTemp = Instantiate(_objectToPool.prefabEnemy, _spawnObject.transform);

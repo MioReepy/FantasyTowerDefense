@@ -51,7 +51,6 @@ namespace TowerSpace
         protected override void Shoot()
         {
             base.Shoot();
-
             _lightningBolt.GetComponent<LightningBoltScript>().EndObject = towerFieldOfView.target.gameObject;
         }
     }

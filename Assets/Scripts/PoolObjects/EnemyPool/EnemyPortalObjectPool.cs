@@ -27,9 +27,9 @@ namespace EnemySpace
 
         internal GameObject GetPoolObject()
         {
-            foreach (var enemyObject in _poolObjects.Where(enemyObject => !enemyObject.activeInHierarchy))
+            foreach (var portalObject in _poolObjects.Where(enemyObject => !enemyObject.activeInHierarchy))
             {
-                return enemyObject;
+                return portalObject;
             }
 
             GameObject poolTemp = Instantiate(objectToPool, spawnObject.transform);

@@ -25,18 +25,16 @@ namespace WaypointSpase
 
         private void SetCurrentWaypoint()
         {
-            if (!_enemyNavigator.isReachedDestination)
-            {
-                _currentWaypoint = _currentWaypoint.nextWaypoint;
-                _enemyNavigator.SetDestination(_currentWaypoint);
-            }
+            if (_enemyNavigator.isReachedDestination) return;
+            
+            _currentWaypoint = _currentWaypoint.nextWaypoint;
+            _enemyNavigator.SetDestination(_currentWaypoint);
         }
 
         internal void UpdateWaypoint(Waypoint waypoint)
         {
             _currentWaypoint = waypoint;
             _enemyNavigator.SetDestination(_currentWaypoint);
-
         }
     }
 }

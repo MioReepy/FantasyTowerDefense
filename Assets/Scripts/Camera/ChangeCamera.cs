@@ -26,28 +26,26 @@ namespace CameraSpace
 
         private void ZoomPlusCamera(object sender, EventArgs e)
         {
-            if (currentZoomCameraIndex < _zoomCamera.Length - 1)
-            {
-                ResetCamera();
-                currentZoomCameraIndex++;
-                _zoomCamera[currentZoomCameraIndex].enabled = true;
+            if (currentZoomCameraIndex >= _zoomCamera.Length - 1) return;
+            
+            ResetCamera();
+            currentZoomCameraIndex++;
+            _zoomCamera[currentZoomCameraIndex].enabled = true;
                 
-                if (_zoomCamera[currentZoomCameraIndex].TryGetComponent(out Boundary boundary))
-                {
-                    _cameraMovement.boundary = boundary;
-                }
+            if (_zoomCamera[currentZoomCameraIndex].TryGetComponent(out Boundary boundary))
+            {
+                _cameraMovement.boundary = boundary;
             }
         }
 
         private void ZoomMinusCamera(object sender, EventArgs e)
         {
-            if (currentZoomCameraIndex > 0)
-            {
-                ResetCamera();
-                currentZoomCameraIndex--;
-                _zoomCamera[currentZoomCameraIndex].enabled = true;
-                _cameraMovement.boundary = _zoomCamera[currentZoomCameraIndex].GetComponent<Boundary>();
-            }
+            if (currentZoomCameraIndex <= 0) return;
+            
+            ResetCamera();
+            currentZoomCameraIndex--;
+            _zoomCamera[currentZoomCameraIndex].enabled = true;
+            _cameraMovement.boundary = _zoomCamera[currentZoomCameraIndex].GetComponent<Boundary>();
         }
 
         private void ResetCamera()

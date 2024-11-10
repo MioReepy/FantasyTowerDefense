@@ -24,13 +24,11 @@ namespace CameraSpace
 
         private void MoveCamera()
         {
-            if (boundary != null)
-            {
-                Vector3 movePosition = transform.position + _moveInput;
-                transform.position = Vector3.MoveTowards(transform.position,
-                    new Vector3(Mathf.Clamp(movePosition.x, boundary.xMin, boundary.xMax), transform.position.y,
-                        Mathf.Clamp(movePosition.z, boundary.zMin, boundary.zMax)), _cameraSpeed * Time.fixedDeltaTime);
-            }
+            if (boundary == null) return;
+            Vector3 movePosition = transform.position + _moveInput;
+            transform.position = Vector3.MoveTowards(transform.position,
+                new Vector3(Mathf.Clamp(movePosition.x, boundary.xMin, boundary.xMax), transform.position.y,
+                    Mathf.Clamp(movePosition.z, boundary.zMin, boundary.zMax)), _cameraSpeed * Time.fixedDeltaTime);
         }
     }
 }

@@ -16,19 +16,18 @@ namespace TowerSpace
 
         private void Update()
         {
-            if (towerFieldOfView.target != null)
+            if (towerFieldOfView.target == null) return;
+            
+            RotateToDirection();
+
+            if (fireCoolDown <= 0f)
             {
-                RotateToDirection();
-
-                if (fireCoolDown <= 0f)
-                {
-                    SoundManager.Instance.MortalShotSound();
-                    Shoot();
-                    fireCoolDown = 1 / fireSpeed;
-                }
-
-                fireCoolDown -= Time.deltaTime;
+                SoundManager.Instance.MortalShotSound();
+                Shoot();
+                fireCoolDown = 1 / fireSpeed;
             }
+
+            fireCoolDown -= Time.deltaTime;
         }
         
         protected override GameObject GetBullet()

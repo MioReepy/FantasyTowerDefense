@@ -5,8 +5,8 @@ namespace TowerSpace
     public class SelectedTowerController : MonoBehaviour
     {
         [SerializeField] private GameObject towers;
-        
         private GameObject selectedTowerController;
+        
         private void Start()
         {
             SelectingTowers.OnTowerSelected += SelectingTowers_OnSelect;

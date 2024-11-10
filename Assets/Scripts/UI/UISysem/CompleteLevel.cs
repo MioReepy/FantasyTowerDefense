@@ -28,12 +28,13 @@ namespace UISpace
             {
                 return;
             }
-            if (lifes > 1)
+            
+            if (lifes < 3)
             {
                 _stars[0].gameObject.SetActive(true);
             }
             
-            if (lifes >= 3)
+            if (lifes < 4)
             {
                 _stars[1].gameObject.SetActive(true);
             }

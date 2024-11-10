@@ -10,8 +10,8 @@ namespace TowerSpace
         [SerializeField] internal GameObject towerPrefab;
         [SerializeField] internal int towerCost;
         [SerializeField] internal int damageTower;
-        
-        internal TowerObject _currentTowerObject;
+
+        private TowerObject _currentTowerObject;
         internal Tower _currentTower;
         internal int currentTowerLevel = 0;
 
@@ -21,13 +21,12 @@ namespace TowerSpace
             {
                 for (int i = 0; i < _towersParent.childCount; i++)
                 {
-                    if (_towersParent.GetChild(i).GetComponent<Tower>()._towerType == towerType)
-                    {
-                        this.towerType = towerType;
-                        _currentTower = _towersParent.GetChild(i).GetComponent<Tower>();
-                        towerObjects = new TowerObject[_currentTower._towerObjects.Length];
-                        break;
-                    }
+                    if (_towersParent.GetChild(i).GetComponent<Tower>()._towerType != towerType) continue;
+                    
+                    this.towerType = towerType;
+                    _currentTower = _towersParent.GetChild(i).GetComponent<Tower>();
+                    towerObjects = new TowerObject[_currentTower._towerObjects.Length];
+                    break;
                 }
 
                 for (int i = 0; i < _currentTower._towerObjects.Length; i++)

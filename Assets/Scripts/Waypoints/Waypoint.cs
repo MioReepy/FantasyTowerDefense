@@ -7,7 +7,6 @@ namespace WaypointSpase
         [SerializeField] internal Waypoint nextWaypoint;
         [SerializeField] internal Waypoint previousWaypoint;
         [SerializeField] internal float waypointWeight = 6f;
-
         internal Vector3 minBounds;
         internal Vector3 maxBounds;
 

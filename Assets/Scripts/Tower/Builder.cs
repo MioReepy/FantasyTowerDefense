@@ -12,7 +12,6 @@ namespace TowerSpace
         [SerializeField] private float timerBuildingTower = 5f;
         private SelectingTowers _selectingTowers;
         private TowerInformation _towerInformation;
-
         private GameObject _tower;
         
         public static event EventHandler<OnUpgrade> OnStartBuildingNewTower;
@@ -39,15 +38,7 @@ namespace TowerSpace
         {
             gameObject.GetComponent<BuyTower>().BuyTowerObject();
             SoundManager.Instance.TowerBuildingSound();
-            
-            if (_emptyTower.activeInHierarchy)
-            {
-                StartCoroutine(BuildNewTower(towerType));
-            }
-            else
-            {
-                StartCoroutine(UpgradeTower());
-            }
+            StartCoroutine(_emptyTower.activeInHierarchy ? BuildNewTower(towerType) : UpgradeTower());
         }
 
         private IEnumerator BuildNewTower(TowerType towerType)
@@ -66,7 +57,6 @@ namespace TowerSpace
 
             _baseTower.SetActive(true);
             _tower = Instantiate(_towerInformation.towerPrefab, _towerInformation._currentTower.transform);
-
             _buildingEffect.SetActive(false);
             _selectingTowers.isAvailableBuild = true;
         }
@@ -79,7 +69,6 @@ namespace TowerSpace
             });
             
             _selectingTowers.isAvailableBuild = false;
-            
             _selectingTowers.OnEscapeDown();
             _buildingEffect.SetActive(true);
             Destroy(_tower);
@@ -87,7 +76,6 @@ namespace TowerSpace
             yield return new WaitForSeconds(timerBuildingTower);
             
             _tower = Instantiate(_towerInformation.towerPrefab, _towerInformation._currentTower.transform);
-            
             _buildingEffect.SetActive(false);
             _selectingTowers.isAvailableBuild = true;
         }
